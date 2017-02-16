@@ -1,6 +1,7 @@
 # java-hdfs
 
-#### Dev tools ####
+### Dev tools ###
+==============
 
 - Eclipse Kepler&Luna
 - Jdk 1.8
@@ -16,16 +17,17 @@
 - spark-2.1.0-bin-hadoop2.7
 - scala-2.11.8
 
-#### Application UI ####
+### Application UI ###
+==============
 
 - Alopex-UI
 
-#### Ubuntu Linux 16.04 LTS (Hadoop Setting Files) ####
+### Ubuntu Linux 16.04 LTS (Hadoop Setting Files) ###
+====
 
-- Folders with files
+>> Folders with files
 
-`
-linux-settings
+` linux-settings `
 
 * capacity-scheduler.xml
 * core-site.xml
@@ -38,4 +40,3 @@ linux-settings
 * slaves
 * yarn-env.sh
 * yarn-site.xml
-`
