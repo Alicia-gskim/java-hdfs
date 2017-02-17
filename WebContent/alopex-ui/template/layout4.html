@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>Alopex UI/UX 표준 Template Object</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<script src="/2.3/demo/UI-basic-template/script/app/biz/include-lib.js"></script>
+	<script src="/2.3/demo/UI-basic-template/script/app/biz/alopex-common.js"></script>
+	<style type="text/css">
+		.pre-style {
+			clear: both;
+			font-size: 12px;
+			white-space: pre-line;
+			margin-top: 10px;
+			padding: 0px 10px;
+			color: #555555;
+			background: #eeeeee;
+			border: 1px solid #d7dde3;
+			line-height: 16px;
+		}
+	</style>
+</head>
+<body class="Margin-0 Padding-0">
+	<div class="Width-100">
+		<!-- header -->
+		<div class="Bg-primary">
+			<div style="width: 1170px; height: 45px; margin: 0 auto">
+				<div class="Grid-sm-12">
+					<h1 class="Float-left Header-5"><a href="../main/ui-main-portal.html" class="Color-white Text-none">Alopex UI/UX 표준 Template</a></h1>
+					<ul class="Float-right Navmenu" style="z-index:101">
+					    <li><a href="../main/ui-main-portal.html">Main Sample</a>
+					        <ul>
+					            <li><a href="../main/ui-main-portal.html">Portal 형</a></li>
+					            <li><a href="../main/ui-main-workspace.html">Workspace 형</a></li>
+					        </ul>
+					    </li>
+					    <li><a href="basic1.html">Basic Template</a>
+					        <ul>
+					            <li><a href="basic1.html">Basic Type</a>
+					            	<ul>
+					            		<li><a href="basic1.html">1 Grid board</a></li>
+					            		<li><a href="basic2.html">Grid/Table/Tab 복합형</a></li>
+					            	</ul>
+					            </li>
+					            <li><a href="board1.html">게시판형</a>
+					                <ul>
+					                	<li><a href="board1.html">2 Grid board</a></li>
+					                	<li><a href="board2.html">Grid/Table 복합형</a></li>
+					                	<li><a href="board3.html">Grid/Table/Tree</a></li>
+					                	<li><a href="board4.html">Form/Chart 복합형</a></li>
+					                </ul>
+					            </li>
+					            <li><a href="table1.html">테이블형</a>
+					            	<ul>
+					            		<li><a href="table1.html">Table 내 Table</a></li>
+					            	</ul>
+					            </li>
+					            <li>
+					            	<a href="dialog1.html">Dialog &amp; Popup</a>
+					            	<ul>
+					            		<li><a href="dialog1.html">Dialog</a></li>
+					            		<li><a href="popup1.html">Popup</a></li>
+					            	</ul>
+					            </li>
+					            <li>
+					            	<a href="contents.html">컨텐츠</a>
+					            	<ul>
+					            		<li><a href="contents.html">컨텐츠 리스트형</a></li>
+					            	</ul>
+					            </li>
+					        </ul>
+					    </li>
+					    <li><a href="object1.html">Object Template</a>
+					    	<ul>
+					    		<li><a href="object1.html">Accordion Template</a></li>
+					    		<li><a href="object2.html">Button Template</a></li>
+					    		<li><a href="object3.html">Carousel</a></li>
+					    		<li><a href="object4.html">Paging</a></li>
+					    		<li><a href="object5.html">Progress bar</a></li>
+					    	</ul>
+					    </li>
+					    <li><a href="layout1.html">Layout Template</a>
+					    	<ul>
+					    		<li><a href="layout1.html">UI Grid Layout</a></li>
+					    		<li><a href="layout2.html">Search Box Template</a>
+					    		<li><a href="layout3.html">LNB Template</a></li>
+					    		<li><a href="layout4.html">Static Contents</a></li>
+					    		<li><a href="layout5.html">Footer Template</a></li>
+					    		<li><a href="layout6.html">Error Template</a></li>
+					    	</ul>
+					    </li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- //header -->
+		<div class="Grid-wrapper">
+			<h3 class="Header-4 Padding-bottom-10" style="border-bottom: 1px solid #d8d8d8">Layout Template : Static Contents</h3>
+			<!-- Main Sample Start-->
+			<div class="Grid-sm-12">
+				<!-- left start -->
+				<div class="Grid-sm-3">
+					<div class="Margin-right-30">
+						<ul class="Accordion">
+					        <li><a href="layout1.html">UI Grid Layout</a></li>
+				    		<li><a href="layout2.html">Search Box Template</a>
+				    		<li><a href="layout3.html">LNB Template</a></li>
+				    		<li><a href="layout4.html">Static Contents</a></li>
+				    		<li><a href="layout5.html">Footer Template</a></li>
+				    		<li><a href="layout6.html">Error Template</a></li>
+					    </ul>
+				    </div>
+				</div>
+				<!-- //left end -->
+				<!-- contents template start -->
+				<div class="Grid-sm-9">
+					<div class="Padding-bottom-10 Margin-bottom-20" style="border-bottom: 1px solid #d8d8d8">
+						<h4 class="Margin-0">일반 컨텐츠 UI Layout Grid 적용법</h4>
+					</div>
+					<div class="Panel">
+						<div class="Panel-content">
+							<h5 class="Font-default Margin-0"><span class="Icon Exclamation-sign Margin-right-5 Display-inblock"></span><span class="Display-inblock">일반 컨텐츠도 Layout 적용시와 동일하게 적용합니다.</span></h5>
+							<ul>
+								<li>UI Layout Grid 사용전 Markup이 block 요소이면 'Grid-sm-12'로 전체를 감싸지 않아도 됩니다. 기본적으로 float: left 가 적용되어 있습니다.<br>(여기서는 없다고 가정하고 예제를 적용하기로 합니다.)</li>
+								<li>Nesting 될 요소가 복잡하다면 'Grid-sm-12'로 Nesting 부모요소를 정의 해줍니다.</li>
+							</ul>
+						</div>
+					</div>
+					<h6>1열 2행 레이아웃</h6>
+					<div class="Grid-sm-12">
+						<div class="Grid-sm-6">
+							<p class="Text-center"><img src="../images/left-banner1.png"></p>
+							<p class="Font-default">This will provide some detailed information about the thumbnail board type. On Arbor Day every year, the executives and employees of SK holdings C&amp;C and its subsidiaries plant seedlings in the ecologica...</p>
+						</div>
+						<div class="Grid-sm-6">
+							<p class="Text-center"><img src="../images/left-banner3.png"></p>
+							<p class="Font-default">On Arbor Day every year, the executives and employees of SK holdings C&amp;C and its subsidiaries plant seedlings in the ecologica.This will provide some detailed information about the thumbnail board type.</p>
+						</div>
+					</div>
+					<pre class="pre-style">
+						<code>
+							<span class="Font-small Color-warning">&lt;!--'Grid-sm-12' 기본으로 선언합니다.--&gt;</span>
+							<span class="Font-small Color-warning">&lt;!--일렬로 정렬된 두 section으로 적용하기 위해 2/12 = 6칸으로 정의합니다.--&gt;</span>
+							&lt;div class="Grid-sm-12"&gt;
+							&nbsp; &nbsp; &lt;div class="Grid-sm-6"&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;&lt;img src="이미지링크"&gt;&lt;/p&gt;<span class="Font-small Color-warning">&lt;!--contents 영역으로 custom 하게 markup 합니다.--&gt;</span>
+							&nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;Text Contents&lt;/p&gt;
+							&nbsp; &nbsp; &lt;/div&gt;
+							&nbsp; &nbsp; &lt;div class="Grid-sm-6"&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;&lt;img src="이미지링크"&gt;&lt;/p&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;Text Contents&lt;/p&gt;
+							&nbsp; &nbsp; &lt;/div&gt;
+							&lt;/div&gt;
+						</code>
+					</pre>
+					<h6 class="Clearboth Padding-top-20">1열 3행 레이아웃</h6>
+					<div class="Grid-sm-12 Margin-bottom-30">
+						<div class="Grid-sm-4">
+							<img src="../images/content-img1.png" class="Width-95" alt="">
+							<h5 class="Margin-0 Padding-top-10 Padding-bottom-10"><a href="#0" class="Color-primary">Forest Protection Activities</a></h5>
+							<p class="Margin-0 Font-default Width-95">On Arbor Day every year, the executives and employees of SK holdings C&amp;C and its subsidiaries plant seedlings in the ecologica</p>
+						</div>
+						<div class="Grid-sm-4">
+							<img src="../images/content-img2.png" class="Width-95 Margin-left-5" alt="">
+							<h5 class="Margin-0 Padding-top-10 Padding-bottom-10 Margin-left-5"><a href="#0" class="Color-primary">Clean Street Campaign with people</a></h5>
+							<p class="Margin-0 Font-default Width-95 Margin-left-5">The members of organization engage in the Smoking Cessation Campaign near our office in Bundang and 
+							</p>
+						</div>
+						<div class="Grid-sm-4">
+							<img src="../images/content-img3.png" class="Width-95 Margin-left-10" alt="">
+							<h5 class="Margin-0 Padding-top-10 Padding-bottom-10 Margin-left-5"><a href="#0" class="Color-primary">Supporting Social Adaption</a></h5>
+							<p class="Margin-0 Font-default Width-95 Margin-left-5">We conduct regular programs for children with physical and mental disabilities living in welfare welfare physical a</p>
+						</div>
+					</div>
+					<div class="Clearboth Panel">
+						<div class="Panel-content">
+							2단 2열을 사용할 경우 각내용에 따라 간격은 Helper class로 정의한다.
+						</div>
+					</div>
+					<pre class="pre-style">
+						<code>
+							<span class="Font-small Color-warning">&lt;!--'Grid-sm-12' 기본으로 선언합니다.--&gt;</span>
+							<span class="Font-small Color-warning">&lt;!--일렬로 정렬된 3개 section으로 적용하기 위해 3/12 = 4칸으로 정의합니다.--&gt;</span>
+							&lt;div class="Grid-sm-12"&gt;
+							&nbsp; &nbsp; &lt;div class="Grid-sm-4"&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; <span class="Font-small Color-warning">&lt;!--contents 영역으로 custom 하게 markup 합니다.--&gt;</span>
+							&nbsp; &nbsp; &nbsp; &nbsp; &lt;img src="이미지링크"&gt; 
+							&nbsp; &nbsp; &nbsp; &nbsp; &lt;h5&gt;Contents title&lt;/h5&gt; <span class="Font-small Color-warning">&lt;!--header 요소를 사용하여 타이틀이 들어간 컨텐츠를 제작할 수도 있습니다. 링크를 넣고 싶은 경우 &lt;a&gt;를 사용하세요--&gt;</span>
+							&nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;Text Contents&lt;/p&gt;
+							&nbsp; &nbsp; &lt;/div&gt;
+							&nbsp; &nbsp; &lt;div class="Grid-sm-4"&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &lt;img src="이미지링크"&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &lt;h5&gt;Contents title&lt;/h5&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;Text Contents&lt;/p&gt;
+							&nbsp; &nbsp; &lt;/div&gt;
+							&nbsp; &nbsp; &lt;div class="Grid-sm-4"&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &lt;img src="이미지링크"&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &lt;h5&gt;Contents title&lt;/h5&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;Text Contents&lt;/p&gt;
+							&nbsp; &nbsp; &lt;/div&gt;
+							&lt;/div&gt;
+						</code>
+					</pre>
+					<h6>2열 2행 레이아웃 : contents 가 있는 경우</h6>
+					<div class="Grid-sm-6 Margin-bottom-15">
+						<img src="../images/left-banner3.png" class="Width-95" alt="">
+						<h5 class="Margin-0 Padding-bottom-10 Padding-top-10"><a href="#0" class="Color-primary">Clean Street Campaign with people</a></h5>
+						<p class="Margin-0 Font-default Padding-right-10">The members of organization engage in the Smoking Cessation Campaign near our office in Bundang and </p>
+					</div>
+					<div class="Grid-sm-6 Margin-bottom-15">
+						<img src="../images/left-banner1.png" class="Width-95" alt="">
+						<h5 class="Margin-0 Padding-bottom-10 Padding-top-10"><a href="#0" class="Color-primary">Clean Street Campaign with people</a></h5>
+						<p class="Margin-0 Font-default Padding-right-10">The members of organization engage in the Smoking Cessation Campaign near our office in Bundang and </p>
+					</div>
+					<div class="Grid-sm-6 Margin-bottom-15">
+						<img src="../images/left-banner2.png" class="Width-95" alt="">
+						<h5 class="Margin-0 Padding-bottom-10 Padding-top-10"><a href="#0" class="Color-primary">Clean Street Campaign with people</a></h5>
+						<p class="Margin-0 Font-default Padding-right-10">The members of organization engage in the Smoking Cessation Campaign near our office in Bundang and </p>
+					</div>
+					<div class="Grid-sm-6 Margin-bottom-15">
+						<img src="../images/left-banner3.png" class="Width-95" alt="">
+						<h5 class="Margin-0 Padding-bottom-10 Padding-top-10"><a href="#0" class="Color-primary">Clean Street Campaign with people</a></h5>
+						<p class="Margin-0 Font-default Padding-right-10">The members of organization engage in the Smoking Cessation Campaign near our office in Bundang and </p>
+					</div>
+					<pre class="pre-style">
+						<code>
+							<span class="Font-small Color-warning">&lt;!-- contents를 일렬로 나열하되 배수로 떨어뜨릴 경우 UI Layout Grid는 기본적으로 <strong>float: left</strong>가 적용되어 있으므로 
+							&nbsp; &nbsp; &nbsp;원하는 columns 수만큼 markup 하면 됩니다.--&gt;</span>
+							<span class="Font-small Color-warning">&lt;!-- 2줄씩 떨어뜨리고 싶으면 2/12 = 6칸 으로 &lt;div class="Grid-sm-6"&gt; 를 적용하고 
+							&nbsp; &nbsp; &nbsp;3개씩 나열하고 싶으면 3/12 = 4칸 &lt;div class="Grid-sm-4"&gt; 로 markup 하세요.--&gt;</span>
+							&lt;div class="Grid-sm-6"&gt;
+							&nbsp; &nbsp; &lt;img src="이미지링크" alt=""&gt;
+							&nbsp; &nbsp; &lt;h5&gt;contents title&lt;/h5&gt;
+							&nbsp; &nbsp; &lt;p&gt;Text Contents&lt;/p&gt;
+							&lt;/div&gt;
+							&lt;div class="Grid-sm-6"&gt;
+							&nbsp; &nbsp; &lt;img src="이미지링크" alt=""&gt;
+							&nbsp; &nbsp; &lt;h5&gt;contents title&lt;/h5&gt;
+							&nbsp; &nbsp; &lt;p&gt;Text Contents&lt;/p&gt;
+							&lt;/div&gt;
+							&lt;div class="Grid-sm-6"&gt;
+							&nbsp; &nbsp; &lt;img src="이미지링크" alt=""&gt;
+							&nbsp; &nbsp; &lt;h5&gt;contents title&lt;/h5&gt;
+							&nbsp; &nbsp; &lt;p&gt;Text Contents&lt;/p&gt;
+							&lt;/div&gt;
+							&lt;div class="Grid-sm-6"&gt;
+							&nbsp; &nbsp; &lt;img src="이미지링크" alt=""&gt;
+							&nbsp; &nbsp; &lt;h5&gt;contents title&lt;/h5&gt;
+							&nbsp; &nbsp; &lt;p&gt;Text Contents&lt;/p&gt;
+							&lt;/div&gt;
+						</code>
+					</pre>
+					<h6 class="Clearboth">이미지 연속 + Contents</h6>
+					<div>
+						<img src="../images/left-banner3.png" alt=""><img src="../images/left-banner2.png" class="Margin-left-20" alt=""><img src="../images/left-banner1.png" class="Margin-left-20" alt="">
+						<p class="Margin-0 Font-default">The members of organization engage in the Smoking Cessation Campaign near our office in Bundang and 
+						members of organization engage in the Smoking Cessation Campaign near our office in Bun  engage in the Smoking Cessation Campaign near our office in Bun  engage in the Smoking Cessation Campaign near our office in Bun
+					</div>
+				</div>
+				<!-- //two table end -->
+				<!-- //contents template end -->
+				<!-- footer start -->
+				<div class="Grid-sm-12 Margin-top-50 Padding-top-20 Padding-bottom-40" style="border-top: 1px solid #d8d8d8;">
+					<div class="Grid-sm-6">
+						<img class="Float-left" src="../images/sk-footer-logo.gif" alt="SK Holdings C&amp;C">
+						<p class="Float-left Margin-left-40 Margin-top-20 Font-default Color-default">26, Jong-ro, Jongno-gu, Seoul, 03188, Republic of Korea<br>COPYRIGHT&copy;2015 BY SK HOLDINGS CO., LTD. ALL RIGHTS RESERVED</p>
+					</div>
+					<div class="Grid-sm-6 Text-right Margin-top-15">
+						<ul class="Display-inblock List-style-none Font-default Margin-right-20">
+							<li class="Display-inblock"><a href="#0" class="Color-default Text-none">Terms and Conditions</a> | </li>
+							<li class="Display-inblock"><a href="#0" class="Color-default Text-none">Privacy</a> | </li>
+							<li class="Display-inblock"><a href="#0" class="Color-default Text-none">Sitemap</a></li>
+						</ul>
+						<select class="Display-inblock Select">
+							<option>Family site</option>
+						</select>
+					</div>
+				</div>
+				<!-- //footer end -->
+			</div>
+		</div>
+	</div>
+</body>
+</html>

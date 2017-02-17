@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>Alopex UI/UX 표준 Template Object</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<script src="/2.3/demo/UI-basic-template/script/app/biz/include-lib.js"></script>
+	<script src="/2.3/demo/UI-basic-template/script/app/biz/alopex-common.js"></script>
+	<style type="text/css">
+		.pre-style {
+			clear: both;
+			font-size: 12px;
+			white-space: pre-line;
+			margin-top: 10px;
+			padding: 0px 10px;
+			color: #555555;
+			background: #eeeeee;
+			border: 1px solid #d7dde3;
+			line-height: 16px;
+		}
+	</style>
+</head>
+<body class="Margin-0 Padding-0">
+	<div class="Width-100">
+		<!-- header -->
+		<div class="Bg-primary">
+			<div style="width: 1170px; height: 45px; margin: 0 auto">
+				<div class="Grid-sm-12">
+					<h1 class="Float-left Header-5"><a href="../main/ui-main-portal.html" class="Color-white Text-none">Alopex UI/UX 표준 Template</a></h1>
+					<ul class="Float-right Navmenu" style="z-index:101">
+					    <li><a href="../main/ui-main-portal.html">Main Sample</a>
+					        <ul>
+					            <li><a href="../main/ui-main-portal.html">Portal 형</a></li>
+					            <li><a href="../main/ui-main-workspace.html">Workspace 형</a></li>
+					        </ul>
+					    </li>
+					    <li><a href="basic1.html">Basic Template</a>
+					        <ul>
+					            <li><a href="basic1.html">Basic Type</a>
+					            	<ul>
+					            		<li><a href="basic1.html">1 Grid board</a></li>
+					            		<li><a href="basic2.html">Grid/Table/Tab 복합형</a></li>
+					            	</ul>
+					            </li>
+					            <li><a href="board1.html">게시판형</a>
+					                <ul>
+					                	<li><a href="board1.html">2 Grid board</a></li>
+					                	<li><a href="board2.html">Grid/Table 복합형</a></li>
+					                	<li><a href="board3.html">Grid/Table/Tree</a></li>
+					                	<li><a href="board4.html">Form/Chart 복합형</a></li>
+					                </ul>
+					            </li>
+					            <li><a href="table1.html">테이블형</a>
+					            	<ul>
+					            		<li><a href="table1.html">Table 내 Table</a></li>
+					            	</ul>
+					            </li>
+					            <li>
+					            	<a href="dialog1.html">Dialog &amp; Popup</a>
+					            	<ul>
+					            		<li><a href="dialog1.html">Dialog</a></li>
+					            		<li><a href="popup1.html">Popup</a></li>
+					            	</ul>
+					            </li>
+					            <li>
+					            	<a href="contents.html">컨텐츠</a>
+					            	<ul>
+					            		<li><a href="contents.html">컨텐츠 리스트형</a></li>
+					            	</ul>
+					            </li>
+					        </ul>
+					    </li>
+					    <li><a href="object1.html">Object Template</a>
+					    	<ul>
+					    		<li><a href="object1.html">Accordion Template</a></li>
+					    		<li><a href="object2.html">Button Template</a></li>
+					    		<li><a href="object3.html">Carousel</a></li>
+					    		<li><a href="object4.html">Paging</a></li>
+					    		<li><a href="object5.html">Progress bar</a></li>
+					    	</ul>
+					    </li>
+					    <li><a href="layout1.html">Layout Template</a>
+					    	<ul>
+					    		<li><a href="layout1.html">UI Grid Layout</a></li>
+					    		<li><a href="layout2.html">Search Box Template</a>
+					    		<li><a href="layout3.html">LNB Template</a></li>
+					    		<li><a href="layout4.html">Static Contents</a></li>
+					    		<li><a href="layout5.html">Footer Template</a></li>
+					    		<li><a href="layout6.html">Error Template</a></li>
+					    	</ul>
+					    </li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- //header -->
+		<div class="Grid-wrapper">
+			<h3 class="Header-4 Padding-bottom-10" style="border-bottom: 1px solid #d8d8d8">Layout Template : LNB Sample</h3>
+			<!-- Main Sample Start-->
+			<div class="Grid-sm-12">
+				<!-- left start -->
+				<div class="Grid-sm-3">
+					<div class="Margin-right-30">
+						<ul class="Accordion">
+					        <li><a href="layout1.html">UI Grid Layout</a></li>
+				    		<li><a href="layout2.html">Search Box Template</a>
+				    		<li><a href="layout3.html">LNB Template</a></li>
+				    		<li><a href="layout4.html">Static Contents</a></li>
+				    		<li><a href="layout5.html">Footer Template</a></li>
+				    		<li><a href="layout6.html">Error Template</a></li>
+					    </ul>
+				    </div>
+				</div>
+				<!-- //left end -->
+				<!-- contents template start -->
+				<div class="Grid-sm-9">
+					<div class="Padding-bottom-10 Margin-bottom-20" style="border-bottom: 1px solid #d8d8d8">
+						<h4 class="Margin-0">LNB Sample</h4>
+					</div>
+					<div class="Panel">
+						<div class="Panel-content">
+							<h5 class="Font-default Margin-0"><span class="Icon Exclamation-sign Margin-right-5 Display-inblock"></span><span class="Display-inblock">UI Layout grid 사용법</span></h5>
+							<ul>
+								<li>List LNB Sample : 1depth 메뉴로만 사용할 경우에는 list를 사용해서도 LNB를 만들 수 있습니다.
+									<br>Icon Object를 활용해서 메뉴별로 icon을 넣어서 좀 더 비쥬얼하게 활용할 수 있습니다.
+									<br>Icon Object를 추가할 경우 메뉴명 부분도 span tag로 감싸주고 간격을 Helper css로 조정해주면 좀 더 완성도 있는 메뉴를 만들 수 있습니다.</li>
+								<li>Accordion을 사용한 sample은 Object Template를 참조해주세요. <a href="object1.html">(Accordion left menu sample 바로가기)</a></li>
+								<li>Tabs 와 Tree를 활용한 LNB 메뉴는 복잡한 메뉴 구조를 가지고 있을때 사용하면 유용합니다.</li>
+							</ul>
+						</div>
+					</div>
+					<h6 class="Margin-0">List를 활용한 LNB Menu</h6>
+					<div class="Grid-sm-6">
+						<ul class="List Margin-0 Margin-right-30 Margin-top-15">
+						    <li class="Link"><a href="#0">Status Menu01</a></li>
+						    <li class="Link"><a href="#0">Status Menu02</a></li>
+						    <li class="Link"><a href="#0">Status Menu03</a></li>
+						    <li class="Link"><a href="#0">Status Menu04</a></li>
+						    <li class="Link"><a href="#0">Status Menu05</a></li>
+						    <li class="Link"><a href="#0">Status Menu06</a></li>
+						    <li class="Link"><a href="#0">Status Menu07</a></li>
+						</ul>
+					</div>
+					<div class="Grid-sm-6">
+						<ul class="List Margin-0 Margin-top-15 Margin-bottom-10">
+						    <li class="Link"><a href="#0"><span class="Icon Star"></span><span class="Margin-left-5">Status Menu01</span></a></li>
+						    <li class="Link"><a href="#0"><span class="Icon User"></span><span class="Margin-left-5">Status Menu02</span></a></li>
+						    <li class="Link"><a href="#0"><span class="Icon File"></span><span class="Margin-left-5">Status Menu03</span></a></li>
+						    <li class="Link"><a href="#0"><span class="Icon Book"></span><span class="Margin-left-5">Status Menu04</span></a></li>
+						    <li class="Link"><a href="#0"><span class="Icon Tint"></span><span class="Margin-left-5">Status Menu05</span></a></li>
+						    <li class="Link"><a href="#0"><span class="Icon Inbox"></span><span class="Margin-left-5">Status Menu06</span></a></li>
+						    <li class="Link"><a href="#0"><span class="Icon Check"></span><span class="Margin-left-5">Status Menu07</span></a></li>
+						</ul>
+					</div>
+					<pre class="pre-style">
+						<code>
+							<span class="Font-small Color-warning">&lt;!--자식이 없는 1depth menu를 사용할 때 활용할 수 있는 sample 입니다.--&gt;</span>
+							&lt;ul class="List"&gt;
+							&nbsp; &nbsp; <span class="Font-small Color-warning">&lt;!-- &lt;span class="Icon Star"&gt;&lt;/span&gt; : icon을 처리한 부분 --&gt;</span>
+							&nbsp; &nbsp; <span class="Font-small Color-warning">&lt;!-- &lt;span&gt;Status Menu01&lt;/span&gt; : 메뉴명 span tag로 처리한 부분(아이콘과 vertical-align을 맞춰주기 위해)--&gt;</span>
+							&nbsp; &nbsp; &lt;li class="Link"&gt;&lt;a href="링크"&gt;&lt;span class="Icon Star"&gt;&lt;/span&gt;&lt;span&gt;Status Menu01&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+							&nbsp; &nbsp; &lt;li class="Link"&gt;&lt;a href="링크"&gt;&lt;span class="Icon User"&gt;&lt;/span&gt;&lt;span&gt;Status Menu02&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+							&nbsp; &nbsp; &lt;li class="Link"&gt;&lt;a href="링크"&gt;&lt;span class="Icon File"&gt;&lt;/span&gt;&lt;span&gt;Status Menu03&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+							&nbsp; &nbsp; &lt;li class="Link"&gt;&lt;a href="링크"&gt;&lt;span class="Icon Book"&gt;&lt;/span&gt;&lt;span&gt;Status Menu04&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+							&nbsp; &nbsp; &lt;li class="Link"&gt;&lt;a href="링크"&gt;&lt;span class="Icon Tint"&gt;&lt;/span&gt;&lt;span&gt;Status Menu05&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+							&nbsp; &nbsp; &lt;li class="Link"&gt;&lt;a href="링크"&gt;&lt;span class="Icon Inbox"&gt;&lt;/span&gt;&lt;span&gt;Status Menu06&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+							&nbsp; &nbsp; &lt;li class="Link"&gt;&lt;a href="링크"&gt;&lt;span class="Icon Check"&gt;&lt;/span&gt;&lt;span&gt;Status Menu07&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+							&lt;/ul&gt;
+						</code>
+					</pre>
+					<h6>Tab 내 Tree를 활용한 LNB Menu</h6>
+					<div class="Grid-sm-12">
+						<div class="Grid-sm-5">
+							<div class="Tabs">
+							    <ul>
+							        <li data-content="#tab1">tab1</li>
+							        <li data-content="#tab2">tab2</li>
+							    </ul>
+							    <div id="tab1">
+							    	<div class="Padding-bottom-30 Margin-bottom-10 Margin-top-10" style="border-bottom: 1px solid #d8d8d8">
+							       		<h6 class="Float-left Margin-0 Padding-top-5">Category</h6>
+										<div class="Float-right"><select class="Select"><option>All Category</option></select></div>
+									</div>
+									<ul class="Tree">
+									    <li>
+									        <span class="Arrow"></span> 
+									        <a> Tree Memu 1</a>
+									        <ul>
+									            <li><span class="Arrow"></span> 
+									                <a>Tree Memu 1-1</a>
+									                <ul>
+									                    <li>
+									                        <span class="Arrow"></span> 
+									                        <a>Tree Memu 1-1-1</a>
+									                    </li>
+									                    <li>
+									                        <span class="Arrow"></span> 
+									                        <a>Tree Memu 1-1-2</a>
+									                    </li>
+									                </ul>
+									            </li>
+									        </ul>
+									    </li>
+									    <li>
+									        <span class="Arrow"></span> 
+									        <a> Tree Memu 2</a>
+									        <ul>
+									            <li><span class="Arrow"></span> 
+									                <a>Tree Memu 2-1</a>
+									                <ul>
+									                    <li>
+									                        <span class="Arrow"></span> 
+									                        <a>Tree Memu 2-1-1</a>
+									                    </li>
+									                </ul>
+									            </li>
+									        </ul>
+									    </li>
+									    <li>
+									        <span class="Arrow"></span> 
+									        <a> Tree Memu 3</a>
+									        <ul>
+									            <li><span class="Arrow"></span> 
+									                <a>Tree Memu 3-1</a>
+									            </li>
+									        </ul>
+									    </li>
+									    <li>
+									        <span class="Arrow"></span> 
+									        <a> Tree Memu 4</a>
+									        <ul>
+									            <li><span class="Arrow"></span> 
+									                <a>Tree Memu 4-1</a>
+									            </li>
+									            <li><span class="Arrow"></span> 
+									                <a>Tree Memu 4-2</a>
+									            </li>
+									            <li><span class="Arrow"></span> 
+									                <a>Tree Memu 4-3</a>
+									            </li>
+									        </ul>
+									    </li>  
+									</ul>
+							    </div>
+							    <div id="tab2">
+							        <strong>tab2</strong>
+							        <p>
+							        tab2 Contents
+							        </p>
+							    </div>
+							</div>
+						</div>
+						<div class="Grid-sm-7">
+							<pre class="pre-style Margin-left-30" style="margin-top:0">
+								<code>
+									<span class="Font-small Color-warning">&lt;!--복잡한 메뉴 구조를 가지고 있는 경우 Alopex UI Tab Menu를 활용하여 대메뉴를 구분하고 해당 탭의 contents 영역에 Alopex UI의 'Tree' 를 활용하여 LNB 상세 메뉴를 만들수 있습니다. 
+										'Tree'와 'Tab Menu'의 상세 사용은 ui.alopex.io 에서 확인하실 수 있습니다. --&gt;
+									</span>
+									&lt;div class="Tabs"&gt;
+									&nbsp; &nbsp; &lt;ul&gt;
+							        &nbsp; &nbsp; &nbsp; &nbsp; &lt;li data-content="#tab1"&gt;tab1&lt;/li&gt;
+							        &nbsp; &nbsp; &nbsp; &nbsp; &lt;li data-content="#tab2"&gt;tab2&lt;/li&gt;
+							    	&nbsp; &nbsp; &lt;/ul&gt;
+							    	&nbsp; &nbsp; &lt;div id="tab1"&gt;
+							    	&nbsp; &nbsp; &nbsp; &nbsp; &lt;ul class="Tree"&gt;
+							    	&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ........
+							    	&nbsp; &nbsp; &nbsp; &nbsp; &lt;/ul&gt;
+							    	&nbsp; &nbsp; &lt;/div&gt;
+							    	&nbsp; &nbsp; &lt;div id="tab2"&gt;tab 2 content&lt;/div&gt;
+							    	&lt;/div&gt;
+								</code>
+							</pre>
+						</div>
+					</div>
+				</div>
+				<!-- //two table end -->
+				<!-- //contents template end -->
+				<!-- footer start -->
+				<div class="Grid-sm-12 Margin-top-50 Padding-top-20 Padding-bottom-40" style="border-top: 1px solid #d8d8d8;">
+					<div class="Grid-sm-6">
+						<img class="Float-left" src="../images/sk-footer-logo.gif" alt="SK Holdings C&amp;C">
+						<p class="Float-left Margin-left-40 Margin-top-20 Font-default Color-default">26, Jong-ro, Jongno-gu, Seoul, 03188, Republic of Korea<br>COPYRIGHT&copy;2015 BY SK HOLDINGS CO., LTD. ALL RIGHTS RESERVED</p>
+					</div>
+					<div class="Grid-sm-6 Text-right Margin-top-15">
+						<ul class="Display-inblock List-style-none Font-default Margin-right-20">
+							<li class="Display-inblock"><a href="#0" class="Color-default Text-none">Terms and Conditions</a> | </li>
+							<li class="Display-inblock"><a href="#0" class="Color-default Text-none">Privacy</a> | </li>
+							<li class="Display-inblock"><a href="#0" class="Color-default Text-none">Sitemap</a></li>
+						</ul>
+						<select class="Display-inblock Select">
+							<option>Family site</option>
+						</select>
+					</div>
+				</div>
+				<!-- //footer end -->
+			</div>
+		</div>
+	</div>
+</body>
+</html>

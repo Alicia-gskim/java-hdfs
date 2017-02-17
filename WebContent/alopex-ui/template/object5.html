@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>Alopex UI/UX 표준 Template Object</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<script src="/2.3/demo/UI-basic-template/script/app/biz/include-lib.js"></script>
+	<script src="/2.3/demo/UI-basic-template/script/app/biz/alopex-common.js"></script>
+	<style type="text/css">
+		.pre-style {
+			clear: both;
+			font-size: 12px;
+			white-space: pre-line;
+			margin-top: 10px;
+			padding: 0px 10px;
+			color: #555555;
+			background: #eeeeee;
+			border: 1px solid #d7dde3;
+			line-height: 16px;
+		}
+	</style>
+</head>
+<body class="Margin-0 Padding-0">
+	<div class="Width-100">
+		<!-- header -->
+		<div class="Bg-primary">
+			<div style="width: 1170px; height: 45px; margin: 0 auto">
+				<div class="Grid-sm-12">
+					<h1 class="Float-left Header-5"><a href="../main/ui-main-portal.html" class="Color-white Text-none">Alopex UI/UX 표준 Template</a></h1>
+					<ul class="Float-right Navmenu" style="z-index:101">
+					    <li><a href="../main/ui-main-portal.html">Main Sample</a>
+					        <ul>
+					            <li><a href="../main/ui-main-portal.html">Portal 형</a></li>
+					            <li><a href="../main/ui-main-workspace.html">Workspace 형</a></li>
+					        </ul>
+					    </li>
+					    <li><a href="basic1.html">Basic Template</a>
+					        <ul>
+					            <li><a href="basic1.html">Basic Type</a>
+					            	<ul>
+					            		<li><a href="basic1.html">1 Grid board</a></li>
+					            		<li><a href="basic2.html">Grid/Table/Tab 복합형</a></li>
+					            	</ul>
+					            </li>
+					            <li><a href="board1.html">게시판형</a>
+					                <ul>
+					                	<li><a href="board1.html">2 Grid board</a></li>
+					                	<li><a href="board2.html">Grid/Table 복합형</a></li>
+					                	<li><a href="board3.html">Grid/Table/Tree</a></li>
+					                	<li><a href="board4.html">Form/Chart 복합형</a></li>
+					                </ul>
+					            </li>
+					            <li><a href="table1.html">테이블형</a>
+					            	<ul>
+					            		<li><a href="table1.html">Table 내 Table</a></li>
+					            	</ul>
+					            </li>
+					            <li>
+					            	<a href="dialog1.html">Dialog &amp; Popup</a>
+					            	<ul>
+					            		<li><a href="dialog1.html">Dialog</a></li>
+					            		<li><a href="popup1.html">Popup</a></li>
+					            	</ul>
+					            </li>
+					            <li>
+					            	<a href="contents.html">컨텐츠</a>
+					            	<ul>
+					            		<li><a href="contents.html">컨텐츠 리스트형</a></li>
+					            	</ul>
+					            </li>
+					        </ul>
+					    </li>
+					    <li><a href="object1.html">Object Template</a>
+					    	<ul>
+					    		<li><a href="object1.html">Accordion Template</a></li>
+					    		<li><a href="object2.html">Button Template</a></li>
+					    		<li><a href="object3.html">Carousel</a></li>
+					    		<li><a href="object4.html">Paging</a></li>
+					    		<li><a href="object5.html">Progress bar</a></li>
+					    	</ul>
+					    </li>
+					    <li><a href="layout1.html">Layout Template</a>
+					    	<ul>
+					    		<li><a href="layout1.html">UI Grid Layout</a></li>
+					    		<li><a href="layout2.html">Search Box Template</a>
+					    		<li><a href="layout3.html">LNB Template</a></li>
+					    		<li><a href="layout4.html">Static Contents</a></li>
+					    		<li><a href="layout5.html">Footer Template</a></li>
+					    		<li><a href="layout6.html">Error Template</a></li>
+					    	</ul>
+					    </li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- //header -->
+		<div class="Grid-wrapper">
+			<h3 class="Header-4 Padding-bottom-10" style="border-bottom: 1px solid #d8d8d8">Object Template : Progress bar</h3>
+			<!-- Main Sample Start-->
+			<div class="Grid-sm-12">
+				<!-- left start -->
+				<div class="Grid-sm-3">
+					<div class="Margin-right-30">
+						<ul class="Accordion">
+					        <li><a href="object1.html">Accordion Template</a></li>
+				            <li><a href="object2.html">Button Template</a></li>
+				            <li><a href="object3.html">Carousel</a></li>
+				            <li><a href="object4.html">Paging</a></li>
+				            <li><a href="object5.html">Progress bar</a></li>
+					    </ul>
+				    </div>
+				</div>
+				<!-- //left end -->
+				<!-- contents template start -->
+				<div class="Grid-sm-9">
+					<div class="Padding-bottom-10 Margin-bottom-20" style="border-bottom: 1px solid #d8d8d8">
+						<h4 class="Margin-0">Progress bar</h4>
+					</div>
+					<div class="Panel">
+						<div class="Panel-content">
+							<h5 class="Font-default Margin-0"><span class="Icon Exclamation-sign Margin-right-5 Display-inblock"></span><span class="Display-inblock">Type 사용법</span></h5>
+							<p>프로그레스바는 %를 이미지로만 표시하는 경우와 %를 텍스트랑 같이 bar 내에 표시하는 경우로 나누어집니다.</p>
+							<ul>
+								<li>이미지로만 표시하는 경우 : bar 내에 텍스트를 두지않고 본문내에 두거나 분리하여 사용할 경우/ 단순히 %의 정도만 보여줄경우</li>
+								<li>bar 내에 텍스트와 컬러를 같이 표현할 경우 : 좁은 공간에서 한번에 많은 정보를 제공하고자 할 때 사용합니다..<br>
+									설문 조사등에 사용할 때는 각 element 별로 Helper css를 사용하여 영역을 구분하여 적용하여 줍니다.
+								</li>
+							</ul>
+						</div>
+					</div>
+					<h6>In Table</h6>
+					<div class="Table-wrapper">
+			            <table class="Table Form-type">
+			            	<colgroup>
+			            		<col style="width:120px">
+			            		<col>
+			            		<col style="width:120px">
+			            		<col>
+			            	</colgroup>
+			                <tbody>
+			                    <tr>
+			                        <th> Row 1, Col 1</th>
+			                        <td> Row 1, Col 2</td>
+			                        <th> Row 1, Col 3</th>
+			                        <td><div class="Progressbar Progress-text" data-default="25"></div></td>
+			                    </tr>
+			                    <tr>
+			                        <th> Row 2, Col 1</th>
+			                        <td><div class="Progressbar Progress-text" data-default="50"></div></td>
+			                        <th> Row 2, Col 3</th>
+			                        <td> Row 2, Col 4</td>
+			                    </tr>
+			                    <tr>
+			                        <th> Row 3, Col 1</th>
+			                        <td> Row 3, Col 2</td>
+			                        <th> Row 3, Col 3</th>
+			                        <td><div class="Progressbar Progress-text" data-default="80"></div></td>
+			                    </tr>
+			                </tbody>
+			            </table>
+					 </div>
+					 <pre class="pre-style">
+					 	<code>
+					 		<span class="Font-small Color-warning">&lt;!-- class 'Progress-text'를 추가하면 Progressbar로 표시되는 해당 %에 대한 텍스트를 추가할 수 있습니다. 자세한 사항은 ui.alopex.io에서 확인해주세요 --&gt;</span>
+					 		&lt;div class="Progressbar Progress-text" data-default="25"&gt;&lt;/div&gt;
+					 	</code>
+					 </pre>
+					 <h6>Survey</h6>
+					 <div class="Panel">
+					 	<div class="Panel-header">Q.01 Alopex UI/UX 를 웹사이트에 접근할때 사용성은 어떤가요?</div>
+					 	<div class="Panel-content">
+					 		<ul>
+					 			<li>
+					 				<div class="Display-inblock Width-20">사용성이 훌륭하다.</div>
+					 				<div class="Display-inblock Width-75">
+					 					<span class="Display-inblock Text-right Width-10">67명</span>
+					 					<div class="Display-inblock Width-80"><div class="Progressbar" data-default="67"></div></div>
+					 					<span class="Display-inblock">67%</span>
+					 				</div>
+					 			</li>
+					 			<li>
+					 				<div class="Display-inblock Width-20">쓸만하다</div>
+					 				<div class="Display-inblock Width-75">
+					 					<span class="Display-inblock Text-right Width-10">30명</span>
+					 					<div class="Display-inblock Width-80"><div class="Progressbar" data-default="30"></div></div>
+					 					<span class="Display-inblock">30%</span>
+					 				</div>
+					 			</li>
+					 			<li>
+					 				<div class="Display-inblock Width-20">제품에 대해서 잘 모른다.</div>
+					 				<div class="Display-inblock Width-75">
+					 					<span class="Display-inblock Text-right Width-10">3명</span>
+					 					<div class="Display-inblock Width-80"><div class="Progressbar" data-default="3"></div></div>
+					 					<span class="Display-inblock">3%</span>
+					 				</div>
+					 			</li>
+					 		</ul>
+					 	</div>
+					 </div>
+					 <pre class="pre-style">
+					 	<code>
+					 		<span class="Font-small Color-warning">&lt;!-- 설문 조사 질문 한개당 한개의 'Panel'이라고 생각하여 여기서는 'Panel'로 적용했습니다. 다른 html tag를 사용하여 custom해도 됩니다.
+					 		&nbsp; &nbsp; &nbsp;'Panel' 사용법에 대해서는 ui.alopex.io에서 확인하실 수 있습니다.--&gt;</span>
+					 		&lt;div class="Panel"&gt;
+					 		&nbsp; &nbsp; &lt;div class="Panel-header"&gt;Q.질문&lt;/div&gt;
+					 		&nbsp; &nbsp; &lt;div class="Panel-content"&gt;
+					 		&nbsp; &nbsp; &nbsp; &nbsp; &lt;ul&gt;
+					 		&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li&gt;
+					 		&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 설문조사 항목에 대한 결과 1
+					 		&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/li&gt;
+					 		&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li&gt;
+					 		&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 설문조사 항목에 대한 결과 2
+					 		&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/li&gt;
+					 		&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li&gt;
+					 		&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 설문조사 항목에 대한 결과 3
+					 		&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/li&gt;
+					 		&nbsp; &nbsp; &nbsp; &nbsp; &lt;/ul&gt;
+					 		&nbsp; &nbsp; &lt;/div&gt;
+					 		&lt;/div&gt;
+					 	</code>
+					 </pre>
+				</div>
+				<!-- //two table end -->
+				<!-- //contents template end -->
+				<!-- footer start -->
+				<div class="Grid-sm-12 Margin-top-50 Padding-top-20 Padding-bottom-40" style="border-top: 1px solid #d8d8d8;">
+					<div class="Grid-sm-6">
+						<img class="Float-left" src="../images/sk-footer-logo.gif" alt="SK Holdings C&amp;C">
+						<p class="Float-left Margin-left-40 Margin-top-20 Font-default Color-default">26, Jong-ro, Jongno-gu, Seoul, 03188, Republic of Korea<br>COPYRIGHT&copy;2015 BY SK HOLDINGS CO., LTD. ALL RIGHTS RESERVED</p>
+					</div>
+					<div class="Grid-sm-6 Text-right Margin-top-15">
+						<ul class="Display-inblock List-style-none Font-default Margin-right-20">
+							<li class="Display-inblock"><a href="#0" class="Color-default Text-none">Terms and Conditions</a> | </li>
+							<li class="Display-inblock"><a href="#0" class="Color-default Text-none">Privacy</a> | </li>
+							<li class="Display-inblock"><a href="#0" class="Color-default Text-none">Sitemap</a></li>
+						</ul>
+						<select class="Display-inblock Select">
+							<option>Family site</option>
+						</select>
+					</div>
+				</div>
+				<!-- //footer end -->
+			</div>
+		</div>
+	</div>
+</body>
+</html>

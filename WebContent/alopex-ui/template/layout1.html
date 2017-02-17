@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>Alopex UI/UX 표준 Template Object</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<script src="/2.3/demo/UI-basic-template/script/app/biz/include-lib.js"></script>
+	<script src="/2.3/demo/UI-basic-template/script/app/biz/alopex-common.js"></script>
+	<style type="text/css">
+		.pre-style {
+			clear: both;
+			font-size: 12px;
+			white-space: pre-line;
+			margin-top: 10px;
+			padding: 0px 10px;
+			color: #555555;
+			background: #eeeeee;
+			border: 1px solid #d7dde3;
+			line-height: 16px;
+		}
+	</style>
+</head>
+<body class="Margin-0 Padding-0">
+	<div class="Width-100">
+		<!-- header -->
+		<div class="Bg-primary">
+			<div style="width: 1170px; height: 45px; margin: 0 auto">
+				<div class="Grid-sm-12">
+					<h1 class="Float-left Header-5"><a href="../main/ui-main-portal.html" class="Color-white Text-none">Alopex UI/UX 표준 Template</a></h1>
+					<ul class="Float-right Navmenu" style="z-index:101">
+					    <li><a href="../main/ui-main-portal.html">Main Sample</a>
+					        <ul>
+					            <li><a href="../main/ui-main-portal.html">Portal 형</a></li>
+					            <li><a href="../main/ui-main-workspace.html">Workspace 형</a></li>
+					        </ul>
+					    </li>
+					    <li><a href="basic1.html">Basic Template</a>
+					        <ul>
+					            <li><a href="basic1.html">Basic Type</a>
+					            	<ul>
+					            		<li><a href="basic1.html">1 Grid board</a></li>
+					            		<li><a href="basic2.html">Grid/Table/Tab 복합형</a></li>
+					            	</ul>
+					            </li>
+					            <li><a href="board1.html">게시판형</a>
+					                <ul>
+					                	<li><a href="board1.html">2 Grid board</a></li>
+					                	<li><a href="board2.html">Grid/Table 복합형</a></li>
+					                	<li><a href="board3.html">Grid/Table/Tree</a></li>
+					                	<li><a href="board4.html">Form/Chart 복합형</a></li>
+					                </ul>
+					            </li>
+					            <li><a href="table1.html">테이블형</a>
+					            	<ul>
+					            		<li><a href="table1.html">Table 내 Table</a></li>
+					            	</ul>
+					            </li>
+					            <li>
+					            	<a href="dialog1.html">Dialog &amp; Popup</a>
+					            	<ul>
+					            		<li><a href="dialog1.html">Dialog</a></li>
+					            		<li><a href="popup1.html">Popup</a></li>
+					            	</ul>
+					            </li>
+					            <li>
+					            	<a href="contents.html">컨텐츠</a>
+					            	<ul>
+					            		<li><a href="contents.html">컨텐츠 리스트형</a></li>
+					            	</ul>
+					            </li>
+					        </ul>
+					    </li>
+					    <li><a href="object1.html">Object Template</a>
+					    	<ul>
+					    		<li><a href="object1.html">Accordion Template</a></li>
+					    		<li><a href="object2.html">Button Template</a></li>
+					    		<li><a href="object3.html">Carousel</a></li>
+					    		<li><a href="object4.html">Paging</a></li>
+					    		<li><a href="object5.html">Progress bar</a></li>
+					    	</ul>
+					    </li>
+					    <li><a href="layout1.html">Layout Template</a>
+					    	<ul>
+					    		<li><a href="layout1.html">UI Grid Layout</a></li>
+					    		<li><a href="layout2.html">Search Box Template</a>
+					    		<li><a href="layout3.html">LNB Template</a></li>
+					    		<li><a href="layout4.html">Static Contents</a></li>
+					    		<li><a href="layout5.html">Footer Template</a></li>
+					    		<li><a href="layout6.html">Error Template</a></li>
+					    	</ul>
+					    </li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- //header -->
+		<div class="Grid-wrapper">
+			<h3 class="Header-4 Padding-bottom-10" style="border-bottom: 1px solid #d8d8d8">Layout Template : UI Grid Layout</h3>
+			<!-- Main Sample Start-->
+			<div class="Grid-sm-12">
+				<!-- left start -->
+				<div class="Grid-sm-3">
+					<div class="Margin-right-30">
+						<ul class="Accordion">
+					        <li><a href="layout1.html">UI Grid Layout</a></li>
+				    		<li><a href="layout2.html">Search Box Template</a>
+				    		<li><a href="layout3.html">LNB Template</a></li>
+				    		<li><a href="layout4.html">Static Contents</a></li>
+				    		<li><a href="layout5.html">Footer Template</a></li>
+				    		<li><a href="layout6.html">Error Template</a></li>
+					    </ul>
+				    </div>
+				</div>
+				<!-- //left end -->
+				<!-- contents template start -->
+				<div class="Grid-sm-9">
+					<div class="Padding-bottom-10 Margin-bottom-20" style="border-bottom: 1px solid #d8d8d8">
+						<h4 class="Margin-0">행 Layout</h4>
+					</div>
+					<div class="Panel">
+						<div class="Panel-content">
+							<h5 class="Font-default Margin-0"><span class="Icon Exclamation-sign Margin-right-5 Display-inblock"></span><span class="Display-inblock">UI Layout grid 사용법</span></h5>
+							<ul>
+								<li>UI Layout Grid 는 총 12개 columns로 나뉘어 있습니다.</li>
+								<li>모바일이 기준으로 되어 있고 반응형을 사용할 경우에는 각 대상 Screen 사이즈별 class를 적용해줍니다.</li>
+								<li>반응형이 아닌 경우 'Grid-wrapper' class를 적용해서 기준점을 제시합니다.</li>
+								<li>반응형을 적용할 경우에는 'Grid-container' class를 적용해서 기준점을 제시합니다.</li>
+								<li>'Grid-wrapper'와 'Grid-container'는 UI Layout을 시작하는 가장 최상위 block tag 에 단 한번만 적용합니다. 보통 div tag에 적용됩니다.
+									<pre class="pre-style">
+										<code>
+										&lt;body&gt;
+										&nbsp; &nbsp; &lt;div class="Grid-wrapper"&gt;
+										......
+										&nbsp; &nbsp; &lt;/div&gt;
+										&lt;/body&gt;
+										</code>
+									</pre>
+								</li>
+								<li>반응형은 Desktop(lg) , Tablet(md) , Mobile(sm) 3가지로 구성되어 있고 각 디바이스에 맞는 컬럼 수에 따라 markup 해줍니다.</li>
+							</ul>
+							<h5 class="Font-default Margin-0"><span class="Icon Exclamation-sign Margin-right-5 Display-inblock"></span><span class="Display-inblock">주요 class name</span></h5>
+							<ul>
+								<li>class name : Grid-sm-{column-number}</li>
+								<li>UI Layout Grid를 사용한 경우에는 block 사이의 간격이 없으므로 간격을 원할 경우 Helper css를 사용하여 간격 조정을 해줍니다.
+									<pre class="pre-style">
+										<code>
+											예) &lt;div class="Grid-sm-12 Margin-top-20"&gt;&lt;/div&gt;
+										</code>
+									</pre>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<h6>2열 레이아웃</h6>
+					<div class="Grid-sm-12 Bg-default Color-white Text-center">
+						<p style="height: 50px" class="Padding-top-30">2행 첫번째</p>
+					</div>
+					<div class="Grid-sm-12 Margin-top-20 Margin-bottom-20 Bg-primary Color-white Text-center">
+						<p style="height: 50px" class="Padding-top-30">2행 두번째</p>
+					</div>
+					<pre class="pre-style">
+						<code>
+							<span class="Font-small Color-warning">&lt;!--한 section에서 나누어진 두문단으로 써야 하면 &lt;div&gt; tag로 block을 하나 만들어 주고 custom 해주세요.--&gt;</span>
+							&lt;div class="Grid-sm-12"&gt; 
+							&nbsp; &nbsp; &lt;p&gt;2행 첫번째&lt;/p&gt; <span class="Font-small Color-warning">&lt;!--컨텐츠 영역--&gt;</span>
+							&lt;/div&gt;
+							&lt;div class="Grid-sm-12"&gt;
+							&nbsp; &nbsp; &lt;p&gt;2행 두번째&lt;/p&gt; <span class="Font-small Color-warning">&lt;!--컨텐츠 영역--&gt;</span>
+							&lt;/div&gt;
+						</code>
+					</pre>
+					<h6 class="Clearboth">3행 레이아웃</h6>
+					<div class="Grid-sm-12 Bg-default Color-white Text-center">
+						<p style="height: 50px" class="Padding-top-30">3행 첫번째</p>
+					</div>
+					<div class="Grid-sm-12 Margin-top-20 Bg-primary Color-white Text-center">
+						<p style="height: 50px" class="Padding-top-30">3행 두번째</p>
+					</div>
+					<div class="Grid-sm-12 Margin-top-20 Margin-bottom-20 Bg-success Color-white Text-center">
+						<p style="height: 50px" class="Padding-top-30">3행 세번째</p>
+					</div>
+					<pre class="pre-style">
+						<code>
+							&lt;div class="Grid-sm-12"&gt; 
+							&nbsp; &nbsp; &lt;p&gt;3행 첫번째&lt;/p&gt;
+							&lt;/div&gt;
+							&lt;div class="Grid-sm-12"&gt;
+							&nbsp; &nbsp; &lt;p&gt;3행 두번째&lt;/p&gt;
+							&lt;/div&gt;
+							&lt;div class="Grid-sm-12"&gt;
+							&nbsp; &nbsp; &lt;p&gt;3행 세번째&lt;/p&gt;
+							&lt;/div&gt;
+						</code>
+					</pre>
+					<div class="Padding-bottom-10 Margin-bottom-20 Margin-top-40" style="border-bottom: 1px solid #d8d8d8">
+						<h4 class="Margin-0">열 Layout</h4>
+					</div>
+					<div class="Clearboth Panel">
+						<div class="Panel-content">
+							<h5 class="Font-default Margin-0"><span class="Icon Exclamation-sign Margin-right-5 Display-inblock"></span><span class="Display-inblock">열 Layout Grid 사용법</span></h5>
+							<ul>
+								<li>columns의 수는 필요한 영역 수 만큼 사용하고, 영역 columns 수를 합했을때 전체 column수인 12를 넘지 않아야 합니다.</li>
+								<li>columns과 columns 사이의 간격은 columns 내에서 Helper css를 사용해서 각 object에 적용합니다.
+									<pre class="pre-style">
+										<code>
+											예 ) &lt;div class="Grid-sm-4"&gt;&lt;p&gt;내용&lt;/p&gt;&lt;/div&gt;
+										</code>
+									</pre>
+								</li>
+								<li>단 내부에 아래 샘플과 같이 간격의 크기가 column 으로 정의할 수 있다면 columns 수로 정의하여 줍니다.</li>
+							</ul>
+						</div>
+					</div>
+					<h6>2행 레이아웃</h6>
+					<div class="Grid-sm-12 Margin-bottom-10">
+						<div class="Grid-sm-6 Bg-default Color-white Text-center">
+							<p style="height: 55px" class="Padding-top-15">1행 1열<br>(Grid-sm-6)</p>
+						</div>
+						<div class="Grid-sm-6 Bg-primary Color-white Text-center">
+							<p style="height: 55px" class="Padding-top-15">1행 2열<br>(Grid-sm-6)</p>
+						</div>
+					</div>
+					<pre class="pre-style">
+						<code>
+							<span class="Font-small Color-warning">&lt;!--12개의 columns을 6개씩 가로로 나눈 Layout--&gt;</span>
+							&lt;div class="Grid-sm-12"&gt;
+							&nbsp; &nbsp; &lt;div class="Grid-sm-6"&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;1행 1열&lt;/p&gt;
+							&nbsp; &nbsp; &lt;/div&gt;
+							&nbsp; &nbsp; &lt;div class="Grid-sm-6"&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;1행 2열&lt;/p&gt;
+							&nbsp; &nbsp; &lt;/div&gt;
+							&lt;/div&gt;
+						</code>
+					</pre>
+					<div class="Margin-top-20 Grid-sm-12 Margin-bottom-10">
+						<div class="Grid-sm-5 Bg-default Color-white Text-center">
+							<p style="height: 55px" class="Padding-top-15">1행 1열<br>(Grid-sm-5)</p>
+						</div>
+						<div class="Grid-sm-2 Text-center">
+							<p style="height: 55px" class="Padding-top-15 Font-default">column 1/6의 간격<br>(Grid-sm-2)</p>
+						</div>
+						<div class="Grid-sm-5 Bg-primary Color-white Text-center">
+							<p style="height: 55px" class="Padding-top-15">1행 2열<br>(Grid-sm-5)</p>
+						</div>
+					</div>
+					<pre class="pre-style">
+						<code>
+							<span class="Font-small Color-warning">&lt;!--12개의 column을 왼쪽 오른쪽 5columns의 영역을 가지고 가운데 간격을 2columns로 설정했습니다.--&gt;</span>
+							<span class="Font-small Color-warning">&lt;!--contents 전체를 감쌀 전체 컨텐츠를 정의합니다. 해당 컨테츠를 기준으로 내부 section을 나누어 줍니다.--&gt;</span>
+							<span class="Font-small Color-warning">&lt;!--반드시 전체 컬럼수가 12일 필요는 없습니다. 만약 7을 전체 컬럼 수로 지정해주면 2개의 영역과 1개의 간격으로 나누면 3/1/3 으로 나누면 됩니다. 
+							&nbsp; &nbsp; 내용에 따라 설정해주세요.--&gt;</span>
+							&lt;div class="Grid-sm-12"&gt; 
+							&nbsp; &nbsp; &lt;div class="Grid-sm-5"&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;1행 1열&lt;/p&gt;
+							&nbsp; &nbsp; &lt;/div&gt;
+							&nbsp; &nbsp; &lt;div class="Grid-sm-2"&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;column 1/6의 간격&lt;/p&gt;
+							&nbsp; &nbsp; &lt;/div&gt;
+							&nbsp; &nbsp; &lt;div class="Grid-sm-5"&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;1행 2열&lt;/p&gt;
+							&nbsp; &nbsp; &lt;/div&gt;
+							&lt;/div&gt;
+						</code>
+					</pre>
+					<h6 class="Clearboth">3열 / 4열 레이아웃</h6>
+					<div class="Grid-sm-12 Margin-bottom-10">
+						<div class="Grid-sm-4 Bg-default Color-white Text-center">
+							<p style="height: 55px" class="Padding-top-15">1행 1열<br>(Grid-sm-4)</p>
+						</div>
+						<div class="Grid-sm-4 Bg-primary Color-white Text-center">
+							<p style="height: 55px" class="Padding-top-15">1행 2열<br>(Grid-sm-4)</p>
+						</div>
+						<div class="Grid-sm-4 Bg-success Color-white Text-center">
+							<p style="height: 55px" class="Padding-top-15">1행 3열<br>(Grid-sm-4)</p>
+						</div>
+					</div>
+					<pre class="pre-style">
+						<code>
+							&lt;div class="Grid-sm-12"&gt; 
+							&nbsp; &nbsp; &lt;div class="Grid-sm-4"&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;1행 1열&lt;/p&gt;
+							&nbsp; &nbsp; &lt;/div&gt;
+							&nbsp; &nbsp; &lt;div class="Grid-sm-4"&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;1행 2열&lt;/p&gt;
+							&nbsp; &nbsp; &lt;/div&gt;
+							&nbsp; &nbsp; &lt;div class="Grid-sm-4"&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;1행 3열&lt;/p&gt;
+							&nbsp; &nbsp; &lt;/div&gt;
+							&lt;/div&gt;
+						</code>
+					</pre>
+					<div class="Margin-top-20 Grid-sm-12 Margin-bottom-10">
+						<div class="Grid-sm-3 Bg-default Color-white Text-center">
+							<p style="height: 55px" class="Padding-top-15">1행 1열<br>(Grid-sm-3)</p>
+						</div>
+						<div class="Grid-sm-3 Bg-primary Color-white Text-center">
+							<p style="height: 55px" class="Padding-top-15">1행 2열<br>(Grid-sm-3)</p>
+						</div>
+						<div class="Grid-sm-3 Bg-success Color-white Text-center">
+							<p style="height: 55px" class="Padding-top-15">1행 3열<br>(Grid-sm-3)</p>
+						</div>
+						<div class="Grid-sm-3 Bg-confirm Color-white Text-center">
+							<p style="height: 55px" class="Padding-top-15">1행 4열<br>(Grid-sm-3)</p>
+						</div>
+					</div>
+					<pre class="pre-style">
+						<code>
+							<span class="Font-small Color-warning">&lt;!--12개는 1개로도 나뉠수 있고 12개 내에서는 원하는 section 만큼 나누어서 사용할 수 있습니다.--&gt;</span>
+							&lt;div class="Grid-sm-12"&gt; 
+							&nbsp; &nbsp; &lt;div class="Grid-sm-3"&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;1행 1열&lt;/p&gt;
+							&nbsp; &nbsp; &lt;/div&gt;
+							&nbsp; &nbsp; &lt;div class="Grid-sm-3"&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;1행 2열&lt;/p&gt;
+							&nbsp; &nbsp; &lt;/div&gt;
+							&nbsp; &nbsp; &lt;div class="Grid-sm-3"&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;1행 3열&lt;/p&gt;
+							&nbsp; &nbsp; &lt;/div&gt;
+							&nbsp; &nbsp; &lt;div class="Grid-sm-3"&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;1행 4열&lt;/p&gt;
+							&nbsp; &nbsp; &lt;/div&gt;
+							&lt;/div&gt;
+						</code>
+					</pre>
+				</div>
+				<!-- //two table end -->
+				<!-- //contents template end -->
+				<!-- footer start -->
+				<div class="Grid-sm-12 Margin-top-50 Padding-top-20 Padding-bottom-40" style="border-top: 1px solid #d8d8d8;">
+					<div class="Grid-sm-6">
+						<img class="Float-left" src="../images/sk-footer-logo.gif" alt="SK Holdings C&amp;C">
+						<p class="Float-left Margin-left-40 Margin-top-20 Font-default Color-default">26, Jong-ro, Jongno-gu, Seoul, 03188, Republic of Korea<br>COPYRIGHT&copy;2015 BY SK HOLDINGS CO., LTD. ALL RIGHTS RESERVED</p>
+					</div>
+					<div class="Grid-sm-6 Text-right Margin-top-15">
+						<ul class="Display-inblock List-style-none Font-default Margin-right-20">
+							<li class="Display-inblock"><a href="#0" class="Color-default Text-none">Terms and Conditions</a> | </li>
+							<li class="Display-inblock"><a href="#0" class="Color-default Text-none">Privacy</a> | </li>
+							<li class="Display-inblock"><a href="#0" class="Color-default Text-none">Sitemap</a></li>
+						</ul>
+						<select class="Display-inblock Select">
+							<option>Family site</option>
+						</select>
+					</div>
+				</div>
+				<!-- //footer end -->
+			</div>
+		</div>
+	</div>
+</body>
+</html>

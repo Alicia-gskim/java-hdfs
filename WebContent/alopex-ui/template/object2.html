@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>Alopex UI/UX 표준 Template Object</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<script src="/2.3/demo/UI-basic-template/script/app/biz/include-lib.js"></script>
+	<script src="/2.3/demo/UI-basic-template/script/app/biz/alopex-common.js"></script>
+	<style type="text/css">
+		.pre-style {
+			clear: both;
+			font-size: 12px;
+			white-space: pre-line;
+			margin-top: 10px;
+			padding: 0px 10px;
+			color: #555555;
+			background: #eeeeee;
+			border: 1px solid #d7dde3;
+			line-height: 16px;
+		}
+	</style>
+</head>
+<body class="Margin-0 Padding-0">
+	<div class="Width-100">
+		<!-- header -->
+		<div class="Bg-primary">
+			<div style="width: 1170px; height: 45px; margin: 0 auto">
+				<div class="Grid-sm-12">
+					<h1 class="Float-left Header-5"><a href="../main/ui-main-portal.html" class="Color-white Text-none">Alopex UI/UX 표준 Template</a></h1>
+					<ul class="Float-right Navmenu" style="z-index:101">
+					    <li><a href="../main/ui-main-portal.html">Main Sample</a>
+					        <ul>
+					            <li><a href="../main/ui-main-portal.html">Portal 형</a></li>
+					            <li><a href="../main/ui-main-workspace.html">Workspace 형</a></li>
+					        </ul>
+					    </li>
+					    <li><a href="basic1.html">Basic Template</a>
+					        <ul>
+					            <li><a href="basic1.html">Basic Type</a>
+					            	<ul>
+					            		<li><a href="basic1.html">1 Grid board</a></li>
+					            		<li><a href="basic2.html">Grid/Table/Tab 복합형</a></li>
+					            	</ul>
+					            </li>
+					            <li><a href="board1.html">게시판형</a>
+					                <ul>
+					                	<li><a href="board1.html">2 Grid board</a></li>
+					                	<li><a href="board2.html">Grid/Table 복합형</a></li>
+					                	<li><a href="board3.html">Grid/Table/Tree</a></li>
+					                	<li><a href="board4.html">Form/Chart 복합형</a></li>
+					                </ul>
+					            </li>
+					            <li><a href="table1.html">테이블형</a>
+					            	<ul>
+					            		<li><a href="table1.html">Table 내 Table</a></li>
+					            	</ul>
+					            </li>
+					            <li>
+					            	<a href="dialog1.html">Dialog &amp; Popup</a>
+					            	<ul>
+					            		<li><a href="dialog1.html">Dialog</a></li>
+					            		<li><a href="popup1.html">Popup</a></li>
+					            	</ul>
+					            </li>
+					            <li>
+					            	<a href="contents.html">컨텐츠</a>
+					            	<ul>
+					            		<li><a href="contents.html">컨텐츠 리스트형</a></li>
+					            	</ul>
+					            </li>
+					        </ul>
+					    </li>
+					    <li><a href="object1.html">Object Template</a>
+					    	<ul>
+					    		<li><a href="object1.html">Accordion Template</a></li>
+					    		<li><a href="object2.html">Button Template</a></li>
+					    		<li><a href="object3.html">Carousel</a></li>
+					    		<li><a href="object4.html">Paging</a></li>
+					    		<li><a href="object5.html">Progress bar</a></li>
+					    	</ul>
+					    </li>
+					    <li><a href="layout1.html">Layout Template</a>
+					    	<ul>
+					    		<li><a href="layout1.html">UI Grid Layout</a></li>
+					    		<li><a href="layout2.html">Search Box Template</a>
+					    		<li><a href="layout3.html">LNB Template</a></li>
+					    		<li><a href="layout4.html">Static Contents</a></li>
+					    		<li><a href="layout5.html">Footer Template</a></li>
+					    		<li><a href="layout6.html">Error Template</a></li>
+					    	</ul>
+					    </li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- //header -->
+		<div class="Grid-wrapper">
+			<h3 class="Header-4 Padding-bottom-10" style="border-bottom: 1px solid #d8d8d8">Object Template : Button Type</h3>
+			<!-- Main Sample Start-->
+			<div class="Grid-sm-12">
+				<!-- left start -->
+				<div class="Grid-sm-3">
+					<div class="Margin-right-30">
+						<ul class="Accordion">
+					        <li><a href="object1.html">Accordion Template</a></li>
+				            <li><a href="object2.html">Button Template</a></li>
+				            <li><a href="object3.html">Carousel</a></li>
+				            <li><a href="object4.html">Paging</a></li>
+				            <li><a href="object5.html">Progress bar</a></li>
+					    </ul>
+				    </div>
+				</div>
+				<!-- //left end -->
+				<!-- contents template start -->
+				<div class="Grid-sm-9">
+					<!-- button type sample -->
+					<div class="Padding-bottom-10 Margin-bottom-20" style="border-bottom: 1px solid #d8d8d8">
+						<h4 class="Margin-0">Button Type</h4>
+					</div>
+					<div class="Panel">
+						<div class="Panel-content">
+							<h5 class="Font-default Margin-0"><span class="Icon Exclamation-sign Margin-right-5 Display-inblock"></span><span class="Display-inblock">Basic Button</span></h5>
+							<p>class name : <span class="Font-bold Color-default">Button</span></p>
+							<pre><code>Button 은  &lt;button&gt;, &lt;input type="button"&gt;, &lt;a&gt;</code>모두에 사용할 수 있습니다.</pre>
+							<p>line button을 적용하고 싶은 경우 class name : <span class="Font-bold Color-default">Typeb</span>를 추가합니다.</p>
+							<h5 class="Font-default Margin-0 Padding-top-5"><span class="Icon Exclamation-sign Margin-right-5 Display-inblock"></span><span class="Display-inblock">Simbolic Button</span></h5>
+							<ul class="Margin-0 Padding-top-10">
+								<li>취소, Default : class name - <span class="Font-bold Color-default">Default</span></li>
+								<li>확인 : class name - <span class="Font-bold Color-default">Confirm</span></li>
+								<li>성공 : class name - <span class="Font-bold Color-default">Success</span></li>
+								<li>경고 : class name - <span class="Font-bold Color-default">Warning</span></li>
+								<li>위험 : class name - <span class="Font-bold Color-default">Danger</span></li>
+							</ul>
+							<p>* 위의 class는 Button class 선언 후 각 용도에 따라 같은 tag 내에 선언해줍니다.</p>
+							<h5 class="Font-default Margin-0 Padding-top-10"><span class="Icon Exclamation-sign Margin-right-5 Display-inblock"></span><span class="Display-inblock">Button Size</span></h5>
+							<ul class="Margin-0 Padding-top-10">
+								<li>Base : class name - <span class="Font-bold Color-default">추가 되는 class name 없음</span></li>
+								<li>Large : class name - <span class="Font-bold Color-default">Large</span></li>
+								<li>Extra : class name - <span class="Font-bold Color-default">Extra</span></li>
+							</ul>
+							<p>* 위의 class는 Button class 선언 후 각 용도에 따라 같은 tag 내에 선언해줍니다.</p>
+						</div>
+					</div>
+					<div>
+						<h6 class="Margin-0 Padding-bottom-10">Basic Button</h6>
+						<button class="Button">Button</button>
+						<button class="Button Typeb">Button(Typeb)</button>
+						<button class="Button" data-disabled="true">Button(Disabled)</button>
+					</div>
+					<pre class="pre-style">
+						<code>
+							&lt;button class="Button"&gt;Button&lt;/button&gt;
+							&lt;button class="Button Typeb"&gt;Button(Typeb)&lt;/button&gt;
+							&lt;button class="Button" data-disabled="true"&gt;Button(Disabled)&lt;/button&gt;
+						</code>
+					</pre>
+					<div class="Margin-top-20">
+						<h6 class="Margin-0 Padding-bottom-10">Simbolic Button</h6>
+						<button class="Button Default">Button Default</button>
+						<button class="Button Confirm">Button Confirm</button>
+						<button class="Button Success">Button Success</button>
+						<button class="Button Warning">Button Warning</button>
+						<button class="Button Danger">Button Danger</button>
+					</div>
+					<pre class="pre-style">
+						<code>
+							&lt;button class="Button Default"&gt;Button Default&lt;/button&gt;
+							&lt;button class="Button Confirm"&gt;Button Confirm&lt;/button&gt;
+							&lt;button class="Button Success"&gt;Button Success&lt;/button&gt;
+							&lt;button class="Button Warning"&gt;Button Warning&lt;/button&gt;
+							&lt;button class="Button Danger"&gt;Button Danger&lt;/button&gt;
+						</code>
+					</pre>
+					<div class="Margin-top-20">
+						<h6 class="Margin-0 Padding-bottom-10">Button Size</h6>
+						<button class="Button">Button</button>
+						<button class="Button Large">Button Large</button>
+						<button class="Button Extra">Button Extra</button>
+					</div>
+					<pre class="pre-style">
+						<code>
+							&lt;button class="Button"&gt;Button&lt;/button&gt;
+							&lt;button class="Button Large"&gt;Button&lt;/button&gt;
+							&lt;button class="Button Extra"&gt;Button&lt;/button&gt;
+						</code>
+					</pre>
+					<div class="Margin-top-50 Padding-bottom-10" style="border-bottom: 1px solid #d8d8d8">
+						<h4 class="Margin-0">Button Width &amp; Position</h4>
+					</div>
+					<div class="Panel Margin-top-10">
+						<div class="Panel-content">
+							<h5 class="Font-default Margin-0"><span class="Icon Exclamation-sign Margin-right-5 Display-inblock"></span><span class="Display-inblock">Button Width Size</span></h5>
+							<p>버튼에 Width 값 적용할 경우 : class name -  <span class="Font-bold Color-default">Width-100</span><br>Width값은 5~100%까지 5단위로 끊어집니다.</p>
+							<h5 class="Font-default Margin-0"><span class="Icon Exclamation-sign Margin-right-5 Display-inblock"></span><span class="Display-inblock">Button Position</span></h5>
+							<p>버튼이 1개이든 2개이든 포지션을 지정해줄경우 class-name 으로 Helper css의 'Float-left', 'Float-right'를 활용하여 왼쪽 오른쪽으로 분리해줍니다. <br>Center의 경우에는 'Text-center' 를 사용해도 되고 상황에 따라 'Margin-auto'를 사용해도 됩니다.</p>
+						</div>
+					</div>
+					<div>
+						<h6 class="Margin-0 Padding-bottom-10">Button Width Sample</h6>
+						<button class="Button Width-30 Margin-bottom-5">Button Width Size 30%</button><br>
+						<button class="Button Typeb Width-50 Margin-bottom-5">Button Width Size 50%</button>
+						<button class="Button Width-80 Margin-bottom-5">Button Width Size 80%</button>
+						<button class="Button Typeb Width-100">Button Width Size 100%</button>
+					</div>
+					<pre class="pre-style">
+						<code>
+							&lt;button class="Button Width-30"&gt;Button Width Size 30%&lt;/button&gt;
+							&lt;button class="Button Typeb Width-50"&gt;Button Typeb / Width Size 50%&lt;/button&gt;
+							&lt;button class="Button Width-80"&gt;Button Width Size 80%&lt;/button&gt;
+							&lt;button class="Button Typeb Width-100"&gt;Button Typeb Width Size 100%&lt;/button&gt;
+						</code>
+					</pre>
+					<div class="Margin-top-20">
+						<h6 class="Clearboth Margin-0 Padding-bottom-10 Padding-top-10">Position left</h6>
+						<div class="Clearboth">
+							<button class="Button">1st button</button>
+							<button class="Button Typeb">2nd button</button>
+						</div>
+						<pre class="pre-style">
+							<code>
+								&lt;div class="Clearboth"&gt;
+								&nbsp; &nbsp; &lt;button class="Button"&gt;1st button&lt;/button&gt;
+								&nbsp; &nbsp; &lt;button class="Button Typeb"&gt;2nd button&lt;/button&gt;
+								&lt;/div&gt;
+								
+								* 'Clearboth'는 Helper css로 float 된 전 객체에 대한 영향을 해제해주는 css 입니다.
+							</code>
+						</pre>
+						<h6 class="Clearboth Margin-0 Padding-bottom-10 Padding-top-10">Position center</h6>
+						<div class="Clearboth Text-center">
+							<button class="Button">1st button</button>
+							<button class="Button Typeb">2nd button</button>
+						</div>
+						<pre class="pre-style">
+							<code>
+								&lt;div class="Clearboth Text-center"&gt;
+								&nbsp; &nbsp; &lt;button class="Button"&gt;1st button&lt;/button&gt;
+								&nbsp; &nbsp; &lt;button class="Button Typeb"&gt;2nd button&lt;/button&gt;
+								&lt;/div&gt;
+								* 'Text-center'는 'text-align: center' 를 나타내는 Helper css 입니다.
+							</code>
+						</pre>
+						<h6 class="Clearboth Margin-0 Padding-bottom-10 Padding-top-10">Position right</h6>
+						<div class="Clearboth Float-right Margin-bottom-10">
+							<button class="Button">1st button</button>
+							<button class="Button Warning">2nd button</button>
+							<button class="Button Typeb">3rd button</button>
+						</div>
+						<pre class="pre-style">
+							<code>
+								&lt;div class="Clearboth Float-right"&gt;
+								&nbsp; &nbsp; &lt;button class"Button"&gt;1st button&lt;/button&gt;
+								&nbsp; &nbsp; &lt;button class"Button Warning"&gt;2nd button&lt;/button&gt;
+								&nbsp; &nbsp; &lt;button class"Button Typeb"&gt;3rd button&lt;/button&gt;
+								&lt;/div&gt;
+								
+								* 'Float-right'는 'float: right' 를 나타내는 Helper css 입니다.
+							</code>
+						</pre>
+						<h6 class="Clearboth Margin-0 Padding-bottom-10 Padding-top-10">Position left &amp; right</h6>
+						<div class="Clearboth Overflow-hid">
+							<div class="Float-left">
+								<button class="Button">1st button</button>
+								<button class="Button Warning">2nd button</button>
+							<button class="Button Typeb">3rd button</button>
+							</div>
+							<div class="Float-right">
+								<button class="Button">1st button</button>
+								<button class="Button Typeb">2nd button</button>
+							</div>
+						</div>
+						<pre class="pre-style">
+							<code>
+								&lt;div class="Clearboth"&gt;
+								&nbsp; &nbsp; &lt;div class="Float-left"&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &lt;button class="Button"&gt;1st button&lt;/button&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &lt;button class="Button Warning"&gt;2nd button&lt;/button&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &lt;button class="Button Typeb"&gt;3rd button&lt;/button&gt;
+								&nbsp; &nbsp; &lt;/div&gt;
+								&nbsp; &nbsp; &lt;div class="Float-right"&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &lt;button class="Button"&gt;1st button&lt;/button&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &lt;button class="Button Typeb"&gt;2nd button&lt;/button&gt;
+								&nbsp; &nbsp; &lt;/div&gt;
+								&lt;/div&gt;
+								
+								* 'Float-left'는 'float: left'를 나타내는 Helper css 입니다.
+							</code>
+						</pre>
+					</div>
+				</div>
+				<!-- //two table end -->
+				<!-- //contents template end -->
+				<!-- footer start -->
+				<div class="Grid-sm-12 Margin-top-50 Padding-top-20 Padding-bottom-40" style="border-top: 1px solid #d8d8d8;">
+					<div class="Grid-sm-6">
+						<img class="Float-left" src="../images/sk-footer-logo.gif" alt="SK Holdings C&amp;C">
+						<p class="Float-left Margin-left-40 Margin-top-20 Font-default Color-default">26, Jong-ro, Jongno-gu, Seoul, 03188, Republic of Korea<br>COPYRIGHT&copy;2015 BY SK HOLDINGS CO., LTD. ALL RIGHTS RESERVED</p>
+					</div>
+					<div class="Grid-sm-6 Text-right Margin-top-15">
+						<ul class="Display-inblock List-style-none Font-default Margin-right-20">
+							<li class="Display-inblock"><a href="#0" class="Color-default Text-none">Terms and Conditions</a> | </li>
+							<li class="Display-inblock"><a href="#0" class="Color-default Text-none">Privacy</a> | </li>
+							<li class="Display-inblock"><a href="#0" class="Color-default Text-none">Sitemap</a></li>
+						</ul>
+						<select class="Display-inblock Select">
+							<option>Family site</option>
+						</select>
+					</div>
+				</div>
+				<!-- //footer end -->
+			</div>
+		</div>
+	</div>
+</body>
+</html>

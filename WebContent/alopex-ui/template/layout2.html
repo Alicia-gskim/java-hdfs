@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>Alopex UI/UX 표준 Template Object</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<script src="/2.3/demo/UI-basic-template/script/app/biz/include-lib.js"></script>
+	<script src="/2.3/demo/UI-basic-template/script/app/biz/alopex-common.js"></script>
+	<style type="text/css">
+		.pre-style {
+			clear: both;
+			font-size: 12px;
+			white-space: pre-line;
+			margin-top: 10px;
+			padding: 0px 10px;
+			color: #555555;
+			background: #eeeeee;
+			border: 1px solid #d7dde3;
+			line-height: 16px;
+		}
+	</style>
+</head>
+<body class="Margin-0 Padding-0">
+	<div class="Width-100">
+		<!-- header -->
+		<div class="Bg-primary">
+			<div style="width: 1170px; height: 45px; margin: 0 auto">
+				<div class="Grid-sm-12">
+					<h1 class="Float-left Header-5"><a href="../main/ui-main-portal.html" class="Color-white Text-none">Alopex UI/UX 표준 Template</a></h1>
+					<ul class="Float-right Navmenu" style="z-index:101">
+					    <li><a href="../main/ui-main-portal.html">Main Sample</a>
+					        <ul>
+					            <li><a href="../main/ui-main-portal.html">Portal 형</a></li>
+					            <li><a href="../main/ui-main-workspace.html">Workspace 형</a></li>
+					        </ul>
+					    </li>
+					    <li><a href="basic1.html">Basic Template</a>
+					        <ul>
+					            <li><a href="basic1.html">Basic Type</a>
+					            	<ul>
+					            		<li><a href="basic1.html">1 Grid board</a></li>
+					            		<li><a href="basic2.html">Grid/Table/Tab 복합형</a></li>
+					            	</ul>
+					            </li>
+					            <li><a href="board1.html">게시판형</a>
+					                <ul>
+					                	<li><a href="board1.html">2 Grid board</a></li>
+					                	<li><a href="board2.html">Grid/Table 복합형</a></li>
+					                	<li><a href="board3.html">Grid/Table/Tree</a></li>
+					                	<li><a href="board4.html">Form/Chart 복합형</a></li>
+					                </ul>
+					            </li>
+					            <li><a href="table1.html">테이블형</a>
+					            	<ul>
+					            		<li><a href="table1.html">Table 내 Table</a></li>
+					            	</ul>
+					            </li>
+					            <li>
+					            	<a href="dialog1.html">Dialog &amp; Popup</a>
+					            	<ul>
+					            		<li><a href="dialog1.html">Dialog</a></li>
+					            		<li><a href="popup1.html">Popup</a></li>
+					            	</ul>
+					            </li>
+					            <li>
+					            	<a href="contents.html">컨텐츠</a>
+					            	<ul>
+					            		<li><a href="contents.html">컨텐츠 리스트형</a></li>
+					            	</ul>
+					            </li>
+					        </ul>
+					    </li>
+					    <li><a href="object1.html">Object Template</a>
+					    	<ul>
+					    		<li><a href="object1.html">Accordion Template</a></li>
+					    		<li><a href="object2.html">Button Template</a></li>
+					    		<li><a href="object3.html">Carousel</a></li>
+					    		<li><a href="object4.html">Paging</a></li>
+					    		<li><a href="object5.html">Progress bar</a></li>
+					    	</ul>
+					    </li>
+					    <li><a href="layout1.html">Layout Template</a>
+					    	<ul>
+					    		<li><a href="layout1.html">UI Grid Layout</a></li>
+					    		<li><a href="layout2.html">Search Box Template</a>
+					    		<li><a href="layout3.html">LNB Template</a></li>
+					    		<li><a href="layout4.html">Static Contents</a></li>
+					    		<li><a href="layout5.html">Footer Template</a></li>
+					    		<li><a href="layout6.html">Error Template</a></li>
+					    	</ul>
+					    </li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- //header -->
+		<div class="Grid-wrapper">
+			<h3 class="Header-4 Padding-bottom-10" style="border-bottom: 1px solid #d8d8d8">Layout Template : Search Box</h3>
+			<!-- Main Sample Start-->
+			<div class="Grid-sm-12">
+				<!-- left start -->
+				<div class="Grid-sm-3">
+					<div class="Margin-right-30">
+						<ul class="Accordion">
+					        <li><a href="layout1.html">UI Grid Layout</a></li>
+					    		<li><a href="layout2.html">Search Box Template</a>
+					    		<li><a href="layout3.html">LNB Template</a></li>
+					    		<li><a href="layout4.html">Static Contents</a></li>
+					    		<li><a href="layout5.html">Footer Template</a></li>
+					    		<li><a href="layout6.html">Error Template</a></li>
+					    </ul>
+				    </div>
+				</div>
+				<!-- //left end -->
+				<!-- contents template start -->
+				<div class="Grid-sm-9">
+					<div class="Padding-bottom-10 Margin-bottom-20" style="border-bottom: 1px solid #d8d8d8">
+						<h4 class="Margin-0">Search Type별 Sample</h4>
+					</div>
+					<div class="Panel">
+						<div class="Panel-content">
+							사용성에 따라 input, select를 섞어서 사용해줍니다.
+						</div>
+					</div>
+					<h6>input &amp; select sample</h6>
+					<span class="Font-default Padding-right-10">input &amp; button 타입</span><input class="Textinput Margin-right-5"><button class="Button"><span class="Icon Search" data-position="left"></span>검색</button>
+					<span class="Font-default Padding-right-10 Padding-left-30">검색 option 선택 타입</span>
+					<select class="Select Margin-right-5" data-placeholder="선택"><option>제목</option><option>글쓴이</option><option>내용</option></select><input class="Textinput Margin-right-5"><button class="Button">검색</button>
+					<pre class="pre-style">
+						<code>
+							<span class="Font-small Color-warning">&lt;!--Margin-right-5 는 margin-right: 5px 을 뜻하는 helper css 입니다.--&gt;</span>
+							<span class="Font-small Color-warning">&lt;!--검색 버튼의 활용은 아이콘만 넣을 수도 있고 텍스트, 아이콘+텍스트, 텍스트+아이콘등으로 사용할 수 있습니다. 
+							상세한 자료는 ui.alopex.io에서 확인해주세요.--&gt;</span>
+							
+							<span class="Font-small Color-warning">&lt;!--input &amp; button 타입--&gt;</span>
+							<span class="Font-small Color-warning">&lt;!--data-position="left" 는 아이콘의 위치를 왼쪽으로 지정해주는 속성입니다.--&gt;</span>
+							&lt;input class="Textinput Margin-right-5"&gt;
+							&lt;button class="Button"&gt;&lt;span class="Icon Search" data-position="left"&gt;&lt;/span&gt;검색&lt;/button&gt;
+							
+							<span class="Font-small Color-warning">&lt;!--검색 option 선택 타입--&gt;</span>
+							<span class="Font-small Color-warning">&lt;!--data-placeholder="선택"은 셀렉트 컴포넌트의 placeholder 값을 설정하는 속성입니다.--&gt;</span>
+							&lt;select class="Select Margin-right-5" data-placeholder="선택"&gt;
+							&nbsp; &nbsp; &lt;option&gt;제목&lt;/option&gt;
+							&nbsp; &nbsp; &lt;option&gt;글쓴이&lt;/option&gt;
+							&nbsp; &nbsp; &lt;option&gt;내용&lt;/option&gt;
+							&lt;/select&gt;
+							&lt;input class="Textinput Margin-right-5"&gt;&lt;button class="Button"&gt;검색&lt;/button&gt;
+						</code>
+					</pre>
+					<p class="Font-default">Helper css를 응용한 big size search sample</p>
+					<div class="Text-center">
+						<input class="Textinput Width-60 Margin-right-5" style="height:38px"><button class="Button Extra"><span class="Icon Search" data-position="left"></span>검색</button>
+					</div>
+					<pre class="pre-style">
+						<code>
+							<span class="Font-small Color-warning">&lt;!--포털 사이트처럼 최상단에 search를 우선으로 넣을 경우 Helper css를 활용하여 search object를 구성할 수 있습니다.--&gt;</span>
+							<span class="Font-small Color-warning">&lt;!--Text-center 는 text-align: center을 상징하는 Helper css 입니다. search object를 가운데로 위치하도록 하기 위해서 사용합니다.--&gt;</span>
+							&lt;div class="Text-center"&gt;
+							<span class="Font-small Color-warning">&lt;!--Width-60 을 width: 60%를 의미합니다. button의 크기는 Extra로 줬기 때문에 input의 height 값을 inline element style을 사용하여 button에 맞추어 줍니다.--&gt;</span>
+							&nbsp; &nbsp; &lt;input class="Textinput Width-60 Margin-right-5" style="height: 38px"&gt;
+							&nbsp; &nbsp; &lt;button class="Button Extra"&gt;&lt;span class="Icon Search" data-position="left"&gt;&lt;/span&gt;검색&lt;/button&gt;
+							&lt;/div&gt;
+						</code>
+					</pre>
+					<div class="Padding-bottom-10 Margin-bottom-20 Padding-top-20" style="border-bottom: 1px solid #d8d8d8">
+						<h4 class="Margin-0">Layout 내에서 search box 활용하기</h4>
+					</div>
+					<div class="Panel">
+						<div class="Panel-content">
+							search box를 사용자의 layout에 맞게 사용하기 위해서는 아래 template의 html tag 외에 Helper css를 활용하거나 프로젝트내 css를 따로 추가하여 사용자가 원하는 모양이나 간격을 조정해 주면 좋습니다.
+						</div>
+					</div>
+					<h6>Form Table Layout</h6>
+					<div class="Table-wrapper">
+				        <table class="Table Form-type">
+				            <colgroup>
+				                <col style="width:100px"/>
+				                <col />
+				                <col style="width:100px"/>
+				                <col />
+				                <col style="width:80px"/>
+				            </colgroup>
+				            <tbody>
+				                <tr>
+				                    <th><span class="Color-danger Padding-right-5">*</span>항목</th>
+				                    <td><select class="Select"><option>옵션을 선택해주세요</option></select></td>
+				                    <th><span class="Icon Exclamation-sign"></span><span class="Margin-left-5 Display-inblock">체크박스</span></th>
+				                	<td><label class="ImageCheckbox">
+										    <input class="Checkbox" type="checkbox" name="chk1" value = "check1" checked="checked">
+										    Checked
+										</label>
+										<label class="ImageCheckbox">
+										    <input class="Checkbox" type="checkbox" name="chk2" value = "check2">
+										    Unchecked
+										</label>
+									</td>
+				                    <th rowspan="3"><button class="Button Warning">검색</button><button class="Button Default Margin-top-5">삭제</button></th>
+				                </tr>
+				                <tr>
+									<th>항목</th>
+									<td><select class="Select Margin-right-5"><option>All</option></select><input class="Textinput"></td>
+									<th>검색</th>
+									<td><label class="ImageRadio">
+										    <input class="Radio" name="radio1" value="value1">radio1
+										</label>
+										<label class="ImageRadio">
+										    <input class="Radio" name="radio2" value="value2">radio2
+										</label>
+									</td>
+				                </tr>
+				                <tr>
+				                	<th>검색조건</th>
+				                	<td><div class="Daterange">
+										    <div class="Startdate Dateinput">
+										        <input>
+										    </div>
+										    ~
+										    <div class="Enddate Dateinput">
+										        <input>
+										    </div>
+										</div>
+									</td>
+				                	<th>검색조건</th>
+				                	<td>
+				                		<input class="Textinput Margin-right-5" placeholder="검색어를 입력하세요"><button class="Button Onlyicon"><span class="Icon Search" data-position="top"></span></button>
+				                	</td>
+				                </tr>
+				            </tbody>
+				        </table>
+					</div>
+					<h6>Form Table 밖에 Button이 있는 경우</h6>
+					<div class="Table-wrapper">
+				        <table class="Table Form-type">
+				            <colgroup>
+				                <col style="width:100px"/>
+				                <col />
+				                <col style="width:100px"/>
+				                <col />
+				            </colgroup>
+				            <tbody>
+				                <tr>
+				                    <th><span class="Color-danger Padding-right-5">*</span>항목</th>
+				                    <td><select class="Select"><option>옵션을 선택해주세요</option></select></td>
+				                    <th><span class="Icon Exclamation-sign"></span><span class="Margin-left-5 Display-inblock">체크박스</span></th>
+				                	<td><label class="ImageCheckbox">
+										    <input class="Checkbox" type="checkbox" name="chk1" value = "check1" checked="checked">
+										    Checked
+										</label>
+										<label class="ImageCheckbox">
+										    <input class="Checkbox" type="checkbox" name="chk2" value = "check2">
+										    Unchecked
+										</label>
+									</td>
+				                </tr>
+				                <tr>
+									<th>항목</th>
+									<td><select class="Select Margin-right-5"><option>All</option></select><input class="Textinput"></td>
+									<th>검색</th>
+									<td><label class="ImageRadio">
+										    <input class="Radio" name="radio1" value="value1">radio1
+										</label>
+										<label class="ImageRadio">
+										    <input class="Radio" name="radio2" value="value2">radio2
+										</label>
+									</td>
+				                </tr>
+				                <tr>
+				                	<th>검색조건</th>
+				                	<td><div class="Daterange">
+										    <div class="Startdate Dateinput">
+										        <input>
+										    </div>
+										    ~
+										    <div class="Enddate Dateinput">
+										        <input>
+										    </div>
+										</div>
+									</td>
+				                	<th>검색조건</th>
+				                	<td>
+				                		<input class="Textinput Margin-right-5" placeholder="검색어를 입력하세요"><button class="Button Onlyicon"><span class="Icon Search" data-position="top"></span></button>
+				                	</td>
+				                </tr>
+				            </tbody>
+				        </table>
+					</div>
+					<div class="Float-right Margin-bottom-10"><button class="Button Warning Margin-right-5">검색</button><button class="Button Default">삭제</button></div>
+					<pre class="pre-style">
+						<code>
+							<span class="Font-small Color-warning">&lt;!--Table Alopex UI를 사용해서 적용해줍니다. Table 내 Scroller가 필요한 경우 "Table-wrapper" 아래에 &lt;div class="Table-scroller"&gt;를 넣어 주면 됩니다.
+							&nbsp; &nbsp; Table 내에 버튼을 넣고 싶은 경우에는 마지막 td 안에 넣어주세요
+							&nbsp; &nbsp; Table 외부로 버튼을 놓고자 하는 경우 Table-wrapper와 동일 선에서 markup 하여줍니다. 위치값은 Button Object Template를 참고하여 원하는 방향으로 
+							&nbsp; &nbsp; 설정해주면 됩니다.--&gt;
+							</span>
+							&lt;div class="Table-wrapper"&gt;
+							&nbsp; &nbsp; &lt;table class="Table Form-type"&gt; <span class="Font-default Color-warning">&lt;!--Form 모양의 Table이 필요한 경우 class name Form-type을 넣어준다.--&gt;</span>
+							&nbsp; &nbsp; &nbsp; &nbsp; &lt;colgroup&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;col style="width:100px"&gt; <span class="Font-default Color-warning">&lt;!--th의 사이즈를 정해준다. 사이즈를 넣지 않을 경우 동일 width로 지정된다.--&gt;</span>
+							&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;col&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;col style="width:100px"&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;col&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &lt;/colgroup&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &lt;tbody&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;tr&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;th&gt;항목&lt;/th&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;td&gt;내용들어가는 곳&lt;/td&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;th&gt;항목&lt;/th&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;td&gt;내용들어가는 곳&lt;/td&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; ......
+							&nbsp; &nbsp; &nbsp; &nbsp; &lt;/tbody&gt;
+							&nbsp; &nbsp; &lt;/table&gt;
+							&lt;/div&gt;
+							<span class="Font-small Color-warning">&lt;!--Button Object 영역--&gt;</span>
+							&lt;div class="Float-right"&gt;&lt;button class="Button Warning Margin-right-5"&gt;검색&lt;/button&gt;&lt;button class="Button Default"&gt;삭제&lt;/button&gt;&lt;/div&gt;
+						</code>
+					</pre>
+					<h6>Main Menu 우측으로 search를 넣을 경우</h6>
+					<ul class="Navmenu"><!-- Requirement : 일렬로 정렬. -->
+					    <li><a href="#0">Parent #1</a>
+					        <ul>
+					            <li><a href="#0">Child #1</a>
+					                <ul>
+					                    <li>
+					                        <a href="#0">GrandChild #1</a>
+					                    </li>
+					                </ul>
+					            </li>
+					            <li><a href="#0">Child #2</a>
+					                <ul >
+					                    <li>
+					                        <a href="#0">GrandChild #1</a>
+					                    </li>
+					                </ul>
+					            </li>
+					        </ul>
+					    </li>
+					    <li>
+					        <a href="#0">Parent #2</a>
+					        <ul >
+					            <li>
+					                <a href="#0">Child #1</a>
+					                <ul>
+					                    <li>
+					                        <a href="#0">GrandChild #1</a>
+					                        <ul>
+					                            <li>
+					                                <a href="#0">Great Grand #1</a>
+					                            </li>
+					                            <li>
+					                                <a href="#0">Great Grand #2</a>
+					                            </li>
+					                        </ul>
+					                    </li>
+					                    <li>
+					                        <a href="#0">GrandChild #2</a>
+					                    </li>
+					                </ul>
+					            </li>
+					            <li>
+					                <a href="#0">Child #2</a>
+					            </li>
+					        </ul>
+					    </li>
+					    <li>
+					        <a href="#0">Parent #3</a>
+					    </li>
+					    <li class="Float-right">
+					    	<input class="Textinput Margin-right-5 Margin-left-10">
+					    	<button class="Button Onlyicon Margin-right-10"><span class="Icon Search" data-position="top"></span></button>
+					    </li>
+					</ul>
+					<pre class="pre-style">
+						<code>
+							&lt;ul class="Navmenu"&gt; <span class="Font-small Color-warning">&lt;!--메인 메뉴에 대한 API를 적용해주세요.--&gt;</span>
+							&nbsp; &nbsp; &lt;li&gt;&lt;a href="#0"&gt;Parent #1&lt;/a&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &lt;ul&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li&gt;&lt;a href="#0"&gt;Child #1&lt;/a&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;ul&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;a href="#0"&gt;GrandChild #1&lt;/a&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/li&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/ul&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/li&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li&gt;&lt;a href="#0"&gt;Child #2&lt;/a&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;ul&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;a href="#0"&gt;GrandChild #1&lt;/a&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/li&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/ul&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/li&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &lt;/ul&gt;
+							&nbsp; &nbsp; &lt;/li&gt;
+							&nbsp; &nbsp; &lt;li&gt;&lt;a href="#0"&gt;Parent #2&lt;/a&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &lt;ul&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li&gt;&lt;a href="#0"&gt;Child #1&lt;/a&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;ul&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ...... <span class="Font-small Color-warning">&lt;!--이후 Navmenu에 관한 사용법은 ui.alopex.io를 참조해주세요.--&gt;</span>
+							&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/ul&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/li&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &lt;/ul&gt;
+							&nbsp; &nbsp; &lt;/li&gt;
+							&nbsp; &nbsp; &lt;li&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &lt;a href="#0"&gt;Parent #3&lt;/a&gt;
+							&nbsp; &nbsp; &lt;/li&gt;
+							&nbsp; &nbsp; &lt;li class="Float-right"&gt;<span class="Font-small Color-warning">&lt;!--Search 부분을 메뉴의 오른쪽으로 위치하기 위해 Helper css "Float-right"를 사용합니다.--&gt;</span>
+							&nbsp; &nbsp; &nbsp; &nbsp; &lt;input class="Textinput"&gt;&lt;button class="Button Onlyicon"&gt;&lt;span class="Icon Search" data-position="top"&gt;&lt;/span&gt;&lt;/button&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; <span class="Font-small Color-warning">&lt;!--Button Onlyicon classname을 적용하고 icon의 위치를 잡아주는  data-position="top" 을 추가해주면 버튼을 아이콘만 표시할 수 있습니다.--&gt;</span>
+							&nbsp; &nbsp; &lt;/li&gt;
+							&lt;/ul&gt;
+						</code>
+					</pre>
+					<h6>Main Menu 우측으로 위에 search를 적용할 경우</h6>
+					<div class="Float-right Margin-bottom-5">
+						<input class="Textinput Margin-right-5"><button class="Button Onlyicon"><span class="Icon Search" data-position="top"></span></button>
+					</div>
+					<ul class="Clearboth Navmenu"><!-- Requirement : 일렬로 정렬. -->
+					    <li><a href="#0">Parent #1</a>
+					        <ul>
+					            <li><a href="#0">Child #1</a>
+					                <ul>
+					                    <li>
+					                        <a href="#0">GrandChild #1</a>
+					                    </li>
+					                </ul>
+					            </li>
+					            <li><a href="#0">Child #2</a>
+					                <ul >
+					                    <li>
+					                        <a href="#0">GrandChild #1</a>
+					                    </li>
+					                </ul>
+					            </li>
+					        </ul>
+					    </li>
+					    <li>
+					        <a href="#0">Parent #2</a>
+					        <ul >
+					            <li>
+					                <a href="#0">Child #1</a>
+					                <ul>
+					                    <li>
+					                        <a href="#0">GrandChild #1</a>
+					                        <ul>
+					                            <li>
+					                                <a href="#0">Great Grand #1</a>
+					                            </li>
+					                            <li>
+					                                <a href="#0">Great Grand #2</a>
+					                            </li>
+					                        </ul>
+					                    </li>
+					                    <li>
+					                        <a href="#0">GrandChild #2</a>
+					                    </li>
+					                </ul>
+					            </li>
+					            <li>
+					                <a href="#0">Child #2</a>
+					            </li>
+					        </ul>
+					    </li>
+					    <li>
+					        <a href="#0">Parent #3</a>
+					    </li>
+					</ul>
+					<pre class="pre-style">
+						<code>
+							<span class="Font-small Color-warning">&lt;!--search 가 먼저 시작하므로 search에 해당하는 markup을 먼저 적용해줍니다. Navmenu 내에 있지 않으므로 block tag를 사용해줍니다.--&gt;</span>
+							&lt;div class="Float-right"&gt;
+							&nbsp; &nbsp; &lt;input class="Textinput"&gt;&lt;button class="Button Onlyicon"&gt;&lt;span class="Icon Search" data-position="top"&gt;&lt;/span&gt;&lt;/button&gt;
+							&lt;/div&gt;
+							&lt;ul class="Clearboth Navmenu"&gt; <span class="Font-small Color-warning">&lt;!--Navmenu에는 clear:both 등 상위 markup의 float를 해제해주는 것이 없으므로 Helper css인 Clearboth 를 추가해줍니다.--&gt;</span>
+							&nbsp; &nbsp; &lt;li&gt;&lt;a href="#0"&gt;Parent #1&lt;/a&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &lt;ul&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;li&gt;&lt;a href="#0"&gt;Child #1&lt;/a&gt;
+							&nbsp; &nbsp; &nbsp; &nbsp; ........
+							&nbsp; &nbsp; &lt;/li&gt;
+							&lt;/ul&gt;
+						</code>
+					</pre>
+					<h6>LNB Template에 적용할 경우</h6>
+					<div class="Grid-sm-4">
+						<p class="Font-default">Accordion으로 적용할 경우</p>
+						<div class="Margin-bottom-5">
+							<input class="Textinput Margin-right-5"><button class="Button Onlyicon"><span class="Icon Search" data-position="top"></span></button>
+						</div>
+						<ul class="Accordion Width-65">
+					        <li>
+					            <a>Another List Content</a>
+					            <ul>
+					                <li><a>Child #1</a></li>
+					                <li><a>Child #2</a></li>
+					                <li>
+					                    <a>Nested Accordion Example</a>
+					                    <ul>
+					                        <li><a>G Child #1</a></li>
+					                        <li><a>G Child #2</a></li>
+					                        <li><a>G Child #3</a></li>            
+					                    </ul>
+					                </li>            
+					            </ul>
+					        </li>
+					        <li>
+					            <a>Another List Content</a>
+					            <ul>
+					                <li><a>Child #1</a></li>
+					                <li><a>Child #2</a></li>
+					            </ul>
+					        </li>
+					     </ul>
+					</div>
+					<div class="Grid-sm-4 Margin-bottom-10">
+						<p class="Font-default">List로 적용할 경우</p>
+						<ul class="List Margin-0 Margin-top-15 Margin-bottom-10 Width-80">
+						    <li class="Link"><a href="#0"><span class="Icon Star"></span><span class="Margin-left-5">Status Menu01</span></a></li>
+						    <li class="Link"><a href="#0"><span class="Icon User"></span><span class="Margin-left-5">Status Menu02</span></a></li>
+						    <li class="Link"><a href="#0"><span class="Icon File"></span><span class="Margin-left-5">Status Menu03</span></a></li>
+						    <li class="Link"><a href="#0"><span class="Icon Book"></span><span class="Margin-left-5">Status Menu04</span></a></li>
+						    <li class="Link"><a href="#0"><span class="Icon Tint"></span><span class="Margin-left-5">Status Menu05</span></a></li>
+						    <li class="Link"><a href="#0"><span class="Icon Inbox"></span><span class="Margin-left-5">Status Menu06</span></a></li>
+						    <li class="Link"><a href="#0"><span class="Icon Check"></span><span class="Margin-left-5">Status Menu07</span></a></li>
+						</ul>
+						<div class="Margin-top-5">
+							<input class="Textinput Width-70 Margin-right-5"><button class="Button Onlyicon"><span class="Icon Search" data-position="top"></span></button>
+						</div>
+					</div>
+					<div class="Grid-sm-4">
+						<p class="Font-default">Tab을 적용하고 Tree 구조를 사용할 경우</p>
+						<div class="Tabs Width-80">
+							<div class="Margin-bottom-5">
+								<input class="Textinput Margin-right-5 Width-85"><button class="Button Onlyicon"><span class="Icon Search" data-position="top"></span></button>
+							</div>
+						    <ul>
+						        <li data-content="#tab1">tab1</li>
+						        <li data-content="#tab2">tab2</li>
+						    </ul>
+						    <div id="tab1">
+						    	<div class="Padding-bottom-30 Margin-bottom-10 Margin-top-10" style="border-bottom: 1px solid #d8d8d8">
+						       		<h6 class="Float-left Margin-0 Padding-top-5">Category</h6>
+									<div class="Float-right"><select class="Select"><option>All Category</option></select></div>
+								</div>
+								<ul class="Tree">
+								    <li>
+								        <span class="Arrow"></span> 
+								        <a> Tree Memu 1</a>
+								        <ul>
+								            <li><span class="Arrow"></span> 
+								                <a>Tree Memu 1-1</a>
+								                <ul>
+								                    <li>
+								                        <span class="Arrow"></span> 
+								                        <a>Tree Memu 1-1-1</a>
+								                    </li>
+								                    <li>
+								                        <span class="Arrow"></span> 
+								                        <a>Tree Memu 1-1-2</a>
+								                    </li>
+								                </ul>
+								            </li>
+								        </ul>
+								    </li>
+								    <li>
+								        <span class="Arrow"></span> 
+								        <a> Tree Memu 2</a>
+								        <ul>
+								            <li><span class="Arrow"></span> 
+								                <a>Tree Memu 2-1</a>
+								                <ul>
+								                    <li>
+								                        <span class="Arrow"></span> 
+								                        <a>Tree Memu 2-1-1</a>
+								                    </li>
+								                </ul>
+								            </li>
+								        </ul>
+								    </li>
+								    <li>
+								        <span class="Arrow"></span> 
+								        <a> Tree Memu 3</a>
+								        <ul>
+								            <li><span class="Arrow"></span> 
+								                <a>Tree Memu 3-1</a>
+								            </li>
+								        </ul>
+								    </li>
+								    <li>
+								        <span class="Arrow"></span> 
+								        <a> Tree Memu 4</a>
+								        <ul>
+								            <li><span class="Arrow"></span> 
+								                <a>Tree Memu 4-1</a>
+								            </li>
+								            <li><span class="Arrow"></span> 
+								                <a>Tree Memu 4-2</a>
+								            </li>
+								            <li><span class="Arrow"></span> 
+								                <a>Tree Memu 4-3</a>
+								            </li>
+								        </ul>
+								    </li>  
+								</ul>
+						    </div>
+						    <div id="tab2">
+						        <strong>tab2</strong>
+						        <p>
+						        tab2 Contents
+						        </p>
+						    </div>
+						    <div class="Margin-top-5">
+								<input class="Textinput Width-85 Margin-right-5"><button class="Button Onlyicon"><span class="Icon Search" data-position="top"></span></button>
+							</div>
+						</div>
+					</div>
+					<pre class="pre-style">
+						<code>
+							<span class="Font-small Color-warning">&lt;!--search를 먼저 위치시키거나 메뉴 밑에 위치시키거나 사용자의 필요성에 따라 적용해줍니다.--&gt;</span>
+							&lt;div&gt;
+							&nbsp; &nbsp; &lt;input class="Textinput"&gt;&lt;button class="Button Onlyicon"&gt;&lt;span class="Icon Search" data-position="top"&gt;&lt;/span&gt;&lt;/button&gt;
+							&lt;/div&gt;
+						</code>
+					</pre>
+				</div>
+				<!-- //contents template end -->
+				<!-- footer start -->
+				<div class="Grid-sm-12 Margin-top-50 Padding-top-20 Padding-bottom-40" style="border-top: 1px solid #d8d8d8;">
+					<div class="Grid-sm-6">
+						<img class="Float-left" src="../images/sk-footer-logo.gif" alt="SK Holdings C&amp;C">
+						<p class="Float-left Margin-left-40 Margin-top-20 Font-default Color-default">26, Jong-ro, Jongno-gu, Seoul, 03188, Republic of Korea<br>COPYRIGHT&copy;2015 BY SK HOLDINGS CO., LTD. ALL RIGHTS RESERVED</p>
+					</div>
+					<div class="Grid-sm-6 Text-right Margin-top-15">
+						<ul class="Display-inblock List-style-none Font-default Margin-right-20">
+							<li class="Display-inblock"><a href="#0" class="Color-default Text-none">Terms and Conditions</a> | </li>
+							<li class="Display-inblock"><a href="#0" class="Color-default Text-none">Privacy</a> | </li>
+							<li class="Display-inblock"><a href="#0" class="Color-default Text-none">Sitemap</a></li>
+						</ul>
+						<select class="Display-inblock Select">
+							<option>Family site</option>
+						</select>
+					</div>
+				</div>
+				<!-- //footer end -->
+			</div>
+		</div>
+	</div>
+</body>
+</html>

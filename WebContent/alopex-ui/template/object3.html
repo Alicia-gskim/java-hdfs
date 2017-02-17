@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>Alopex UI/UX 표준 Template Object</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<script src="/2.3/demo/UI-basic-template/script/app/biz/include-lib.js"></script>
+	<script src="/2.3/demo/UI-basic-template/script/app/biz/alopex-common.js"></script>
+	<style type="text/css">
+		.pre-style {
+			clear: both;
+			font-size: 12px;
+			white-space: pre-line;
+			margin-top: 10px;
+			padding: 0px 10px;
+			color: #555555;
+			background: #eeeeee;
+			border: 1px solid #d7dde3;
+			line-height: 16px;
+		}
+	</style>
+</head>
+<body class="Margin-0 Padding-0">
+	<div class="Width-100">
+		<!-- header -->
+		<div class="Bg-primary">
+			<div style="width: 1170px; height: 45px; margin: 0 auto">
+				<div class="Grid-sm-12">
+					<h1 class="Float-left Header-5"><a href="../main/ui-main-portal.html" class="Color-white Text-none">Alopex UI/UX 표준 Template</a></h1>
+					<ul class="Float-right Navmenu" style="z-index:101">
+					    <li><a href="../main/ui-main-portal.html">Main Sample</a>
+					        <ul>
+					            <li><a href="../main/ui-main-portal.html">Portal 형</a></li>
+					            <li><a href="../main/ui-main-workspace.html">Workspace 형</a></li>
+					        </ul>
+					    </li>
+					    <li><a href="basic1.html">Basic Template</a>
+					        <ul>
+					            <li><a href="basic1.html">Basic Type</a>
+					            	<ul>
+					            		<li><a href="basic1.html">1 Grid board</a></li>
+					            		<li><a href="basic2.html">Grid/Table/Tab 복합형</a></li>
+					            	</ul>
+					            </li>
+					            <li><a href="board1.html">게시판형</a>
+					                <ul>
+					                	<li><a href="board1.html">2 Grid board</a></li>
+					                	<li><a href="board2.html">Grid/Table 복합형</a></li>
+					                	<li><a href="board3.html">Grid/Table/Tree</a></li>
+					                	<li><a href="board4.html">Form/Chart 복합형</a></li>
+					                </ul>
+					            </li>
+					            <li><a href="table1.html">테이블형</a>
+					            	<ul>
+					            		<li><a href="table1.html">Table 내 Table</a></li>
+					            	</ul>
+					            </li>
+					            <li>
+					            	<a href="dialog1.html">Dialog &amp; Popup</a>
+					            	<ul>
+					            		<li><a href="dialog1.html">Dialog</a></li>
+					            		<li><a href="popup1.html">Popup</a></li>
+					            	</ul>
+					            </li>
+					            <li>
+					            	<a href="contents.html">컨텐츠</a>
+					            	<ul>
+					            		<li><a href="contents.html">컨텐츠 리스트형</a></li>
+					            	</ul>
+					            </li>
+					        </ul>
+					    </li>
+					    <li><a href="object1.html">Object Template</a>
+					    	<ul>
+					    		<li><a href="object1.html">Accordion Template</a></li>
+					    		<li><a href="object2.html">Button Template</a></li>
+					    		<li><a href="object3.html">Carousel</a></li>
+					    		<li><a href="object4.html">Paging</a></li>
+					    		<li><a href="object5.html">Progress bar</a></li>
+					    	</ul>
+					    </li>
+					    <li><a href="layout1.html">Layout Template</a>
+					    	<ul>
+					    		<li><a href="layout1.html">UI Grid Layout</a></li>
+					    		<li><a href="layout2.html">Search Box Template</a>
+					    		<li><a href="layout3.html">LNB Template</a></li>
+					    		<li><a href="layout4.html">Static Contents</a></li>
+					    		<li><a href="layout5.html">Footer Template</a></li>
+					    		<li><a href="layout6.html">Error Template</a></li>
+					    	</ul>
+					    </li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- //header -->
+		<div class="Grid-wrapper">
+			<h3 class="Header-4 Padding-bottom-10" style="border-bottom: 1px solid #d8d8d8">Object Template : Carousel</h3>
+			<!-- Main Sample Start-->
+			<div class="Grid-sm-12">
+				<!-- left start -->
+				<div class="Grid-sm-3">
+					<div class="Margin-right-30">
+						<ul class="Accordion">
+					        <li><a href="object1.html">Accordion Template</a></li>
+				            <li><a href="object2.html">Button Template</a></li>
+				            <li><a href="object3.html">Carousel</a></li>
+				            <li><a href="object4.html">Paging</a></li>
+				            <li><a href="object5.html">Progress bar</a></li>
+					    </ul>
+				    </div>
+				</div>
+				<!-- //left end -->
+				<!-- contents template start -->
+				<div class="Grid-sm-9">
+					<div>
+						<div class="Padding-bottom-10 Margin-bottom-20" style="border-bottom: 1px solid #d8d8d8">
+							<h4 class="Margin-0">Carousel : 본문 예제</h4>
+						</div>
+						<div class="Panel">
+							<div class="Panel-content">
+								<h5 class="Font-default Margin-0"><span class="Icon Exclamation-sign Margin-right-5 Display-inblock"></span><span class="Display-inblock">Image Rolling + Contents</span></h5>
+								<p>Carousel에 이미지와 컨텐츠를 사용할 경우 Carousel 하단에 div나 p tag를 사용하여 설명 부분을 넣어주면 이미지가 롤링되는 컨텐츠를 만들 수 있습니다.<br>
+								   이미지마다 설명 부분을 따로 넣고 컨텐츠도 같이 롤링 되도록 하기를 원할 경우에는 컨텐츠 크기 만큼 Carousel의 Height 값을 늘려주어 전체가 Rolling 되도록 해줍니다.<br>
+								  text를 롤링 이미지 전체 하단에 추가한 경우, 이미지 옆으로 텍스트를 추가할 경우 이미지와 함께 Rolling하려면 class name 'Page'를 가지고 있는 div tag 내에 text를 Markup 하고 Carousel의 Width 값을 추가해주면 됩니다.</p>
+								   <pre class="pre-style">
+								   	    <code>
+								   	    	&lt;div class="Page"&gt;여기에 롤링 되는 컨텐츠를 넣어주세요.&lt;/div&gt;
+								   	    </code>
+								   </pre>
+								<h5 class="Font-default Margin-0"><span class="Icon Exclamation-sign Margin-right-5 Display-inblock"></span><span class="Display-inblock">Text Rolling</span></h5>
+								<p>단순 컨텐츠로 이루어진 배너 롤링 방식으로는 아래 <a href="#text-rolling">Text Rolling Banner</a> 예제처럼 활용 할 수 있습니다.</p>
+							</div>
+						</div>
+						<h6>Contents + Text Sample</h6>
+						<div class="Carousel" data-autoSlidemode="true" data-autoSlideDuration="5000">
+						    <div class="Scroller">
+						        <div class="Page">
+						            <img src="../images/carousel3.jpg">
+						        </div>
+						        <div class="Page">
+						            <img src="../images/carousel2.jpg">
+						        </div>
+						        <div class="Page">
+						            <img src="../images/carousel1.jpg">
+						        </div>
+						    </div>
+						    <a class="Prev"></a>
+   							<a class="Next"></a>
+						    <div class="Paging Mobile">
+						        <a class="Link">1</a>
+						        <a class="Link">2</a>
+						        <a class="Link">3</a>
+						    </div>
+						</div>
+						<div class="Font-default Margin-top-10" style="width:590px">
+							This will provide some detailed information about the thumbnail board type. 
+							This will provide some detailed information about the thumbnail board type.This will provide some detailed information about the thumbnail board type.
+							This will provide some detailed information about the thumbnail board type.
+						</div>
+						<pre class="pre-style">
+							<code>
+								&lt;div class="Carousel" data-autoSlidemode="true" data-autoSlideDuration="5000"&gt; <span class="Color-warning Font-small">&lt;!--'data-' 부분은 ui.alopex.io를 참조해서 설정해주세요--&gt;</span>
+								&nbsp; &nbsp; &lt;div class="Scroller"&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class="Page"&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;img src="이미지링크1"&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class="Page"&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;img src="이미지링크2"&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class="Page"&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;img src="이미지링크3"&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;
+								&nbsp; &nbsp; &lt;/div&gt;
+								&nbsp; &nbsp; &lt;a class="Prev"&gt;&lt;/a&gt;
+								&nbsp; &nbsp; &lt;a class="Next"&gt;&lt;/a&gt;
+								&nbsp; &nbsp; &lt;div class="Paging Mobile"&gt; <span class="Color-warning Font-small">&lt;!--Rolling되는 링크 수를 나타내는 dot 모양의 이미지입니다. 숫자를 나타내고 싶으면 'Mobile'을 생략하면 됩니다.--&gt;</span>
+								&nbsp; &nbsp; &nbsp; &nbsp; &lt;a class="Link"&gt;1&lt;/a&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &lt;a class="Link"&gt;2&lt;/a&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &lt;a class="Link"&gt;3&lt;/a&gt;
+								&nbsp; &nbsp; &lt;/div&gt;
+								&lt;/div&gt;
+								&lt;div&gt; 
+								&nbsp; &nbsp; <span class="Color-warning Font-small">&lt;!--Carousel 이미지의 크기에 맞게 컨텐츠 영역을 style이나 css 를 추가해서 맞추어 주세요.
+								&nbsp; &nbsp; &nbsp; &nbsp; Carousel 전체에 대한 컨텐츠를 추가하고 싶을 때 이곳에 넣어줍니다.--&gt;</span>
+								&lt;/div&gt;
+							</code>
+						</pre>
+						<h6>Contents + Text All Rolling</h6>
+						<div class="Carousel" style="height:390px;" data-autoSlidemode="true" data-autoSlideDuration="5000">
+						    <div class="Scroller">
+						        <div class="Page">
+						            <img src="../images/carousel1.jpg">
+						            <div class="Font-default Margin-top-10" style="width:590px">
+										더그커팅을 "처음에는 하둡이 이렇게 성공할 줄 몰랐고, 실리콘밸리 외부 사람들이 하둡을 진지하게 받아들일 것이라고는 생각하지 못했다"며 "하둡은 현재 청년기에 접어들었고, 이는 오늘 이자리에 모인 여러분이 활동한 커뮤니티의 산물"이라고 소감을 밝혔다.
+									</div>
+						        </div>
+						        <div class="Page">
+						            <img src="../images/carousel3.jpg">
+						            <div class="Font-default Margin-top-10" style="width:590px">
+									 	행사 첫날, 신입사원들은 계룡산에 올랐다. 수통골에서 시작해 도덕봉-자타고개-금수봉-빈계산을 거쳐 수통골로 돌아오는 9km의 산길을 함께 돌며 신입사원으로서의 도전정신과 패기, 서로가 서로를 챙기는 팀워크의 의미를 되새겼다.
+									</div>
+						        </div>
+						        <div class="Page">
+						            <img src="../images/carousel2.jpg">
+						            <div class="Font-default Margin-top-10" style="width:590px">
+										This will provide some detailed information about the thumbnail board type. 
+										This will provide some detailed information about the thumbnail board type.This will provide some detailed information about the thumbnail board type.
+										This will provide some detailed information about the thumbnail board type.
+									</div>
+						        </div>
+						    </div>
+						    <a class="Prev"></a>
+   							<a class="Next"></a>
+						    <div class="Paging Mobile">
+						        <a class="Link">1</a>
+						        <a class="Link">2</a>
+						        <a class="Link">3</a>
+						    </div>
+						</div>
+						<pre class="pre-style">
+							<code>
+								&lt;div class="Carousel" data-autoSlidemode="true" data-autoSlideDuration="5000"&gt;
+								&nbsp; &nbsp; &lt;div class="Scroller"&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class="Page"&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="Color-warning Font-small">&lt;!-- Carousel 이미지의 크기에 맞게 컨텐츠 영역을 style이나 css 를 추가해서 맞추어 주세요.--&gt;</span>
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <span class="Color-warning Font-small">&lt;!-- Rolling되는 항목에 대한 내용을 각각 넣을 수 있습니다.--&gt;</span>
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;img src="이미지링크1"&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "이미지링크1"에 대한 내용을 추가해주세요.
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class="Page"&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;img src="이미지링크2"&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "이미지링크2"에 대한 내용을 추가해주세요.
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class="Page"&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;img src="이미지링크3"&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "이미지링크3"에 대한 내용을 추가해주세요.
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;
+								&nbsp; &nbsp; &lt;/div&gt;
+								&nbsp; &nbsp; &lt;a class="Prev"&gt;&lt;/a&gt;
+								&nbsp; &nbsp; &lt;a class="Next"&gt;&lt;/a&gt;
+								&nbsp; &nbsp; &lt;div class="Paging Mobile"&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &lt;a class="Link"&gt;1&lt;/a&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &lt;a class="Link"&gt;2&lt;/a&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &lt;a class="Link"&gt;3&lt;/a&gt;
+								&nbsp; &nbsp; &lt;/div&gt;
+								&lt;/div&gt;
+							</code>
+						</pre>
+						<h6 id="text-rolling">Text Rolling Banner</h6>
+						<div class="Carousel" style="width:270px; height: 180px; background: #e1e2e6" data-autoSlidemode="true" data-autoSlideDuration="5000">
+						    <div class="Scroller">
+						        <div class="Page Text-center Margin-top-15 Padding-left-20 Padding-right-20">
+						            <p class="Font-bold Font-big Color-warning">Creative ICT Factory</p> 
+						            <p>With superior technological prowess and industry insight</p>
+						        </div>
+						        <div class="Page Text-center Margin-top-15 Padding-left-20 Padding-right-20">
+						            <p class="Font-bold Font-big Color-success">IT Sector Activities</p> 
+						            <p>Website Construction for Non-Profit Organizations</p>
+						        </div>
+						        <div class="Page Text-center Margin-top-15 Padding-left-20 Padding-right-20">
+						            <p class="Font-bold Font-big Color-info">Age Group-Based IT Education</p> 
+						            <p>we are offering customized IT education programs</p>
+						        </div>
+						    </div>
+						    <div class="Paging Mobile">
+						        <a class="Link">1</a>
+						        <a class="Link">2</a>
+						        <a class="Link">3</a>
+						    </div>
+						</div>
+						<pre class="pre-style">
+							<code>
+								&lt;div class="Carousel" data-autoSlidemode="true" data-autoSlideDuration="5000"&gt;
+								&nbsp; &nbsp; &lt;div class="Scroller"&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class="Page"&gt; <span class="Color-warning Font-small">&lt;!--'이미지링크' 대신 텍스트 배너 방식으로도 적용 가능합니다. Markup 은 사용자가 원하는 대로 작성하면 됩니다.--&gt;</span>
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;Creative ICT Factory&lt;/p&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;With superior technological prowess and industry insight&lt;/p&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class="Page"&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;IT Sector Activities&lt;/p&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;Website Construction for Non-Profit Organizations&lt;/p&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class="Page"&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;Age Group-Based IT Education&lt;/p&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;p&gt;we are offering customized IT education programs&lt;/p&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;
+								&nbsp; &nbsp; &lt;/div&gt;
+								&nbsp; &nbsp; &lt;a class="Prev"&gt;&lt;/a&gt;
+								&nbsp; &nbsp; &lt;a class="Next"&gt;&lt;/a&gt;
+								&nbsp; &nbsp; &lt;div class="Paging Mobile"&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &lt;a class="Link"&gt;1&lt;/a&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &lt;a class="Link"&gt;2&lt;/a&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &lt;a class="Link"&gt;3&lt;/a&gt;
+								&nbsp; &nbsp; &lt;/div&gt;
+								&lt;/div&gt;
+							</code>
+						</pre>
+						<h6>Carousel Position Left + Text Position Right</h6>
+						<div class="Overflow-hid">
+							<div class="Float-left">
+								<div class="Carousel" style="width:272px; height: 200px;" data-autoSlidemode="true" data-autoSlideDuration="8000">
+								    <div class="Scroller">
+								        <div class="Page">
+								            <img src="../images/left-banner1.png">
+								        </div>
+								        <div class="Page">
+								            <img src="../images/left-banner2.png">
+								        </div>
+								        <div class="Page">
+								            <img src="../images/left-banner3.png">
+								        </div>
+								    </div>
+								    <div class="Paging Mobile">
+								        <a class="Link">1</a>
+								        <a class="Link">2</a>
+								        <a class="Link">3</a>
+								    </div>
+								</div>
+							</div>
+							<div class="Float-left Margin-left-20 Font-default" style="width:200px;">
+								Thumbnails Board Type Contents Subject Name This will provide some detailed information about the thumbnail board type.<br>
+								Thumbnails Board Type Contents Subject Name This will provide some detailed information about the thumbnail board type.
+							</div>
+						</div>
+						<pre class="pre-style">
+							<code>
+								&lt;div class="Overflow-hid"&gt; <span class="Font-small Color-warning">&lt;!--Float를 초기화 합니다. 'Overflow-hid'는 Helper css 입니다.--&gt;</span>
+								&nbsp; &nbsp; &lt;div class="Float-left"&gt; <span class="Font-small Color-warning">&lt;!--Carousel 부분과 Contents가 나란히 있을 수 있도록 일렬로 졍렬합니다.--&gt;</span>
+								&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class="Carousel" data-autoSlidemode="true" data-autoSlideDuration="8000"&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class="Scroller"&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class="Page"&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;img src="이미지링크1"&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class="Page"&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;img src="이미지링크2"&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class="Page"&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;img src="이미지링크3"&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;a class="Prev"&gt;&lt;/a&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;a class="Next"&gt;&lt;/a&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;div class="Paging Mobile"&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;a class="Link"&gt;1&lt;/a&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;a class="Link"&gt;2&lt;/a&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;a class="Link"&gt;3&lt;/a&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;
+								&nbsp; &nbsp; &lt;/div&gt;
+								&nbsp; &nbsp; &lt;div class="Float-left"&gt; <span class="Font-small Color-warning">&lt;!--'Float-left', 'Float-right'는 Helper css로 사용에 맞추어 적용해줍니다.--&gt;</span>
+								&nbsp; &nbsp; &nbsp; &nbsp; 왼쪽 carousel에 대한 내용 넣어주세요.
+								&nbsp; &nbsp; &lt;/div&gt;
+								&lt;/div&gt;
+							</code>
+						</pre>
+				    </div>
+				</div>
+				<!-- //two table end -->
+				<!-- //contents template end -->
+				<!-- footer start -->
+				<div class="Grid-sm-12 Margin-top-50 Padding-top-20 Padding-bottom-40" style="border-top: 1px solid #d8d8d8;">
+					<div class="Grid-sm-6">
+						<img class="Float-left" src="../images/sk-footer-logo.gif" alt="SK Holdings C&amp;C">
+						<p class="Float-left Margin-left-40 Margin-top-20 Font-default Color-default">26, Jong-ro, Jongno-gu, Seoul, 03188, Republic of Korea<br>COPYRIGHT&copy;2015 BY SK HOLDINGS CO., LTD. ALL RIGHTS RESERVED</p>
+					</div>
+					<div class="Grid-sm-6 Text-right Margin-top-15">
+						<ul class="Display-inblock List-style-none Font-default Margin-right-20">
+							<li class="Display-inblock"><a href="#0" class="Color-default Text-none">Terms and Conditions</a> | </li>
+							<li class="Display-inblock"><a href="#0" class="Color-default Text-none">Privacy</a> | </li>
+							<li class="Display-inblock"><a href="#0" class="Color-default Text-none">Sitemap</a></li>
+						</ul>
+						<select class="Display-inblock Select">
+							<option>Family site</option>
+						</select>
+					</div>
+				</div>
+				<!-- //footer end -->
+			</div>
+		</div>
+	</div>
+</body>
+</html>

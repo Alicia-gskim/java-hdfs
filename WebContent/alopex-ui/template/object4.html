@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<title>Alopex UI/UX 표준 Template Object</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<script src="/2.3/demo/UI-basic-template/script/app/biz/include-lib.js"></script>
+	<script src="/2.3/demo/UI-basic-template/script/app/biz/alopex-common.js"></script>
+	<style type="text/css">
+		.pre-style {
+			clear: both;
+			font-size: 12px;
+			white-space: pre-line;
+			margin-top: 10px;
+			padding: 0px 10px;
+			color: #555555;
+			background: #eeeeee;
+			border: 1px solid #d7dde3;
+			line-height: 16px;
+		}
+	</style>
+</head>
+<body class="Margin-0 Padding-0">
+	<div class="Width-100">
+		<!-- header -->
+		<div class="Bg-primary">
+			<div style="width: 1170px; height: 45px; margin: 0 auto">
+				<div class="Grid-sm-12">
+					<h1 class="Float-left Header-5"><a href="../main/ui-main-portal.html" class="Color-white Text-none">Alopex UI/UX 표준 Template</a></h1>
+					<ul class="Float-right Navmenu" style="z-index:101">
+					    <li><a href="../main/ui-main-portal.html">Main Sample</a>
+					        <ul>
+					            <li><a href="../main/ui-main-portal.html">Portal 형</a></li>
+					            <li><a href="../main/ui-main-workspace.html">Workspace 형</a></li>
+					        </ul>
+					    </li>
+					    <li><a href="basic1.html">Basic Template</a>
+					        <ul>
+					            <li><a href="basic1.html">Basic Type</a>
+					            	<ul>
+					            		<li><a href="basic1.html">1 Grid board</a></li>
+					            		<li><a href="basic2.html">Grid/Table/Tab 복합형</a></li>
+					            	</ul>
+					            </li>
+					            <li><a href="board1.html">게시판형</a>
+					                <ul>
+					                	<li><a href="board1.html">2 Grid board</a></li>
+					                	<li><a href="board2.html">Grid/Table 복합형</a></li>
+					                	<li><a href="board3.html">Grid/Table/Tree</a></li>
+					                	<li><a href="board4.html">Form/Chart 복합형</a></li>
+					                </ul>
+					            </li>
+					            <li><a href="table1.html">테이블형</a>
+					            	<ul>
+					            		<li><a href="table1.html">Table 내 Table</a></li>
+					            	</ul>
+					            </li>
+					            <li>
+					            	<a href="dialog1.html">Dialog &amp; Popup</a>
+					            	<ul>
+					            		<li><a href="dialog1.html">Dialog</a></li>
+					            		<li><a href="popup1.html">Popup</a></li>
+					            	</ul>
+					            </li>
+					            <li>
+					            	<a href="contents.html">컨텐츠</a>
+					            	<ul>
+					            		<li><a href="contents.html">컨텐츠 리스트형</a></li>
+					            	</ul>
+					            </li>
+					        </ul>
+					    </li>
+					    <li><a href="object1.html">Object Template</a>
+					    	<ul>
+					    		<li><a href="object1.html">Accordion Template</a></li>
+					    		<li><a href="object2.html">Button Template</a></li>
+					    		<li><a href="object3.html">Carousel</a></li>
+					    		<li><a href="object4.html">Paging</a></li>
+					    		<li><a href="object5.html">Progress bar</a></li>
+					    	</ul>
+					    </li>
+					    <li><a href="layout1.html">Layout Template</a>
+					    	<ul>
+					    		<li><a href="layout1.html">UI Grid Layout</a></li>
+					    		<li><a href="layout2.html">Search Box Template</a>
+					    		<li><a href="layout3.html">LNB Template</a></li>
+					    		<li><a href="layout4.html">Static Contents</a></li>
+					    		<li><a href="layout5.html">Footer Template</a></li>
+					    		<li><a href="layout6.html">Error Template</a></li>
+					    	</ul>
+					    </li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- //header -->
+		<div class="Grid-wrapper">
+			<h3 class="Header-4 Padding-bottom-10" style="border-bottom: 1px solid #d8d8d8">Object Template : Paging</h3>
+			<!-- Main Sample Start-->
+			<div class="Grid-sm-12">
+				<!-- left start -->
+				<div class="Grid-sm-3">
+					<div class="Margin-right-30">
+						<ul class="Accordion">
+					        <li><a href="object1.html">Accordion Template</a></li>
+				            <li><a href="object2.html">Button Template</a></li>
+				            <li><a href="object3.html">Carousel</a></li>
+				            <li><a href="object4.html">Paging</a></li>
+				            <li><a href="object5.html">Progress bar</a></li>
+					    </ul>
+				    </div>
+				</div>
+				<!-- //left end -->
+				<!-- contents template start -->
+				<div class="Grid-sm-9">
+					<div>
+						<div class="Padding-bottom-10 Margin-bottom-20" style="border-bottom: 1px solid #d8d8d8">
+							<h4 class="Margin-0">Paging : Type &amp; Position</h4>
+						</div>
+						<div class="Panel">
+							<div class="Panel-content">
+								<h5 class="Font-default Margin-0"><span class="Icon Exclamation-sign Margin-right-5 Display-inblock"></span><span class="Display-inblock">Typeb</span></h5>
+								<p>Typeb 를 사용할 경우 class 'Typeb'를 적용해줍니다.</p>
+								<h5 class="Font-default Margin-0"><span class="Icon Exclamation-sign Margin-right-5 Display-inblock"></span><span class="Display-inblock">Element 영역 나누기</span></h5>
+								<p>단순 Paging만이 아니라 element 를 한 줄에 넣고 싶은 경우 UI Layout Grid을 사용하여 원하는 영역으로 분활하여 줍니다.<br>
+								element가 비어있더라도 paging을 가운데로 두려면 UI Layout Grid를 그대로 유지하여 영역을 맞추어 줍니다.</p>
+							</div>
+						</div>
+						<h6>Paging</h6>
+						<div class="Paging" data-totalpage="19" data-button-behavior="disable">
+						    <a class="Link First"><span>첫페이지</span></a>
+						    <a class="Link Prev"><span>이전</span></a>
+						    <a class="Link">1</a>
+						    <a class="Link Selected">2</a>
+						    <a class="Link">3</a>
+						    <a class="Link Next"><span>다음</span></a>
+						    <a class="Link Last"><span>마지막페이지</span></a>
+						</div>
+						<h6>Paging Tybeb</h6>
+						<div class="Paging Typeb" data-totalpage="19" data-button-behavior="disable">
+						    <a class="Link First"><span>첫페이지</span></a>
+						    <a class="Link Prev"><span>이전</span></a>
+						    <a class="Link">1</a>
+						    <a class="Link Selected">2</a>
+						    <a class="Link">3</a>
+						    <a class="Link Next"><span>다음</span></a>
+						    <a class="Link Last"><span>마지막페이지</span></a>
+						</div>
+						<h6>Position : center</h6>
+						<div class="Text-center">
+							<div class="Paging" data-totalpage="19" data-button-behavior="disable">
+							    <a class="Link First"><span>첫페이지</span></a>
+							    <a class="Link Prev"><span>이전</span></a>
+							    <a class="Link">1</a>
+							    <a class="Link Selected">2</a>
+							    <a class="Link">3</a>
+							    <a class="Link Next"><span>다음</span></a>
+							    <a class="Link Last"><span>마지막페이지</span></a>
+							</div>
+						</div>
+						<h6>Position : right</h6>
+						<div class="Float-right Margin-bottom-10">
+							<div class="Paging" data-totalpage="19" data-button-behavior="disable">
+							    <a class="Link First"><span>첫페이지</span></a>
+							    <a class="Link Prev"><span>이전</span></a>
+							    <a class="Link">1</a>
+							    <a class="Link Selected">2</a>
+							    <a class="Link">3</a>
+							    <a class="Link Next"><span>다음</span></a>
+							    <a class="Link Last"><span>마지막페이지</span></a>
+							</div>
+						</div>
+						<pre class="pre-style">
+							<code>
+								&lt;div class="Text-center"&gt;
+								<span class="Font-small Color-warning">&lt;!--Paging의 Position을 center로 설정할 경우 &lt;div class="Text-center"&gt; 를 추가해주고
+								&nbsp; &nbsp; Position을 right로 설정할 경우 &lt;div class="Float-right"&gt; 를 추가해주세요.--&gt;</span>
+								&nbsp; &nbsp; &lt;div class="Paging" data-totalpage="19" data-button-behavior="disable"&gt;
+								&nbsp; &nbsp; <span class="Font-small Color-warning">&lt;!-- Paging Typeb : Paging의 또다른 디자인 적용 시 'Typeb'를 추가해줍니다.--&gt;</span>
+								&nbsp; &nbsp; &nbsp; &nbsp; &lt;a class="Link First"&gt;&lt;span&gt;첫페이지&lt;/span&gt;&lt;/a&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &lt;a class="Link Prev"&gt;&lt;span&gt;이전&lt;/span&gt;&lt;/a&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &lt;a class="Link"&gt;&lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &lt;a class="Link"&gt;&lt;span&gt;2&lt;/span&gt;&lt;/a&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &lt;a class="Link"&gt;&lt;span&gt;3&lt;/span&gt;&lt;/a&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &lt;a class="Link Next"&gt;&lt;span&gt;다음&lt;/span&gt;&lt;/a&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &lt;a class="Link Last"&gt;&lt;span&gt;마지막페이지&lt;/span&gt;&lt;/a&gt;
+								&nbsp; &nbsp; &lt;/div&gt;
+								&lt;/div&gt;
+							</code>
+						</pre>
+						<h6 class="Clearboth">Paging Layout</h6>
+						<div class="Grid-sm-12">
+							<div class="Grid-sm-3">
+								<select class="Select">
+									<option>1~10 Pages</option>
+									<option>11~20 Pages</option>
+									<option>21~30 Pages</option>
+								</select>
+							</div>
+							<div class="Grid-sm-6 Text-center">
+								<div class="Paging" data-totalpage="19" data-button-behavior="disable">
+								    <a class="Link First"><span>첫페이지</span></a>
+								    <a class="Link Prev"><span>이전</span></a>
+								    <a class="Link">1</a>
+								    <a class="Link Selected">2</a>
+								    <a class="Link">3</a>
+								    <a class="Link Next"><span>다음</span></a>
+								    <a class="Link Last"><span>마지막페이지</span></a>
+								</div>
+							</div>
+							<div class="Grid-sm-3 Text-right">
+								<input class="Textinput Width-20"><span class="Font-default Margin-right-10"> / 1000</span><button class="Button">이동</button>
+							</div>
+						</div>
+						<h6 class="Clearboth Padding-top-20">Paging Layout : 왼쪽 Element 가 비어있는 경우</h6>
+						<div class="Grid-sm-12">
+							<div class="Grid-sm-3">
+								
+							</div>
+							<div class="Grid-sm-6 Text-center">
+								<div class="Paging" data-totalpage="19" data-button-behavior="disable">
+								    <a class="Link First"><span>첫페이지</span></a>
+								    <a class="Link Prev"><span>이전</span></a>
+								    <a class="Link">1</a>
+								    <a class="Link Selected">2</a>
+								    <a class="Link">3</a>
+								    <a class="Link Next"><span>다음</span></a>
+								    <a class="Link Last"><span>마지막페이지</span></a>
+								</div>
+							</div>
+							<div class="Grid-sm-3 Text-right">
+								<input class="Textinput Width-20"><span class="Font-default Margin-right-10"> / 1000</span><button class="Button">이동</button>
+							</div>
+						</div>
+						<h6 class="Clearboth Padding-top-20">Paging Layout : 오른쪽 element가 비어있는 경우</h6>
+						<div class="Grid-sm-12 Margin-bottom-20">
+							<div class="Grid-sm-3">
+								<select class="Select">
+									<option>1~10 Pages</option>
+									<option>11~20 Pages</option>
+									<option>21~30 Pages</option>
+								</select>
+							</div>
+							<div class="Grid-sm-6 Text-center">
+								<div class="Paging" data-totalpage="19" data-button-behavior="disable">
+								    <a class="Link First"><span>첫페이지</span></a>
+								    <a class="Link Prev"><span>이전</span></a>
+								    <a class="Link">1</a>
+								    <a class="Link Selected">2</a>
+								    <a class="Link">3</a>
+								    <a class="Link Next"><span>다음</span></a>
+								    <a class="Link Last"><span>마지막페이지</span></a>
+								</div>
+							</div>
+							<div class="Grid-sm-3"></div>
+						</div>
+						<pre class="pre-style">
+							<code>
+								<span class="Font-small Color-warning">&lt;!-- UI Layout Grid를 3columns / 6columns / 3columns 로 나누어 적용하였습니다. --&gt;</span>
+								&lt;div class="Grid-sm-12"&gt;
+								&nbsp; &nbsp; &lt;div class="Grid-sm-3"&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &lt;select class="Select"&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;option&gt;1~10 Pages&lt;/option&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;option&gt;11~20 Pages&lt;/option&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;option&gt;21~30 Pages&lt;/option&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &lt;/select&gt;
+								&nbsp; &nbsp; &lt;/div&gt;
+								&nbsp; &nbsp; &lt;div class="Grid-sm-6 Text-center"&gt;
+								&nbsp; &nbsp; <span class="Font-small Color-warning">&lt;!-- 가운데 Paging 부분을 6columns에서 중앙에 위치하도록 하기 위해서 class 'Text-center'를 추가하였습니다. --&gt;</span>
+								&nbsp; &nbsp; &nbsp; &nbsp; &lt;div class="Paging" data-totalpage="19" data-button-behavior="disable"&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;a class="Link First"&gt;&lt;span&gt;첫페이지&lt;/span&gt;&lt;/a&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;a class="Link Prev"&gt;&lt;span&gt;이전&lt;/span&gt;&lt;/a&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;a class="Link"&gt;&lt;span&gt;1&lt;/span&gt;&lt;/a&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;a class="Link"&gt;&lt;span&gt;2&lt;/span&gt;&lt;/a&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;a class="Link"&gt;&lt;span&gt;3&lt;/span&gt;&lt;/a&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;a class="Link Next"&gt;&lt;span&gt;다음&lt;/span&gt;&lt;/a&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;a class="Link Last"&gt;&lt;span&gt;마지막페이지&lt;/span&gt;&lt;/a&gt;
+								&nbsp; &nbsp; &nbsp; &nbsp; &lt;/div&gt;
+								&nbsp; &nbsp; &lt;/div&gt;
+								&nbsp; &nbsp; &lt;div class="Grid-sm-3 Text-right"&gt;
+								&nbsp; &nbsp; <span class="Font-small Color-warning">&lt;!-- 오른쪽 element 부분을 오른쪽으로 완전히 붙이기 위해서 class 'Text-right'를 추가하였습니다.--&gt;</span>
+								&nbsp; &nbsp; &nbsp; &nbsp; &lt;input class="Textinput"&gt;&lt;span&gt;/ 1000&lt;/span&gt;&lt;button class="Button"&gt;이동&lt;/button&gt;
+								&nbsp; &nbsp; &lt;/div&gt;
+								&lt;/div&gt;
+								
+								* 각 column에 내용이 없더라도 Paging을 중앙에 위치하도록 하려면 내용만 비워두고 UI Layout Grid 형식은 그대로 유지하여 줍니다.
+							</code>
+						</pre>
+				    </div>
+				</div>
+				<!-- //two table end -->
+				<!-- //contents template end -->
+				<!-- footer start -->
+				<div class="Grid-sm-12 Margin-top-50 Padding-top-20 Padding-bottom-40" style="border-top: 1px solid #d8d8d8;">
+					<div class="Grid-sm-6">
+						<img class="Float-left" src="../images/sk-footer-logo.gif" alt="SK Holdings C&amp;C">
+						<p class="Float-left Margin-left-40 Margin-top-20 Font-default Color-default">26, Jong-ro, Jongno-gu, Seoul, 03188, Republic of Korea<br>COPYRIGHT&copy;2015 BY SK HOLDINGS CO., LTD. ALL RIGHTS RESERVED</p>
+					</div>
+					<div class="Grid-sm-6 Text-right Margin-top-15">
+						<ul class="Display-inblock List-style-none Font-default Margin-right-20">
+							<li class="Display-inblock"><a href="#0" class="Color-default Text-none">Terms and Conditions</a> | </li>
+							<li class="Display-inblock"><a href="#0" class="Color-default Text-none">Privacy</a> | </li>
+							<li class="Display-inblock"><a href="#0" class="Color-default Text-none">Sitemap</a></li>
+						</ul>
+						<select class="Display-inblock Select">
+							<option>Family site</option>
+						</select>
+					</div>
+				</div>
+				<!-- //footer end -->
+			</div>
+		</div>
+	</div>
+</body>
+</html>
