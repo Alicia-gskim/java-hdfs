@@ -186,7 +186,7 @@ public class JavaHdfsService {
 //		result = "Dir : " + dirName + " delete fail!";
 //	    }
 	    
-//	    fs.delete(path, true);
+	    fs.delete(path, true);
 	    fs.close();
 	} catch (IOException e) {
 	    result = e.getMessage();
