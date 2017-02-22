@@ -1,22 +1,37 @@
 package com.hdfs.service;
 
+import java.io.BufferedInputStream;
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
 import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.FSDataOutputStream;
 import org.apache.hadoop.fs.FileStatus;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
+
+import com.hdfs.utils.CustomDataFormatter;
 
 @Service
 public class JavaHdfsService {
+    
+    @Autowired
+    private CustomDataFormatter customDataFormatter;
     
     private Configuration conf = new Configuration();
     
@@ -39,22 +54,20 @@ public class JavaHdfsService {
         
         Map<String, Object> resMap = new HashMap<String, Object>();
         
+        FileSystem hdfs = null;
         List<String> detailPathArr = new ArrayList<String>();
-        FileSystem fs = null;
         BufferedReader br = null;
         List<String> listStr = new ArrayList<String>();
         
         try{
-            fs = FileSystem.get(conf);
-            
             Path path = new Path(hdfsDirPath);
             
-            FileSystem hdfs = FileSystem.get(new URI(defaultPath), conf);
+            hdfs = FileSystem.get(new URI(defaultPath), conf);
             FileStatus[] fileStatus = hdfs.listStatus(path);
             
             if(hdfs.isFile(path)){
                 
-                br = new BufferedReader(new InputStreamReader(fs.open(path)));
+                br = new BufferedReader(new InputStreamReader(hdfs.open(path)));
                 String str1 = null;
                 while((str1 = br.readLine()) != null){
                     listStr.add(str1);
@@ -101,7 +114,7 @@ public class JavaHdfsService {
                 resMap.put("parentPath", parentPath);
                 resMap.put("fullPath", fullPath);
                 
-                fs.close();
+                hdfs.close();
             } else {
         	// 폴더내 목록이 없는 경우
         	String parentPath = hdfsDirPath.substring(hdfsDirPath.indexOf("/"), hdfsDirPath.lastIndexOf("/"));
@@ -123,7 +136,7 @@ public class JavaHdfsService {
             resMap.put("parentPath", parentPath);
             resMap.put("fullPath", hdfsDirPath);
             
-            fs.close();
+            hdfs.close();
         }
         
         return resMap;
@@ -137,14 +150,15 @@ public class JavaHdfsService {
      * @param dirName	하둡의 경로
      * @return		success, fail 결과 msg
      */
-    public String mkdirService(String dirName){
+    public String hdfsMkdirService(String dirName) throws Exception {
 	conf.set("fs.defaultFS", defaultPath);
 	String result = "";
+	FileSystem fs = null;
 	
 	System.out.println("create Directory Name : " + dirName);
 	
 	try{
-	    FileSystem fs = FileSystem.get(conf);
+	    fs = FileSystem.get(conf);
 	    Path path = new Path(dirName);
 	    
 	    result = "Dir : " + dirName + " create success!";
@@ -158,38 +172,125 @@ public class JavaHdfsService {
 	    fs.close();
 	} catch (IOException e) {
 	    result = e.getMessage();
+	    fs.close();
 	}
 	
 	return result;
     }
     
     /**
-     * 하둡경로 폴더 삭제
+     * 하둡경로 폴더/파일 삭제
      * 
      * @param conf	접속할 하둡의 hostname+port 값
      * @param dirName	하둡의 경로
      * @return		success, fail 결과 msg
      */
-    public String deldirService(String dirName) {
+    public String hdfsDeleteService(String dirName) throws Exception {
 	conf.set("fs.defaultFS", defaultPath);
 	String result = "";
+	FileSystem fs = null;
 	
 	System.out.println("delete Directory Name : " + dirName);
 	
 	try{
-	    FileSystem fs = FileSystem.get(conf);
+	    fs = FileSystem.get(conf);
 	    Path path = new Path(dirName);
 	    
-	    result = "Dir : " + dirName + " delete success!";
-//	    if(fs.exists(path)){
-//		System.out.println("Dir : " + dirName + " delete fail!");
-//		result = "Dir : " + dirName + " delete fail!";
-//	    }
+	    if(fs.isDirectory(path)) {
+		result = "Dir : " + dirName + " delete success!";
+	    } else {
+		result = "File : " + dirName + " delete success!";
+	    }
 	    
 	    fs.delete(path, true);
 	    fs.close();
 	} catch (IOException e) {
 	    result = e.getMessage();
+	    fs.close();
+	}
+	
+	return result;
+    }
+    
+    /**
+     * 하둡 경로에 파일 업로드
+     *  - 추가하고자 하는 파일 목록을 이동한 하둡 폴더 경로에 저장
+     *  - JavaHdfs 의 copyFromLocalFile(srcPath, dstPath) 메소드를 이용한 업로드
+     *  
+     * @param srcPath		저장할 파일이 있는 로컬 경로
+     * @param dstPath		파일을 저장할 하둡의 경로
+     * @return			저장한 결과 값(int)
+     * @throws URISyntaxException 
+     */
+    public String hdfsPutFilesService(String uploadPath, MultipartHttpServletRequest mReq) throws Exception {
+	conf.set("fs.defaultFS", defaultPath);
+	
+	FileSystem fs = null;
+	FSDataOutputStream out = null;
+	InputStream in = null;
+	
+	String result = "";
+	String saveFileName = "";
+	
+	try {
+	    String psyicPath = "/upload/";
+	    File dir = new File(psyicPath);
+	    
+	    //물리 경로 생성(하둡 경로에 업로드할 파일의 내용을 읽어오기 위함)
+	    if(!dir.isDirectory()) {
+		dir.mkdirs();
+	    }
+	    Iterator<String> iterator = mReq.getFileNames();
+	    while(iterator.hasNext()) {
+		String psyicFileName = iterator.next();
+		MultipartFile mFile = mReq.getFile(psyicFileName);
+		String originFileName = mFile.getOriginalFilename();
+		
+		String ext = originFileName.substring(originFileName.indexOf("."), originFileName.length());
+		String name = originFileName.substring(0, originFileName.indexOf("."));
+		String finalName = "";
+		if(name.matches("[^0-9]")) {
+		    int num = Integer.parseInt(name.replaceAll("[^0-9]", ""));
+		    String newName = name.replaceAll("[0-9]", "").concat(String.valueOf(num+1));
+		    finalName = customDataFormatter.customDateFormatter(newName);
+		} else {
+		    finalName = customDataFormatter.customDateFormatter(name);
+		}
+		
+		saveFileName = finalName.concat(ext);
+		
+		if(saveFileName != null && !saveFileName.equals("")) {
+		    
+		    // 한글 깨짐으로 인한 인코딩 값 셋팅
+		    saveFileName = new String(saveFileName.getBytes("8859_1"), "EUC-KR");
+		    try {
+			mFile.transferTo(new File(psyicPath + saveFileName));
+		    }catch(Exception e) {
+			e.printStackTrace();
+		    }
+		}
+	    }
+	
+	    fs = FileSystem.get(new URI(defaultPath), conf);
+	    Path path = new Path(uploadPath + "/" + saveFileName);
+	    
+	    //하둡경로에 생성한 파일을 OutputStream에 저장(업로드하는 파일의 내용을 저장히기 위함)
+	    out = fs.create(path);
+	    
+	    in = new BufferedInputStream(new FileInputStream(psyicPath + saveFileName));
+	    int readBuffer = 0;
+	    byte[] buffer = new byte[512];
+	    while((readBuffer = in.read(buffer)) != -1) {
+		out.write(buffer, 0, readBuffer);
+	    }
+	    result = "File created successfully in HDFS "+ fs.getFileChecksum(path);
+	    
+	} catch(IOException e) {
+	    result = e.getMessage();
+	} finally {
+	    if(in != null) { in.close(); }
+	    if(out != null) { out.close(); }
+	    if(fs != null) { fs.close(); }
 	}
 	
 	return result;

@@ -45,5 +45,20 @@
 	    <div id="valueFrame" class="bottom_panel"></div>
 	</div>
 	
+	<div id="upload_area" style="float:left; width:100%;">
+		<center>
+			<h4>The subfunction allows you can upload</h4>
+			<h4>the file to the desired path</h4>
+		</center>
+		<div id="fileuploader" class="Fileupload" data-selectType="advance" ></div>
+		<div>
+			<div class="Float-right Margin-top-5">
+				<button id="startUpload" class="Button Confirm"> startUpload </button>
+				<button id="stopUpload" class="Button Danger"> stopUpload </button>
+				<button id="cancelAll" class="Button Warning"> cancelAll </button>
+			</div>
+		</div>
+	</div>
+	
 </body>
 </html>

@@ -1,6 +1,7 @@
 /**
  * http://usejsdoc.org/
  */
+var uploadPath = "/";
 
 $a.page(function(){
 	
@@ -12,7 +13,98 @@ $a.page(function(){
 		
 		// 최초 root 목록 생성을 위한 함수 호출
 		hdfsAjax('/hdfsInfo');
+		
+		$('#upload_area').show();
+		
+		// 파일 업로드 - 멀티
+		var uploadObj = $("#fileuploader").setOptions({
+	        url : '/hdfsPutFiles',
+	        fileName : 'uploadFiles',
+//	        maxFileSize : 1000000,
+	        showFileCounter : true,
+	        showDone: false,
+	        formData : {
+	        	uploadPath : uploadPath
+	        },
+	        onLoad : function(obj){
+	        	console.log("onload : " + obj);
+	        	var addFormTag = "<form id='infoFilesForm' method='POST' enctype='multipart/form-data'></form>";
+	        	$('#upload_area').after(addFormTag);
+	        },
+	        onSelect : function(files) {
+	        	var addFormTag = "";
+	        	for(var i=0; i < files.length; i++){
+	        		addFormTag += "	<div name='"+ files[i].name +"'>";
+	        		addFormTag += "		<input type='hidden' name='"+ files[i].name +"' value='"+ files[i].name +"'/>";
+	        		addFormTag += "		<input type='hidden' name='"+ files[i].size +"' value='"+ files[i].size +"'/>";
+	        		addFormTag += "	</div>";
+	        		
+	        		var fileInfo = files[i].name + " (" + files[i].size + "Byte)";
+	        		console.log(fileInfo);
+	        	}
+	        	
+	        	$('#infoFilesForm').append(addFormTag);
+	        	
+	        	return true;
+	        	// return false; / 리턴 값이 false 일 경우, 선택 취소
+	        },
+	        onSubmit : function(files, xhr) {
+	        	// startUpload() 이 호출되면 실행됨
+	        	console.log("Submit File : " + files);
+	        	console.log("Submit : " + xhr);
+	        	
+	        	$('#infoFilesForm').html("");
+	        	// return false; // 리턴 값이 false 일 경우, 전송 중단
+	        },
+	        onError : function(files, status, errMsg, pd) {
+	        	var errorInfo = files+" / "+status+" / "+errMsg;
+	        	alert(errorInfo);
+	        },
+	        onCancel : function(files, pd) {
+	        	var cancelInfo = "Cancel File : "+files;
+	        	console.log(cancelInfo);
+	        	$('div[name="'+ files +'"]').detach();
+	        },
+	        onSuccess : function(files,data,xhr,pd){
+	        	console.log(files);
+	        	console.log(data);
+	        	console.log(xhr);
+	        	console.log(pd);
+	        	if($('#rootLi').length > 0){
+	        		var data = { data: $('#rootLi a')[0].name };
+	        		hdfsAjax('/hdfsInfo', data);
+	        	} else {
+	        		hdfsAjax('/hdfsInfo');
+	        	}
+	        },
+	        deleteCallback: function(fileInfo, pd){
+	        	$a.request('/delete', {
+	        		data : {'fileName': fileInfo.name},
+	        		success: function(res){
+	        			pd.statusbar.hide();
+	        			console.log(res.fileName + "삭제 성공");
+	        		}
+	        	});
+	        },
+	        downloadCallback: function(fileInfo, pd){
+	        	console.log(fileInfo);
+	        	console.log(pd);
+	        }
+		});
 	};
+	
+	// fileupload 시작
+	$(document).on('click', '#startUpload', function(){
+         $("#fileuploader").startUpload();
+	});
+	// fileupload 중단
+	$(document).on('click', '#stopUpload', function(){
+        $("#fileuploader").stopUpload();
+	});
+	// fileupload 파일목록 전부 취소(목록 삭제)
+	$(document).on('click', '#cancelAll', function(){
+        $("#fileuploader").cancelAll();
+	});
 
 	// 경로 이동
 	$(document).on('click', 'a', function() {
@@ -24,10 +116,12 @@ $a.page(function(){
 				data = {
 						data: "/" + this.name
 				};
+				
 			} else { // 여러 depth이거나, 파일을 선택했을 때
 				data = {
 						data: $('#rootLi a')[0].name + "/" + this.name
 				};
+				
 			}
 		} else { //2. 상위 경로 이동
 			data = {
@@ -42,9 +136,11 @@ $a.page(function(){
 			if(this.name.indexOf(".") != -1){
 				//파일을 선택했을 경우
 				$('#showPath').hide();
+				$('#upload_area').hide();
 			} else {
 				//폴더를 선택했을 경우
 				$('#showPath').show();
+				$('#upload_area').show();
 				
 				// 상단에 현재 접속한 경로 표시
 				var showAreaTag = '';
@@ -85,7 +181,22 @@ $a.page(function(){
 				//root인 경우
 				$('#showPath').hide();
 			}
+			
+			$('#upload_area').show();
 		}
+		
+		$('#fileuploader').cancelAll();
+		
+		// -------------------------업로드할 하둡 경로 변경
+		uploadPath = data.data;
+		console.log("move dept : " + uploadPath);
+		
+		$('#fileuploader').setOptions({
+			formData: {
+				uploadPath : uploadPath
+			}
+		});
+		// -------------------------업로드할 하둡 경로 변경
 	});
 	
 	function hdfsAjax(url, data){
@@ -155,6 +266,17 @@ $a.page(function(){
 			}
 		});
 	};
+	
+	function comparePathFunc(){
+		var createPath = "";
+		if($('#rootLi').length != 0){
+			createPath = $('input[name=parentPath]').val();
+		} else {
+			createPath = "/";
+		}
+		
+		return createPath;
+	}
 	
 	// 폴더 생성
 	$(document).on('click', '#addDir', function() {
@@ -228,6 +350,7 @@ $a.page(function(){
 		}
 	});
 	
+	// 화면 새로고침
 	function reloadFunc(){
 		var reloadPath = {};
 		if($('#rootLi').length != 0){
@@ -242,7 +365,7 @@ $a.page(function(){
 		
 		// 입력상자 초기화
 		$('#dirName').val("");
-		// 입력상자 초기화
+		// 선택상자 초기화
 		$('#dirName').selectionInitialization();
 	}
 });

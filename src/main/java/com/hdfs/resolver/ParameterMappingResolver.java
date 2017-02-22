@@ -24,8 +24,9 @@ public class ParameterMappingResolver implements HandlerMethodArgumentResolver {
 	    String key = (String)enumeration.nextElement();
 	    String[] values = webRequest.getParameterValues(key);
 	    if(values != null){
-		requestMap.put(key, (values.length <= 1) ? ((Object)(values[0])) : ((Object)(values)));
+//		requestMap.put(key, (values.length <= 1) ? ((Object)(values[0])) : ((Object)(values)));
 //		requestMap.put(key, (values.length <= 1) ? values : values[0]);
+		requestMap.put(key, (values.length > 1) ? values: values[0] );
 	    }
 	}
 	return requestMap;
