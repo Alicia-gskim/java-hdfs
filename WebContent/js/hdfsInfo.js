@@ -6,6 +6,7 @@ var uploadPath = "/";
 $a.page(function(){
 	
 	this.init = function(id, param){
+		$('input[name=fullPath').val(uploadPath);
 		console.log("id : " + id);
 		console.log("param : " + param);
 		
@@ -21,7 +22,6 @@ $a.page(function(){
 	        url : '/hdfsPutFiles',
 	        fileName : 'uploadFiles',
 //	        maxFileSize : 1000000,
-	        showFileCounter : true,
 	        showDone: false,
 	        formData : {
 	        	uploadPath : uploadPath
@@ -45,8 +45,6 @@ $a.page(function(){
 	        	
 	        	$('#infoFilesForm').append(addFormTag);
 	        	
-	        	return true;
-	        	// return false; / 리턴 값이 false 일 경우, 선택 취소
 	        },
 	        onSubmit : function(files, xhr) {
 	        	// startUpload() 이 호출되면 실행됨
@@ -54,7 +52,6 @@ $a.page(function(){
 	        	console.log("Submit : " + xhr);
 	        	
 	        	$('#infoFilesForm').html("");
-	        	// return false; // 리턴 값이 false 일 경우, 전송 중단
 	        },
 	        onError : function(files, status, errMsg, pd) {
 	        	var errorInfo = files+" / "+status+" / "+errMsg;
@@ -66,10 +63,9 @@ $a.page(function(){
 	        	$('div[name="'+ files +'"]').detach();
 	        },
 	        onSuccess : function(files,data,xhr,pd){
-	        	console.log(files);
-	        	console.log(data);
-	        	console.log(xhr);
-	        	console.log(pd);
+	        	var resMsg = data.msg;
+	        	alert(resMsg);
+	        	
 	        	if($('#rootLi').length > 0){
 	        		var data = { data: $('#rootLi a')[0].name };
 	        		hdfsAjax('/hdfsInfo', data);
@@ -85,12 +81,47 @@ $a.page(function(){
 	        			console.log(res.fileName + "삭제 성공");
 	        		}
 	        	});
-	        },
-	        downloadCallback: function(fileInfo, pd){
-	        	console.log(fileInfo);
-	        	console.log(pd);
+	        }
+	        ,downloadCallback: function(fileInfo, pd){
+	        	$('#fileuploader').setOptions({
+	        		onLoad: function(obj){
+//	        			$a.request('/download', {
+//	        				type: 'post',
+//	        				url: '/hdfsDownloadFile',
+//	        				data: {
+//	        					data: fileInfo.fileList[0]
+//	        				},
+//	        				success: function(res){
+//	        					alert("downloadCallback : " + res);
+//	        				}
+//	        			});
+	        			$.ajax({
+	        				url: '/hdfsDownloadFile',
+	        	    		type: 'post',
+	        	    		dataType: 'json',
+	        	    		data: {
+	        	    			data: fileInfo.fileList[0]
+	        	    		},
+	        	    		success: function(res){
+	        	    			alert("downloadCallback : " + res);
+	        	    		}
+	        	    	});
+	        		}
+	        	});
+//	        	$a.request('/download', {
+//	        		type: 'post',
+//	        		url: '/hdfsDownloadFile',
+//	        		data : {
+//	        			data: fileInfo.fileList[0]
+//	        		},
+//	        		success : function(res){
+//	        			alert(res);
+//	        		}
+//	        	});
+//	        	fileDownAjax(, data);
 	        }
 		});
+		
 	};
 	
 	// fileupload 시작
@@ -105,6 +136,20 @@ $a.page(function(){
 	$(document).on('click', '#cancelAll', function(){
         $("#fileuploader").cancelAll();
 	});
+	// fileupload 파일목록 다운로드(단일)
+//	$(document).on('click', 'button.download', function(){
+//		console.log(this);
+//		$.ajax('/hdfsDownloadFile', {
+//    		type: 'post',
+//    		dataType: 'json',
+//    		data: {
+//    			data: fileInfo.fileList[0]
+//    		},
+//    		success: function(res){
+//    			alert(res);
+//    		}
+//    	});
+//	});
 
 	// 경로 이동
 	$(document).on('click', 'a', function() {
@@ -129,6 +174,7 @@ $a.page(function(){
 			};
 		}
 		
+		$('input[name=fullPath').val(data.data);
 		hdfsAjax('/hdfsInfo',data);
 		
 		if(this.text != ".."){
@@ -185,11 +231,8 @@ $a.page(function(){
 			$('#upload_area').show();
 		}
 		
-		$('#fileuploader').cancelAll();
-		
 		// -------------------------업로드할 하둡 경로 변경
 		uploadPath = data.data;
-		console.log("move dept : " + uploadPath);
 		
 		$('#fileuploader').setOptions({
 			formData: {
@@ -267,15 +310,19 @@ $a.page(function(){
 		});
 	};
 	
-	function comparePathFunc(){
-		var createPath = "";
-		if($('#rootLi').length != 0){
-			createPath = $('input[name=parentPath]').val();
-		} else {
-			createPath = "/";
-		}
-		
-		return createPath;
+	function fileDownAjax(url, data){
+		$.ajax({
+			type: 'POST',
+			url : url,
+			data : data,
+//			dataType: 'json',
+			error : function(e){
+				console.log(e);
+			},
+			success : function(res){
+				console.log(res);
+			}
+		});
 	}
 	
 	// 폴더 생성
@@ -314,7 +361,7 @@ $a.page(function(){
 		}
 	});
 	
-	// 폴더 삭제
+	// 폴더, 파일 삭제
 	$(document).on('click', '#delDir', function(){
 		var selPath = $('#cnt_dirName').getTexts()[0];
 		if(selPath != "선택"){
@@ -348,6 +395,16 @@ $a.page(function(){
 		} else {
 			alert("값을 선택하세요!");
 		}
+	});
+	
+	// 다운로드
+	$(document).on('click', '#downBtn', function(fileInfo, pd){
+		console.log(fileInfo);
+		console.log(pd);
+//		$a.requuest('/hdfsDown""loadFile', {
+			
+		//});
+		
 	});
 	
 	// 화면 새로고침

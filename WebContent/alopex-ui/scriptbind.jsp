@@ -22,3 +22,11 @@
 
 <script type="text/javascript" src="alopex-ui/alopex/script/alopex-common.js"></script>
 <script type="text/javascript" src="alopex-ui/alopex/script/defiant.min.js"></script>
+
+<script type="text/javascript" src="jquery-ui/js/cors/jquery.xdr-transport.js"></script>
+<script type="text/javascript" src="jquery-ui/js/vendor/jquery.ui.widget.js"></script>
+
+<script type="text/javascript" src="jquery-ui/js/jquery.fileupload.js"></script>
+<script type="text/javascript" src="jquery-ui/js/jquery.iframe-transport.js"></script>
+
+<!-- <script data-main="scripts/main" src="js/require.js"></script> -->

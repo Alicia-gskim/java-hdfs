@@ -10,8 +10,10 @@
 		<script src="alopex-ui/alopex/script/jquery/jquery-1.11.3.js"></script>
 		<%@ include file="/alopex-ui/cssbind.jsp" %>
 		<%@ include file="/alopex-ui/scriptbind.jsp" %>
+		
 		<script type="text/javascript" src="js/hdfsInfo.js"></script>
-	
+<!-- 		<script type="text/javascript" src="js/fileupload.js"></script> -->
+		
 	</head>
 	
 
@@ -24,10 +26,11 @@
 	
 	<div style="display:none;">
 		<input type="text" name="parentPath" >
+		<input type="text" name="fullPath" >
 	</div>
 	
-	<div style="line-height: 30px; margin-bottom: 10px;">
-		<div id="groupBtn" class="Margin-bottom-10" style="float:right !important;">
+	<div style="line-height: 30px;">
+		<div id="groupBtn" class="Margin-bottom-40" style="float:right !important;">
 			<div style="float:right !important;">
 				<label>폴더명: <input id="dirName" class="Textinput" placeholder="값을 입력하세요."></label>
 				<button id="addDir" name="/mkdir" class="Button">ADD</button>
@@ -50,15 +53,42 @@
 			<h4>The subfunction allows you can upload</h4>
 			<h4>the file to the desired path</h4>
 		</center>
+		
 		<div id="fileuploader" class="Fileupload" data-selectType="advance" ></div>
-		<div>
-			<div class="Float-right Margin-top-5">
-				<button id="startUpload" class="Button Confirm"> startUpload </button>
-				<button id="stopUpload" class="Button Danger"> stopUpload </button>
-				<button id="cancelAll" class="Button Warning"> cancelAll </button>
-			</div>
+
+		<div class="Float-right Margin-top-5">
+			<button id="startUpload" class="Button Confirm"> startUpload </button>
+			<button id="stopUpload" class="Button Danger"> stopUpload </button>
+			<button id="cancelAll" class="Button Warning"> cancelAll </button>
 		</div>
 	</div>
+	
+	<script id="template-upload" type="text/x-tmpl">
+{%=fileList%}
+		{% for (var i=0, file; file=o.files[i]; i++) { %}
+    		<tr class="template-upload fade">
+        		<td>
+            		<span class="preview"></span>
+        		</td>
+        		<td>
+		            <p class="name">{%=file.name%}</p>
+            		<strong class="error"></strong>
+        		</td>
+        		<td>
+            		<p class="size">Processing...</p>
+	            	<div class="progress"></div>
+        		</td>
+        		<td>
+            		{% if (!i && !o.options.autoUpload) { %}
+                		<button class="start" disabled>Start</button>
+            		{% } %}
+            		{% if (!i) { %}
+                		<button class="cancel">Cancel</button>
+            		{% } %}
+        		</td>
+    		</tr>
+		{% } %}
+		</script>
 	
 </body>
 </html>

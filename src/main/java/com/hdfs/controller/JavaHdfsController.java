@@ -1,7 +1,7 @@
 package com.hdfs.controller;
 
+import java.io.File;
 import java.net.URISyntaxException;
-import java.util.Iterator;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -11,7 +11,7 @@ import org.apache.hadoop.conf.Configuration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -117,50 +117,40 @@ public class JavaHdfsController {
      * @throws URISyntaxException 
      */
     @RequestMapping(value = "/hdfsPutFiles")
-    public ModelAndView hdfsPutFiles(Object requestMap, HttpServletRequest request) throws Exception {
+    public ModelAndView hdfsPutFiles(Object requestMap, MultipartHttpServletRequest request, HttpServletResponse response) throws Exception {
 	Map<String, Object> pMap = (Map<String, Object>) requestMap;
 	String uploadPath = (String) pMap.get("uploadPath");
 	
-	MultipartHttpServletRequest multipartHttpServletRequest = (MultipartHttpServletRequest) request;
-	String result = javaHdfsService.hdfsPutFilesService(uploadPath, multipartHttpServletRequest);
+	Map<String, Object> result = javaHdfsService.hdfsPutFilesService(uploadPath, request);
 	
 	ModelAndView mav = new ModelAndView("jsonView");
 	
-	mav.addObject("result", result);
-	
-	return mav;
-    }
-    
-    /**
-     * 하둡 경로에 업로드한 파일 삭제
-     *  - 단일 삭제만 가능
-     *  - 폴더 삭제 불가! 파일만 삭제 가능
-     * 
-     * @param request
-     * @return
-     * @throws Exception
-     */
-    public ModelAndView hdfsRemoveFile(Object requestMap, HttpServletRequest request) throws Exception {
-	Map<String, Object> pMap = (Map<String, Object>) requestMap;
-	String dirName = (String) pMap.get("data");
-	
-	String result = javaHdfsService.hdfsDeleteService(dirName);
-	
-	ModelAndView mav = new ModelAndView("jsonView");
-	mav.addObject("msg", result);
+	mav.addObject("msg", result.get("msg"));
+	mav.addObject("fileList", result.get("fileList"));
 	
 	return mav;
     }
     
     /**
      * 하둡 경로의 파일 다운로드
-     *  - JavaHdfs의 {???} 메소드를 이용한 다운로드
+     *  - JavaHdfs의 copyFromLocal 메소드를 이용한 다운로드
      * 
      * @param requestMap	하둡경로, 다운로드할 파일명
      * @return			다운로드 결과 값
      */
-    public ModelAndView hdfsGetFiles(Object requestMap, HttpServletResponse response) {
-	ModelAndView mav = new ModelAndView("jsonView");
+    @RequestMapping(value = "/hdfsDownloadFile")
+    public ModelAndView hdfsDownloadFile(Object requestMap, HttpServletRequest req, HttpServletResponse res) throws Exception {
+	Map<String, Object> pMap = (Map<String, Object>) requestMap;
+	String hdfsFullPath = (String) pMap.get("data");
+	
+	Map<String, Object> resMap = javaHdfsService.hdfsDownloadFileService(hdfsFullPath, req, res);
+//	return new ModelAndView("download", "downloadView", javaHdfsService.hdfsDownloadFileService(hdfsFullPath, req, res));
+	String fileName = (String) resMap.get("fileName");
+	File file = new File("C:/upload/" + fileName);
+	
+	ModelAndView mav = new ModelAndView();
+	mav.addObject("result", file);
+	mav.setViewName("downloadView");
 	
 	return mav;
     }
