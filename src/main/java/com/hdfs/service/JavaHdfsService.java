@@ -7,7 +7,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.OutputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
@@ -15,7 +14,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
-import java.util.UUID;
+import java.util.Set;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -27,7 +26,6 @@ import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.util.FileCopyUtils;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
@@ -42,6 +40,8 @@ public class JavaHdfsService {
     private Configuration conf = new Configuration();
     
     private static String defaultPath = "hdfs://192.168.240.134:9000";
+    
+    private static String localPath = "C:/Users/gskim/workspace/Java-hdfs/WebContent/upload/";
     
     public JavaHdfsService() {
 	// default Constructor
@@ -230,9 +230,17 @@ public class JavaHdfsService {
      */
     public Map<String, Object> hdfsPutFilesService(String uploadPath, MultipartHttpServletRequest mReq) throws Exception {
 	System.out.println("File upload start ------ local path");
+//	Set<String> localPath = req.getServletContext().getResourcePaths("/upload/");
+	
+	File dir = new File(localPath);
+	if(!dir.isDirectory()) {
+	    dir.mkdirs();
+	}
+	
 	Iterator<String> iterator = mReq.getFileNames();
 	MultipartFile mFile;
-	List<String> fileInfoList = new ArrayList<String>();
+	List<Map<String, Object>> fileInfoList = new ArrayList<Map<String, Object>>();
+	Map<String, Object> fileMap = null;
 	String newFileName = "";
 	while(iterator.hasNext()) {
 	    mFile = mReq.getFile(iterator.next());
@@ -245,12 +253,17 @@ public class JavaHdfsService {
 	    String contentType = mFile.getContentType();
 	    System.out.println(contentType);
 	    
+	    fileMap = new HashMap<String, Object>();
+	    fileMap.put("fileName", newFileName);
+	    fileMap.put("filePath", localPath);
+	    fileInfoList.add(fileMap);
+	    
 	    try {
-		File newFile = new File("/upload/" + newFileName);
+		File newFile = new File(localPath, newFileName);
 		mFile.transferTo(newFile);
-		System.out.println("local upload path : " + "/upload/"+newFileName + " ---> upload success");
+		System.out.println("local upload path : " + localPath+newFileName + " ---> upload success");
 	    } catch(Exception e) {
-		System.out.println("local upload path : " + "/upload/"+newFileName + " ---> upload fail");
+		System.out.println("local upload path : " + localPath+newFileName + " ---> upload fail");
 		e.printStackTrace();
 	    }
 	}
@@ -269,10 +282,8 @@ public class JavaHdfsService {
 	    Path path = null;
 	    if(uploadPath.equals("/")) {
 		path = new Path(uploadPath+newFileName);
-		fileInfoList.add(uploadPath+newFileName);
 	    } else {
 		path = new Path(uploadPath + "/" + newFileName);
-		fileInfoList.add(uploadPath + "/" + newFileName);
 	    }
 	    
 	    System.out.println("hadoop save path : " + path);
@@ -280,7 +291,7 @@ public class JavaHdfsService {
 	    //하둡경로에 생성한 파일을 OutputStream에 저장(업로드하는 파일의 내용을 저장히기 위함)
 	    out = fs.create(path);
 	    
-	    in = new BufferedInputStream(new FileInputStream("/upload/" + newFileName));
+	    in = new BufferedInputStream(new FileInputStream(localPath + newFileName));
 	    int readBuffer = 0;
 	    byte[] buffer = new byte[512];
 	    while((readBuffer = in.read(buffer)) != -1) {
@@ -296,76 +307,8 @@ public class JavaHdfsService {
 	    if(fs != null) { fs.close(); }
 	}
 	result.put("msg", msg);
-	result.put("fileList", fileInfoList);
+	result.put("fileInfoList", fileInfoList);
 	
-	return result;
-    }
-    
-    public Map<String, Object> hdfsDownloadFileService(String hdfsPath, HttpServletRequest req, HttpServletResponse res) throws Exception {
-	String srcStr = "/downloads/";
-//	String msg = "";
-	File dir = new File(srcStr);
-	if(!dir.isDirectory()) {
-	    dir.mkdirs();
-	}
-	
-	Map<String, Object> result = new HashMap<String, Object>();
-//	conf.set("fs.defaultFS", defaultPath);
-	
-//	FileSystem fs = FileSystem.get(conf);
-//	Path localPath = new Path(srcStr);
-//	Path hadoopPath = new Path(hdfsPath);
-//	if(!fs.exists(hadoopPath)) {
-//	    System.out.println("No such destination " + hadoopPath);
-//	}
-	
-	String fileName = hdfsPath.substring(hdfsPath.lastIndexOf("/")+1, hdfsPath.length());
-	System.out.println(fileName);
-	
-//	OutputStream os = null;
-//	FileInputStream fis = null;
-//	File file = null;
-//	try {
-//	    file = new File("/upload/", fileName);
-//	    InputStream in = new FileInputStream(file);
-//	    String client = req.getHeader("User-Agent");
-	    
-//            if(client.indexOf("MSIE") != -1){
-//                res.setHeader ("Content-Disposition", "attachment; filename="+new String(fileName.getBytes("UTF-8"),"8859_1"));
-// 
-//            } else {
-//                fileName = new String(fileName.getBytes("UTF-8"),"8859_1");
-// 
-//                res.setHeader("Content-Disposition", "attachment; filename=\"" + fileName + "\"");
-//                res.setContentType("application/download; utf-8");
-//            }
-//            os = res.getOutputStream();
-//            fis = new FileInputStream(file);
-//            FileCopyUtils.copy(fis, os);
-            
-            
-//            byte b[] = new byte[(int)file.length()];
-//            int leng = 0;
-//            while((leng = in.read(b)) > 0) {
-//        	os.write(b, 0, leng);
-//            }
-	    
-//	    fs.copyToLocalFile(hadoopPath, localPath);
-	    
-//	    os.flush();
-//	    msg = "Success";
-//	} catch(Exception e) {
-//	    e.printStackTrace();
-//	    msg = e.getMessage();
-//	} finally {
-//	    fis.close();
-//	    os.close();
-//	    fs.close();
-//	}
-	
-//	result.put("msg", msg);
-	result.put("fileName", fileName);
-//	
 	return result;
     }
 }

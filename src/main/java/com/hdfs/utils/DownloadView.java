@@ -2,6 +2,7 @@ package com.hdfs.utils;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.io.OutputStream;
 import java.net.URLEncoder;
 import java.util.Map;
@@ -15,35 +16,35 @@ import org.springframework.web.servlet.view.AbstractView;
 public class DownloadView extends AbstractView {
     
     public DownloadView() {
-        setContentType("application/octet-stream");
+        setContentType("application/download; charset=utf-8");
     }
 
     @Override
     protected void renderMergedOutputModel(Map<String, Object> model, HttpServletRequest req, HttpServletResponse res) throws Exception {
-//	Map<String, Object> param = (Map<String, Object>) model.get("result");
+	Map<String, Object> fileInfo = (Map<String, Object>) model.get("downloadFile");
 	
-//	File file = new File("/upload" + param.get("fileName"));
-	File file = (File) model.get("result");
+	String filePhysicName = (String) fileInfo.get("fileName");
+	String path = (String) fileInfo.get("filePath");
+	
+	File file = new File(path+filePhysicName);
 	System.out.println("file : " + file);
         System.out.println("DownloadView --> file.getPath() : " + file.getPath());
         System.out.println("DownloadView --> file.getName() : " + file.getName());
         
-//        res.setContentType(getContentType());
-        res.setContentType("text/plain");
+        res.setContentType(getContentType());
         res.setContentLength((int)file.length());
-         
-        String userAgent = req.getHeader("User-Agent");
-        boolean ie = userAgent.indexOf("MSIE") > -1;
+        
         String fileName = null;
+	String userAgent = req.getHeader("User-Agent");
+	if(userAgent.indexOf("MSIE") > -1) {
+	    fileName = URLEncoder.encode(filePhysicName, "utf-8");
+	} else {
+	    fileName = new String(filePhysicName.getBytes("utf-8"), "iso-8859-1");
+	}
          
-        if(ie){
-            fileName = URLEncoder.encode(file.getName(), "utf-8");
-        } else {
-            fileName = new String(file.getName().getBytes("utf-8"));
-        }// end if;
-         
-        res.setHeader("Content-Disposition", "attachment; filename=\"" + fileName + "\";");
-        res.setHeader("Content-Transfer-Encoding", "binary");
+	res.setHeader("Content-Disposition", "attachment; filename=\"" + new String(fileName.getBytes(), "ISO8859_1"));
+	res.setHeader("Content-Transfer-Encoding", "binary");
+	
         OutputStream out = res.getOutputStream();
         FileInputStream fis = null;
          
@@ -56,11 +57,11 @@ public class DownloadView extends AbstractView {
             if(fis != null){
                 try{
                     fis.close();
-                }catch(Exception e){}
+                }catch(IOException ex){
+                    ex.getMessage();
+                }
             }
         }// try end;
         out.flush();
     }// render() end;
 }
-//file:///C:/upload/src_20170228_154602
-//    file:///C:/upload/src_20170228_154602.txt

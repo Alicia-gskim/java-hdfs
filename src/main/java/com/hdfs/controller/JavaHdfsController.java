@@ -2,6 +2,7 @@ package com.hdfs.controller;
 
 import java.io.File;
 import java.net.URISyntaxException;
+import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -117,16 +118,16 @@ public class JavaHdfsController {
      * @throws URISyntaxException 
      */
     @RequestMapping(value = "/hdfsPutFiles")
-    public ModelAndView hdfsPutFiles(Object requestMap, MultipartHttpServletRequest request, HttpServletResponse response) throws Exception {
+    public ModelAndView hdfsPutFiles(Object requestMap, MultipartHttpServletRequest mReq, HttpServletResponse res) throws Exception {
 	Map<String, Object> pMap = (Map<String, Object>) requestMap;
 	String uploadPath = (String) pMap.get("uploadPath");
 	
-	Map<String, Object> result = javaHdfsService.hdfsPutFilesService(uploadPath, request);
+	Map<String, Object> result = javaHdfsService.hdfsPutFilesService(uploadPath, mReq);
 	
 	ModelAndView mav = new ModelAndView("jsonView");
 	
 	mav.addObject("msg", result.get("msg"));
-	mav.addObject("fileList", result.get("fileList"));
+	mav.addObject("result", result.get("fileInfoList"));
 	
 	return mav;
     }
@@ -140,18 +141,17 @@ public class JavaHdfsController {
      */
     @RequestMapping(value = "/hdfsDownloadFile")
     public ModelAndView hdfsDownloadFile(Object requestMap, HttpServletRequest req, HttpServletResponse res) throws Exception {
+	System.out.println("File Download Start ----------------");
+	
 	Map<String, Object> pMap = (Map<String, Object>) requestMap;
-	String hdfsFullPath = (String) pMap.get("data");
+	String fileName = (String) pMap.get("fileName");
+	String filePath = (String) pMap.get("filePath");
 	
-	Map<String, Object> resMap = javaHdfsService.hdfsDownloadFileService(hdfsFullPath, req, res);
-//	return new ModelAndView("download", "downloadView", javaHdfsService.hdfsDownloadFileService(hdfsFullPath, req, res));
-	String fileName = (String) resMap.get("fileName");
-	File file = new File("C:/upload/" + fileName);
+	Map<String, Object> fileInfo = new HashMap<String, Object>();
 	
-	ModelAndView mav = new ModelAndView();
-	mav.addObject("result", file);
-	mav.setViewName("downloadView");
+	fileInfo.put("fileName", fileName);
+	fileInfo.put("filePath", filePath);
 	
-	return mav;
+	return new ModelAndView("downloadView", "downloadFile", fileInfo);
     }
 }

@@ -32,14 +32,12 @@
     <mvc:resources location="/jquery-ui/" mapping="/jquery-ui/**"></mvc:resources>
     
     
-<!--     <bean id="beanNameViewResolver" class="org.springframework.web.servlet.view.BeanNameViewResolver"></bean> -->
-    <bean class="org.springframework.web.servlet.view.BeanNameViewResolver">
+    <bean id="downloadView" class="com.hdfs.utils.DownloadView"></bean>
+    <bean id="downloadViewResolver" class="org.springframework.web.servlet.view.BeanNameViewResolver">
     	<property name="order" value="0"></property>
     </bean>
     
-    <bean id="downloadView" class="com.hdfs.utils.DownloadView"></bean>
-    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
-    </bean>
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"></bean>
     
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" id="viewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>

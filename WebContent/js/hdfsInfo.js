@@ -81,10 +81,30 @@ $a.page(function(){
 	        			console.log(res.fileName + "삭제 성공");
 	        		}
 	        	});
-	        }
-	        ,downloadCallback: function(fileInfo, pd){
-	        	$('#fileuploader').setOptions({
-	        		onLoad: function(obj){
+	        },
+	        downloadCallback: function(fileInfo, pd){
+	        	console.log(fileInfo);
+	        	var resFileInfo = fileInfo.result[0];
+	        	
+	        	var form = document.createElement("form");
+	        	form.setAttribute("method", "post");
+	        	form.setAttribute("action", "hdfsDownloadFile");
+	        	console.log(form);
+	        	
+	        	for(var key in resFileInfo){
+	        		var hiddenField = document.createElement("input");
+	        		hiddenField.setAttribute("type", "hidden");
+	        		hiddenField.setAttribute("name", key);
+	        		hiddenField.setAttribute("value", resFileInfo[key]);
+	        		
+	        		form.appendChild(hiddenField);
+	        	}
+	        	
+	        	pd.download[0].append(form);
+	        	form.submit();
+	        	
+//	        	$('#fileuploader').setOptions({
+//	        		onLoad: function(obj){
 //	        			$a.request('/download', {
 //	        				type: 'post',
 //	        				url: '/hdfsDownloadFile',
@@ -95,19 +115,19 @@ $a.page(function(){
 //	        					alert("downloadCallback : " + res);
 //	        				}
 //	        			});
-	        			$.ajax({
-	        				url: '/hdfsDownloadFile',
-	        	    		type: 'post',
-	        	    		dataType: 'json',
-	        	    		data: {
-	        	    			data: fileInfo.fileList[0]
-	        	    		},
-	        	    		success: function(res){
-	        	    			alert("downloadCallback : " + res);
-	        	    		}
-	        	    	});
-	        		}
-	        	});
+//	        			$.ajax({
+//	        				url: '/hdfsDownloadFile',
+//	        	    		type: 'post',
+//	        	    		dataType: 'json',
+//	        	    		data: {
+//	        	    			data: fileInfo.fileList[0]
+//	        	    		},
+//	        	    		success: function(res){
+//	        	    			alert("downloadCallback : " + res);
+//	        	    		}
+//	        	    	});
+//	        		}
+//	        	});
 //	        	$a.request('/download', {
 //	        		type: 'post',
 //	        		url: '/hdfsDownloadFile',
@@ -136,20 +156,6 @@ $a.page(function(){
 	$(document).on('click', '#cancelAll', function(){
         $("#fileuploader").cancelAll();
 	});
-	// fileupload 파일목록 다운로드(단일)
-//	$(document).on('click', 'button.download', function(){
-//		console.log(this);
-//		$.ajax('/hdfsDownloadFile', {
-//    		type: 'post',
-//    		dataType: 'json',
-//    		data: {
-//    			data: fileInfo.fileList[0]
-//    		},
-//    		success: function(res){
-//    			alert(res);
-//    		}
-//    	});
-//	});
 
 	// 경로 이동
 	$(document).on('click', 'a', function() {
@@ -309,21 +315,6 @@ $a.page(function(){
 			}
 		});
 	};
-	
-	function fileDownAjax(url, data){
-		$.ajax({
-			type: 'POST',
-			url : url,
-			data : data,
-//			dataType: 'json',
-			error : function(e){
-				console.log(e);
-			},
-			success : function(res){
-				console.log(res);
-			}
-		});
-	}
 	
 	// 폴더 생성
 	$(document).on('click', '#addDir', function() {
