@@ -39,7 +39,7 @@ public class JavaHdfsService {
     
     private Configuration conf = new Configuration();
     
-    private static String defaultPath = "hdfs://192.168.240.134:9000";
+    private static String defaultPath = "hdfs://http://192.168.240.142:9000";
     
     private static String localPath = "C:/Users/gskim/workspace/Java-hdfs/WebContent/upload/";
     
@@ -64,6 +64,7 @@ public class JavaHdfsService {
         List<String> detailPathArr = new ArrayList<String>();
         BufferedReader br = null;
         List<String> listStr = new ArrayList<String>();
+        boolean emptyChk = false;
         
         try{
             Path path = new Path(hdfsDirPath);
@@ -86,7 +87,7 @@ public class JavaHdfsService {
             // 폴더내 목록이 있는 경우
             if(fileStatus != null && fileStatus.length > 0){
         	/* 
-        	 * INPUT DATA -> hdfs://192.168.240.134:9000/common
+        	 * INPUT DATA -> hdfs://192.168.240.142:9000/common
         	 * 공통경로를 제외한 나머지 경로의 값 : hdfsDirPath만 이용
         	 * 1. path가 "/"인 경우 === param : /
         	 * 2. path가 2dept이상인 경우 === param : /var
@@ -129,20 +130,28 @@ public class JavaHdfsService {
         	}
         	resMap.put("parentPath", parentPath);
         	resMap.put("fullPath", hdfsDirPath);
-        	System.out.println("Empty Directory && Empty File");
+        	System.out.println("Empty Directory & Empty Files");
         	resMap.put("detailPath", "");
             }
+            resMap.put("emptyChk", emptyChk);
     
         } catch (Exception e) {
+            emptyChk = true;
             System.out.println(e);
             String parentPath = hdfsDirPath.substring(hdfsDirPath.indexOf("/"), hdfsDirPath.lastIndexOf("/"));
             if(parentPath.equals("")){
         	parentPath = "/";
             }
+            detailPathArr.add("Empty directory & Empy files.. please add directory or upload files..");
+            
+            resMap.put("emptyChk", emptyChk);
+            resMap.put("detailPath", detailPathArr);
             resMap.put("parentPath", parentPath);
             resMap.put("fullPath", hdfsDirPath);
             
-            hdfs.close();
+            if(hdfs != null) {
+        	hdfs.close();
+            }
         }
         
         return resMap;

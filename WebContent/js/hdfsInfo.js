@@ -21,7 +21,6 @@ $a.page(function(){
 		var uploadObj = $("#fileuploader").setOptions({
 	        url : '/hdfsPutFiles',
 	        fileName : 'uploadFiles',
-//	        maxFileSize : 1000000,
 	        showDone: false,
 	        formData : {
 	        	uploadPath : uploadPath
@@ -102,43 +101,6 @@ $a.page(function(){
 	        	
 	        	pd.download[0].append(form);
 	        	form.submit();
-	        	
-//	        	$('#fileuploader').setOptions({
-//	        		onLoad: function(obj){
-//	        			$a.request('/download', {
-//	        				type: 'post',
-//	        				url: '/hdfsDownloadFile',
-//	        				data: {
-//	        					data: fileInfo.fileList[0]
-//	        				},
-//	        				success: function(res){
-//	        					alert("downloadCallback : " + res);
-//	        				}
-//	        			});
-//	        			$.ajax({
-//	        				url: '/hdfsDownloadFile',
-//	        	    		type: 'post',
-//	        	    		dataType: 'json',
-//	        	    		data: {
-//	        	    			data: fileInfo.fileList[0]
-//	        	    		},
-//	        	    		success: function(res){
-//	        	    			alert("downloadCallback : " + res);
-//	        	    		}
-//	        	    	});
-//	        		}
-//	        	});
-//	        	$a.request('/download', {
-//	        		type: 'post',
-//	        		url: '/hdfsDownloadFile',
-//	        		data : {
-//	        			data: fileInfo.fileList[0]
-//	        		},
-//	        		success : function(res){
-//	        			alert(res);
-//	        		}
-//	        	});
-//	        	fileDownAjax(, data);
 	        }
 		});
 		
@@ -258,6 +220,7 @@ $a.page(function(){
 				console.log(e);
 			},
 			success : function(data){
+				var emptyChk = data.result.emptyChk;
 				var detailPath = data.result.detailPath;
 				var parentPath = data.result.parentPath;
 				var fullPath = data.result.fullPath;
@@ -271,19 +234,23 @@ $a.page(function(){
 				if(fullPath != "/" && parentPath != ""){ // 최상위 경로인 경우
 					appendTag += '<li id="rootLi" class="Link"><a href="#" name="'+ fullPath +'"><span style="font-size:20px;">..</span></a></li>';
 				}
-				if(detailPath != null){
-					var data_list = [];
-					for(var i = 0; i < detailPath.length; i++){
-						if(fileContents == null){ //파일이 아닌 경우
-							appendTag += '	<li class="Link">';
-							appendTag += '		<a name="'+ detailPath[i] +'" href="#"><span style="font-size:15px;"><strong>' + detailPath[i] + '</strong></span></a>';
-							appendTag += '	</li>';
-							
-							// 현재 경로의 폴더 및 파일 목록 저장 -> select box에 data-binding에 필요한 값
-							data_list.push( {cnt:(i+1), dirName:detailPath[i]} );
+				if(emptyChk){
+					appendTag += '<li>'+ detailPath[0] +'</li>';
+				}else{
+//					if(detailPath != null){
+						var data_list = [];
+						for(var i = 0; i < detailPath.length; i++){
+							if(fileContents == null){ //파일이 아닌 경우
+								appendTag += '	<li class="Link">';
+								appendTag += '		<a name="'+ detailPath[i] +'" href="#"><span style="font-size:15px;"><strong>' + detailPath[i] + '</strong></span></a>';
+								appendTag += '	</li>';
+								
+								// 현재 경로의 폴더 및 파일 목록 저장 -> select box에 data-binding에 필요한 값
+								data_list.push( {cnt:(i+1), dirName:detailPath[i]} );
+							}
 						}
-					}
-					$('#cnt_dirName').setData({option_data:data_list});
+						$('#cnt_dirName').setData({option_data:data_list});
+//					}
 				}
 				appendTag += '	</ul>';
 				appendTag += '</div>';
@@ -386,16 +353,6 @@ $a.page(function(){
 		} else {
 			alert("값을 선택하세요!");
 		}
-	});
-	
-	// 다운로드
-	$(document).on('click', '#downBtn', function(fileInfo, pd){
-		console.log(fileInfo);
-		console.log(pd);
-//		$a.requuest('/hdfsDown""loadFile', {
-			
-		//});
-		
 	});
 	
 	// 화면 새로고침
