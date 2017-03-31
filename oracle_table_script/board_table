@@ -1,0 +1,38 @@
+-- USER TABLE --
+CREATE TABLE ORACLE.BOARD_USER (
+  BOARD_USER_NO          NUMBER           NOT NULL, 
+  BOARD_USER_NAME        VARCHAR2(20)     NOT NULL, 
+  BOARD_USER_PASSWORD    VARCHAR2(20)     NOT NULL, 
+  BOARD_USER_AGE         NUMBER(2)            NULL, 
+  BOARD_USER_EMAIL       VARCHAR2(50)         NULL, 
+  DEL_YN                 CHAR(1)          NOT NULL, 
+  INS_DT                 DATE             NOT NULL, 
+  UPD_DT                 DATE             NOT NULL
+)
+
+--BOARD TABLE --
+CREATE TABLE ORACLE.BOARD_TBL (
+  BOARD_TBL_NO     NUMBER            NOT NULL, 
+  BOARD_USER_NO    NUMBER            NOT NULL, 
+  BOARD_TITLE      VARCHAR2(100)     NOT NULL, 
+  BOARD_CONT       CLOB                  NULL, 
+  BOARD_CNT        NUMBER            NOT NULL, 
+  FILE_YN          CHAR(1)           NOT NULL, 
+  DEL_YN           CHAR(1)           NOT NULL, 
+  INS_DT           DATE              NOT NULL, 
+  UPD_DT           DATE              NOT NULL
+)
+
+-- FILE TABLE --
+CREATE TABLE ORACLE.BOARD_FILE (
+  BOARD_FILE_NO           NUMBER            NOT NULL, 
+  BOARD_TBL_NO            NUMBER            NOT NULL, 
+  BOARD_USER_NAME         VARCHAR2(20)      NOT NULL, 
+  BOARD_FILE_NAME         VARCHAR2(100)     NOT NULL, 
+  BOARD_FILE_ORIGIN_NM    VARCHAR2(100)     NOT NULL, 
+  BOARD_FILE_EXT          VARCHAR2(10)      NOT NULL, 
+  BOARD_FILE_SIZE         NUMBER            NOT NULL, 
+  DEL_YN                  CHAR(1)           NOT NULL, 
+  INS_DT                  DATE              NOT NULL, 
+  UPD_DT                  DATE              NOT NULL
+)
