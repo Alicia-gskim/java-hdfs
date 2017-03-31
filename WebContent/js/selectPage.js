@@ -23,6 +23,8 @@ $a.page(function(){
 				$a.navigate('hdfsHome');
 			} else if(name == 'alopexPage'){
 				$a.navigate('portalType');
+			} else if(name == 'oraclePage'){
+				$a.navigate('oracle/mainPage');
 			}
 		});
 	}

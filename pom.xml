@@ -14,6 +14,11 @@
     	<id>cloudera</id>
     	<url>https://repository.cloudera.com/artifactory/cloudera-repos</url>
   	</repository>
+  	<repository>
+         <id>oracle</id>
+         <name>ORACLE JDBC Repository</name>
+         <url>http://www.ebi.ac.uk/intact/maven/nexus/content/repositories/ebi-repo</url>
+    </repository>
   </repositories>
   
   <dependencies>
@@ -23,6 +28,12 @@
 	    <groupId>org.springframework</groupId>
 	    <artifactId>spring-core</artifactId>
 	    <version>${spring.version}</version>
+		<exclusions>
+			<exclusion>
+				<groupId>commons-logging</groupId>
+				<artifactId>commons-logging</artifactId>
+			</exclusion>
+		</exclusions>
 	</dependency>
 	
 	<dependency>
@@ -69,7 +80,6 @@
 	    <artifactId>jackson-core-asl</artifactId>
 	    <version>1.9.13</version>
 	</dependency>
-	
 	<!-- Spring Configure - Jackson -->
 	
 	<!-- Hadoop File System -->
@@ -126,6 +136,66 @@
 	</dependency>
 	<!-- File Upload -->
 	
+	<!-- Oracle Database -->
+	<dependency>
+	    <groupId>ojdbc</groupId>
+	    <artifactId>ojdbc</artifactId>
+	    <version>14</version>
+	</dependency>
+	<dependency>
+		<groupId>org.mybatis</groupId>
+		<artifactId>mybatis</artifactId>
+		<version>3.3.0</version>
+	</dependency>
+	<dependency>
+		<groupId>org.mybatis</groupId>
+		<artifactId>mybatis-spring</artifactId>
+		<version>1.2.2</version>
+	</dependency>
+	<dependency>
+		<groupId>commons-dbcp</groupId>
+		<artifactId>commons-dbcp</artifactId>
+		<version>1.4</version>
+	</dependency>
+	<dependency>
+		<groupId>org.springframework</groupId>
+		<artifactId>spring-jdbc</artifactId>
+		<version>${spring.version}</version>
+	</dependency>
+	<!-- Oracle Database -->
+	
+	<!-- Multi DB Setting -->
+	<dependency>
+		<groupId>org.aspectj</groupId>
+		<artifactId>aspectjweaver</artifactId>
+		<version>1.8.9</version>
+	</dependency>
+	<dependency>
+		<groupId>org.aspectj</groupId>
+		<artifactId>aspectjrt</artifactId>
+		<version>1.8.9</version>
+	</dependency>
+	<!-- Multi DB Setting -->
+	
+	<!-- logback -->
+	<dependency>
+		<groupId>ch.qos.logback</groupId>
+		<artifactId>logback-classic</artifactId>
+		<version>1.2.1</version>
+		<exclusions>
+			<exclusion>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+			</exclusion>
+		</exclusions>
+		<scope>runtime</scope>
+	</dependency>
+	<dependency>
+		<groupId>org.slf4j</groupId>
+		<artifactId>jcl-over-slf4j</artifactId>
+		<version>1.7.21</version>
+	</dependency>
+	<!-- logback -->
 	
 	<dependency>
 	    <groupId>junit</groupId>

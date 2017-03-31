@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- For assistance related to logback-translator or configuration -->
+<!-- files in general, please contact the logback user mailing list -->
+<!-- at http://www.qos.ch/mailman/listinfo/logback-user -->
+<!-- -->
+<!-- For professional support please see -->
+<!-- http://www.qos.ch/shop/products/professionalSupport -->
+<!-- -->
+
+<configuration>
+
+	<!-- console로 log 남기기 -->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <pattern> ▶  [%-5p][%d{yyyy-MM-dd HH:mm:ss}][%C{1}.%M] - %msg%n </pattern>
+        </encoder>
+    </appender>
+
+    <appender name="console-querylog" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+            <pattern> ▷  [%-5p][%d{yyyy-MM-dd HH:mm:ss}][%C{1}.%M] - %msg%n </pattern>
+    	</encoder>
+    </appender>
+    
+    <root level="DEBUG">
+        <appender-ref ref="console" />
+    </root>
+    
+    <logger name="org.springframework" additivity="false" level="INFO">
+        <appender-ref ref="console" />
+    </logger>
+
+    <logger name="com.linux.oracle.LinuxOracleService" additivity="false" level="DEBUG">
+        <appender-ref ref="console" />
+    </logger>
+    
+<!--     이 아래에 있는 애들 다 log로 찍겠다. -->
+<!--     <logger name="com.ktds.mcjang.intercept.LoginInterceptor" level="info"> -->
+<!--         <appender-ref ref="fileForLoginInterceptor"/> -->
+<!--     </logger> -->
+    
+<!--     이 아래에 있는 애들 다 log로 찍겠다. -->
+<!--     <logger name="org.springframework" level="info" /> -->
+<!--     <root level="info"> -->
+<!--         <appender-ref ref="console" /> -->
+<!--         <appender-ref ref="file" /> -->
+<!--     </root> -->
+
+</configuration>

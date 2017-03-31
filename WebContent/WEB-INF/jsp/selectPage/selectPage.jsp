@@ -32,6 +32,9 @@
 				<li class="Link"><a name="hdfsPage" href="#">HDFS Page</a></li>
 			</ul>
 			<ul class="List">
+				<li class="Link"><a name="oraclePage" href="#">Oracle Database Page</a></li>
+			</ul>
+			<ul class="List">
 				<li class="Link"><a name="alopexPage" href="#">Alopex-UI Page</a></li>
 			</ul>
 		</div>

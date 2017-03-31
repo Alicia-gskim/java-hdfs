@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0/EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="oracle">
+	<!--
+	 * 결과값을 순서대로 저장할 피요가 있어서 LinkedHashMap Class를 사용함
+	 * 순서가 상관없을 경우는 HashMap Class를 사용하면 됨
+	-->
+	<resultMap id="clobMap" type="java.util.LinkedHashMap">
+		<result property="BOARD_CONT" column="BOARD_CONT" javaType="java.lang.String" jdbcType="CLOB"/>
+	</resultMap>
+	
+	<select id="selectGetTblList" resultType="hashmap">
+		SELECT OBJECT_NAME
+		  FROM USER_OBJECTS
+		 WHERE OBJECT_TYPE='TABLE'
+	</select>
+	<!-- 접속 계정의 해당하는 table의 컬럼명 조회 -->
+	<select id="selectColumnName" resultType="hashmap">
+		SELECT COLUMN_NAME
+			   , DATA_TYPE
+			   , DATA_LENGTH
+			   , DATA_PRECISION
+			   , DATA_SCALE
+			   , NULLABLE
+		  FROM COLS
+		 WHERE TABLE_NAME= #{tblName}
+	</select>
+	<select id="selectTblInfo" resultType="hashmap">
+		SELECT ROWNUM AS RN, INFO.*
+		  FROM (
+				SELECT *
+				  FROM ${tblName}
+			  ) INFO
+	</select>
+	<select id="selectGetBoardInfo" resultType="java.util.LinkedHashMap">
+		SELECT PAGE.RNUM,
+				PAGE.BOARD_TBL_NO,
+				PAGE.BOARD_TITLE,
+				PAGE.BOARD_CNT,
+				PAGE.FILE_YN,
+				PAGE.BOARD_USER_NAME,
+				PAGE.UPD_DT
+		  FROM (
+				SELECT ROWNUM AS RNUM,
+						INFO.BOARD_TBL_NO,
+						INFO.BOARD_TITLE,
+						INFO.BOARD_CNT,
+						INFO.FILE_YN,
+						INFO.BOARD_USER_NAME,
+						INFO.UPD_DT
+				  FROM (
+						SELECT B.BOARD_TBL_NO,
+								B.BOARD_TITLE,
+                                B.BOARD_CNT,
+								B.FILE_YN,
+								A.BOARD_USER_NAME,
+								B.UPD_DT
+						  FROM BOARD_USER A, BOARD_TBL B, BOARD_FILE C
+						 WHERE B.BOARD_USER_NO = A.BOARD_USER_NO
+						   AND B.BOARD_TBL_NO = C.BOARD_TBL_NO
+						   AND C.BOARD_USER_NAME = A.BOARD_USER_NAME
+						   AND A.DEL_YN = 'N'
+						   AND B.DEL_YN = 'N'
+						   AND C.DEL_YN = 'N'
+					) INFO
+				) PAGE
+	</select>
+	<select id="selectGetBoardCount" resultType="java.lang.Integer">
+		SELECT COUNT(*)
+		  FROM (
+				SELECT ROWNUM AS RNUM,
+						INFO.BOARD_TBL_NO,
+						INFO.BOARD_TITLE,
+						INFO.BOARD_CNT,
+						INFO.FILE_YN,
+						INFO.BOARD_USER_NAME,
+						INFO.UPD_DT
+				  FROM (
+						SELECT B.BOARD_TBL_NO,
+								B.BOARD_TITLE,
+                                B.BOARD_CNT,
+								B.FILE_YN,
+								A.BOARD_USER_NAME,
+								B.UPD_DT
+						  FROM BOARD_USER A, BOARD_TBL B, BOARD_FILE C
+						 WHERE B.BOARD_USER_NO = A.BOARD_USER_NO
+						   AND B.BOARD_TBL_NO = C.BOARD_TBL_NO
+						   AND C.BOARD_USER_NAME = A.BOARD_USER_NAME
+						   AND A.DEL_YN = 'N'
+						   AND B.DEL_YN = 'N'
+						   AND C.DEL_YN = 'N'
+					) INFO
+				) PAGE
+	</select>
+	
+	<select id="selectGetBoardDetailInfo" resultMap="clobMap">
+		SELECT PAGE.RNUM,
+				PAGE.BOARD_TBL_NO,
+				PAGE.BOARD_TITLE,
+				PAGE.BOARD_CONT,
+				PAGE.BOARD_FILE_NAME,
+				PAGE.BOARD_FILE_ORIGIN_NM,
+				PAGE.BOARD_FILE_EXT,
+				PAGE.BOARD_FILE_SIZE,
+				PAGE.BOARD_CNT,
+				PAGE.FILE_YN,
+				PAGE.DEL_YN,
+				PAGE.BOARD_USER_NAME,
+				PAGE.BOARD_USER_AGE,
+				PAGE.BOARD_USER_EMAIL,
+				PAGE.UPD_DT
+		  FROM (
+				SELECT ROWNUM AS RNUM,
+						INFO.BOARD_TBL_NO,
+						INFO.BOARD_TITLE,
+						INFO.BOARD_CONT,
+						INFO.BOARD_FILE_NAME,
+						INFO.BOARD_FILE_ORIGIN_NM,
+						INFO.BOARD_FILE_EXT,
+						INFO.BOARD_FILE_SIZE,
+						INFO.BOARD_CNT,
+						INFO.FILE_YN,
+						INFO.DEL_YN,
+						INFO.BOARD_USER_NAME,
+						INFO.BOARD_USER_AGE,
+						INFO.BOARD_USER_EMAIL,
+						INFO.UPD_DT
+				  FROM (
+						SELECT B.BOARD_TBL_NO,
+								B.BOARD_TITLE,
+								B.BOARD_CONT,
+								C.BOARD_FILE_NAME,
+								C.BOARD_FILE_ORIGIN_NM,
+								C.BOARD_FILE_EXT,
+								C.BOARD_FILE_SIZE,
+                                B.BOARD_CNT,
+								B.FILE_YN,
+								B.DEL_YN,
+								A.BOARD_USER_NAME,
+								A.BOARD_USER_AGE,
+								A.BOARD_USER_EMAIL,
+								B.UPD_DT
+						  FROM BOARD_USER A, BOARD_TBL B, BOARD_FILE C
+						 WHERE B.BOARD_USER_NO = A.BOARD_USER_NO
+						   AND B.BOARD_TBL_NO = C.BOARD_TBL_NO
+						   AND C.BOARD_USER_NAME = A.BOARD_USER_NAME
+						   AND A.DEL_YN = 'N'
+						   AND B.DEL_YN = 'N'
+						   AND C.DEL_YN = 'N'
+					) INFO
+				) PAGE
+	</select>
+</mapper>

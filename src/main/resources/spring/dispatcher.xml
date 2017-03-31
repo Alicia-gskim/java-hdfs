@@ -12,27 +12,37 @@
         
     <mvc:annotation-driven>
 		<mvc:argument-resolvers>
-			<bean class="com.hdfs.resolver.ParameterMappingResolver"></bean>
+			<bean class="com.linux.resolver.ParameterMappingResolver"></bean>
 		</mvc:argument-resolvers>
 	</mvc:annotation-driven>
 	
 	<bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"></bean>
 	
-    <context:component-scan base-package="com.hdfs">
+    <context:component-scan base-package="com.linux">
     	<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     	<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Service"/>
     	<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Repository"/>
     </context:component-scan> 
 
+	<mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <mvc:exclude-mapping path="/js/**"/>
+            <bean class="com.linux.interceptor.Interceptor" />
+        </mvc:interceptor>
+    </mvc:interceptors>
+
     <mvc:resources location="/resources/" mapping="/resources/**"></mvc:resources>
     <mvc:resources location="/js/" mapping="/js/**"></mvc:resources>
     <mvc:resources location="/css/" mapping="/css/**"></mvc:resources>
+    <mvc:resources location="/image/" mapping="/image/**"></mvc:resources>
     
     <mvc:resources location="/alopex-ui/" mapping="/alopex-ui/**"></mvc:resources>
     <mvc:resources location="/jquery-ui/" mapping="/jquery-ui/**"></mvc:resources>
+    <mvc:resources location="/uitemplate/" mapping="/uitemplate/**"></mvc:resources>
     
     
-    <bean id="downloadView" class="com.hdfs.utils.DownloadView"></bean>
+    <bean id="downloadView" class="com.linux.utils.DownloadView"></bean>
     <bean id="downloadViewResolver" class="org.springframework.web.servlet.view.BeanNameViewResolver">
     	<property name="order" value="0"></property>
     </bean>
