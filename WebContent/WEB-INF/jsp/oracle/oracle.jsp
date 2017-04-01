@@ -7,39 +7,35 @@
 	
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script type="text/javascript" src="/js/oracle/oracle.js"></script>
+	<script type="text/javascript" src="/uitemplate/admin/js/app.js"></script>
+	
+	<%@ include file="cssbind.jsp" %>
 </head>
-<body>
-	<center>
-		<hr>
-		${welCome}
-		<hr>
-	</center>
-	<div>
-		<button id="createBtn" name="create"> Create Table </button>
-		<button id="writeBtn" name="write"> Write Data </button>
-	</div>
-	<div>
-		<button id="moveBtn" name="move"> Select Oracle Database Info </button>
-	</div>
-	<div>
-		<button id="insertBtn" name="board"> Board Page </button>
+<body class="skin-red">
+	<%@ include file="headerclass.jsp" %>
+	<%@ include file="sidebar.jsp" %>
+	
+	<div class="content-wrapper">
 	</div>
 	
-	<div class="jsonViewArea">
-		<table class="selectInfo" border="1px solid">
-			<thead>
-				<tr>
-					<th scope="col">IDX</th>
-					<th scope="col">TITLE</th>
-					<th scope="col">NAME</th>
-					<th scope="col">IP</th>
-					<th scope="col">INS_DT</th>
-					<th scope="col">UPD_DT</th>
-				</tr>
-			</thead>
-			<tbody>
-			</tbody>
-		</table>
-	</div>
+	<footer class="main-footer">
+		<center>
+			<hr>
+			${welCome}
+			<hr>
+		</center>
+		<div>
+			<button id="createBtn" name="create"> Create Table </button>
+			<button id="writeBtn" name="write"> Write Data </button>
+		</div>
+		<div>
+			<button id="moveBtn" name="move"> Select Oracle Database Info </button>
+		</div>
+		<div>
+			<button id="insertBtn" name="board"> Board Page </button>
+		</div>
+	</footer>
 </body>
+
+
 </html>

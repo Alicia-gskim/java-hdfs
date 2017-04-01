@@ -9,28 +9,30 @@
 	<script type="text/javascript" src="/js/oracle/viewBoard.js"></script>
 	<script type="text/javascript" src="/uitemplate/datatables/jquery.dataTables.js"></script>
 	<script type="text/javascript" src="/uitemplate/datatables/dataTables.bootstrap.js"></script>
+	<script type="text/javascript" src="/uitemplate/admin/js/bootstrap.min.js"></script>
 	
-	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
-	<link rel="stylesheet" type="text/css" href="/uitemplate/datatables/dataTables.bootstrap.css" />
+	<%@ include file="cssbind.jsp" %>
 </head>
-<body>
-	<center><hr>${msg }<hr></center>
-	<br/>
-	<div>
-		<center><hr>${data }<hr></center>
-	</div>
+<body class="skin-red">
 	
-	<div>
-		<button id="getTbl">Get Table List</button>
-	</div>
+		<%@ include file="headerclass.jsp" %>
+		<%@ include file="sidebar.jsp" %>
 	
-	<div class="row">
-		<div id="tblList" class="col-xs-12">
-			
-		</div>
-		<div id="tblContents" class="col-xs-12">
+	<div class="content-wrapper">
+		<center><hr>${msg }<hr></center>
+		<br/>
 		
+		<div class="row">
+			<div id="tblList" class="col-xs-12">
+				
+			</div>
+			<div id="tblContents" class="col-xs-12">
+			
+			</div>
 		</div>
 	</div>
+	<footer class="main-footer">
+		<center><hr>Board Main Page Footer<hr></center>
+	</footer>
 </body>
 </html>

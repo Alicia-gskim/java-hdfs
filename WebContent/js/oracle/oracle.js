@@ -4,10 +4,7 @@
 
 $(function(){
 	
-	console.log("111111");
-	
-	$('button').on('click', function(){
-		console.log("Some button click");
+	$('a').on('click', function(){
 		var name = this.name;
 		
 		if(name == "create") {
@@ -20,18 +17,4 @@ $(function(){
 			location.href = "/oracle/viewBoard";
 		}
 	});
-	
-//	$('#moveBtn').on('click', function(){
-//		location.href = "/oracle/writeData";
-//	});
-//	
-//	$('#createBtn').on('click', function(){
-//		location.href = "/oracle/createTbl";
-//	});
-//	
-//	$('#writeBtn').on('click', function(){
-//		location.href = "/oracle/writeData";
-//	});
-	
-	
 });
